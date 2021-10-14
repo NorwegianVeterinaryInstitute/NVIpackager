@@ -35,6 +35,8 @@ usethis::use_build_ignore(notes, escape = TRUE)
 
 usethis::git_vaccinate()
 usethis::use_git_ignore(ignores, directory = ".")
+# Should be in vaccinate?
+# usethis::use_git_ignore(ignores, file = "*.Rproj")
 
 usethis::use_readme_md()
 #> ✓ Writing 'README.md'
