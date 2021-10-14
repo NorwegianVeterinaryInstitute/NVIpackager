@@ -1,0 +1,21 @@
+Package: NVIdevpkg
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Petter",
+             family = "Hopp",
+             role = c("aut", "cre"),
+             email = "Petter.Hopp@vetinst.no",
+             comment = c(ORCID = "0000-0002-8695-0378")),
+      person(given = "Norwegian Veterinary Institute",
+             role = "cph"))
+Description: What the package does (one paragraph).
+License: BSD_3_clause + file LICENSE
+URL: https://github.com/NorwegianVeterinaryInstitute/NVIdevpkg
+BugReports: 
+    https://github.com/NorwegianVeterinaryInstitute/NVIdevpkg/issues
+Encoding: UTF-8
+Language: en-GB
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
