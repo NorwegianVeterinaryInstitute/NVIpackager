@@ -67,3 +67,8 @@ options(
 )
 
 usethis::use_vignette(name = "contribute_to_mypkg", title = "Contribute to mypkg")
+
+
+# use_spell_check(vignettes = TRUE, lang = "en-GB", error = FALSE)
+# use_logo(img, geometry = "240x278", retina = TRUE)
+# use_package_doc(open = rlang::is_interactive())
