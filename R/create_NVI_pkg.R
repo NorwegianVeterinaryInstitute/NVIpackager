@@ -2,6 +2,7 @@ library(usethis)
 
 pkg <- stringi::stri_extract_last_words(getwd())
 
+
 options(
   usethis.description = list(
     `Authors@R` = 'c(person(given = "Petter",
@@ -65,8 +66,6 @@ options(
     Language =  "en-GB"
   )
 )
-
-usethis::use_vignette(name = "contribute_to_mypkg", title = "Contribute to mypkg")
 
 
 # use_spell_check(vignettes = TRUE, lang = "en-GB", error = FALSE)
