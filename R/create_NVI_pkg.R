@@ -45,7 +45,10 @@ usethis::use_readme_md()
 usethis::use_news_md()
 #> ✓ Writing 'NEWS.md'
 
+# set up test structure
 usethis::use_testthat()
+usethis::use_spell_check(vignettes = TRUE, lang = "en-GB", error = FALSE)
+usethis::use_coverage()
 
 usethis::use_code_of_conduct()
 
@@ -68,6 +71,5 @@ options(
 )
 
 
-# use_spell_check(vignettes = TRUE, lang = "en-GB", error = FALSE)
 # use_logo(img, geometry = "240x278", retina = TRUE)
 # use_package_doc(open = rlang::is_interactive())
