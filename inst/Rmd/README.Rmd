@@ -1,0 +1,109 @@
+--- 
+title: "README"
+output: 
+  md_document:
+  variant: markdown_github
+  
+params:
+  NVIpkg: "NVIpackage"
+---
+
+```{r, include = FALSE}
+# NVIpkg <- params$NVIpkg
+NVIpkg <- stringi::stri_extract_last_words(usethis::proj_path())
+NVIpkg_inline <- paste0("`", NVIpkg, "`")
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+`r paste0(NVIpkg, ": ", desc::desc_get_field(key = "Title"))`
+================
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+  <!-- badges: start -->
+  [![Codecov test coverage](https://codecov.io/gh/PetterHopp/NVIdevpkg/branch/master/graph/badge.svg)](https://codecov.io/gh/PetterHopp/NVIdevpkg?branch=master)
+  <!-- badges: end -->
+
+  - [Overview](#overview)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Copyright and license](#copyright-and-license)
+  - [Contributing](#contributing)
+
+# Overview
+`r NVIpkg_inline` provide tools to ...
+
+The package is under development. [Contributions](#contributing) to enhance the package is highly appreciated.  
+
+`r NVIpkg_inline` is part of `NVIverse`, a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI).  
+
+####  Table 1. NVIverse packages
+```{r echo = FALSE, resuls = 'asis'}
+NVIverse <- as.data.frame(rbind(c("NVIconfig", "Private",
+                                  "Configuration information necessary for some NVIverse functions"),
+                                c("NVIdb", "Public",
+                                  "Tools to facilitate the use of NVI's databases"),
+                                c("NVIpretty",  "Public",
+                                  "Tools to make R-output pretty in accord with NVI's graphical profile"),
+                                c("NVIbatch",  "Public",
+                                  "Tools to facilitate the running of R-scripts in batch mode at NVI"),
+                                c("NVIcheckmate",  "Public",
+                                  "Extension of checkmate with argument checking adapted for NVIverse"),
+                                c("OKplan",  "Public",
+                                  "Tools to facilitate the planning of surveillance programmes for the NFSA"),
+                                c("OKcheck",  "Public",
+                                  "Tools to facilitate checking of data from national surveillance programmes")))
+colnames(NVIverse) <- c("Package", "Status", "Description")
+knitr::kable(x = NVIverse)
+```
+
+# Installation
+`r NVIpkg_inline`  is available at [GitHub](https://github.com/NorwegianVeterinaryInstitute). 
+To install `r NVIpkg_inline` you will need:
+
+- R version > 4.0.0
+- R package `devtools`
+- Rtools 4.0
+
+First install and attach the `devtools` package.  
+
+``` {r, eval = FALSE} 
+install.packages("devtools")
+library(devtools)
+```
+
+To install (or update) the `r NVIpkg_inline` package, run the following code:
+
+``` {r text, message=FALSE, warnings=FALSE, echo=FALSE, prompt = FALSE, comment = ""} 
+text <- paste(paste0('remotes::install_github("NorwegianVeterinaryInstitute/', NVIpkg, '")'), 
+	'    upgrade = FALSE,', 
+	'    build = TRUE,',
+	'    build_manual = TRUE)', sep = '\n')
+cat(text, sep="", fill = TRUE)
+```
+
+# Usage
+To come.
+
+
+# Copyright and license
+
+Copyright (c) 2021 Norwegian Veterinary Institute.  
+Licensed under the BSD 3-Clause [License](`r  paste0("https://github.com/NorwegianVeterinaryInstitute/", NVIpkg, "/blob/main/LICENSE")` ).
+  
+
+# Contributing
+
+Contributions to develop `r NVIpkg_inline` is highly appreciated. There are several 
+ways you can contribute to this project: ask a question, propose an idea, report 
+a bug, improve the documentation, or contribute code. The vignette 
+"Contribute to `r NVIpkg`" gives more information.
+
+-----
+
+Please note that the `r NVIpkg` project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By 
+contributing to this project, you agree to abide by its terms.
