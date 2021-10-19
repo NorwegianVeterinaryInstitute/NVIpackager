@@ -1,7 +1,7 @@
 library(usethis)
 
 pkg <- stringi::stri_extract_last_words(getwd())
-
+pkg <- stringi::stri_extract_last_words(usethis::proj_path())
 
 options(
   usethis.description = list(
@@ -70,6 +70,8 @@ options(
   )
 )
 
+description_titel <- desc::desc_get_field(key = "Title")
+description_descr <- desc::desc_get_field(key = "Description")
 
 # use_logo(img, geometry = "240x278", retina = TRUE)
 # use_package_doc(open = rlang::is_interactive())
