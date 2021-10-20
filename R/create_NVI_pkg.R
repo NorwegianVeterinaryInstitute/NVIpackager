@@ -22,53 +22,37 @@ options(
 # Create a new package -------------------------------------------------
 # pkg <- "mypkg"
 # path <- file.path(".", pkg)
-usethis::create_package(getwd())
+usethis::create_package(usethis::proj_path(), rstudio = FALSE, open = FALSE)
 
-usethis::proj_activate(path)
+# usethis::proj_activate(path)
 
 # Modify the description ----------------------------------------------
 usethis::use_package(package = "devtools", type = "Suggests")
 usethis::use_package(package = "checkmate", type = "Imports", min_version = NULL)
-usethis::use_dev_package(package = "NVIcheckmate", type = "Imports", remote = "github::NorwegianVeterinaryInstitute/NVIcheckmate")
+# usethis::use_dev_package(package = "NVIcheckmate", type = "Imports", remote = "github::NorwegianVeterinaryInstitute/NVIcheckmate")
 
-# Set up other files -------------------------------------------------
-usethis::use_build_ignore(notes, escape = TRUE)
+# This works
+usethis::use_git_ignore(ignores = "*.Rproj")
 
-usethis::git_vaccinate()
-usethis::use_git_ignore(ignores, directory = ".")
-# Should be in vaccinate?
-# usethis::use_git_ignore(ignores, file = "*.Rproj")
-
-usethis::use_readme_md()
+# usethis::use_readme_md()
 #> ✓ Writing 'README.md'
 
-usethis::use_news_md()
+# Seems like changes must be committed before use_news_md() is run
+usethis::use_news_md(open = FALSE)
 #> ✓ Writing 'NEWS.md'
 
 # set up test structure
 usethis::use_testthat()
+# spell check ask if shall overwrite file
 usethis::use_spell_check(vignettes = TRUE, lang = "en-GB", error = FALSE)
 usethis::use_coverage()
 
 usethis::use_code_of_conduct()
 
 usethis::use_directory(path = "notes" , ignore = FALSE)
+# Set up other files -------------------------------------------------
+usethis::use_build_ignore(files = "notes", escape = TRUE)
 
-options(
-  usethis.description = list(
-    `Authors@R` = 'c(person(given = "Petter",
-           family = "Hopp",
-           role = c("aut", "cre"),
-           email = "Petter.Hopp@vetinst.no",
-           comment = c(ORCID = "0000-0002-8695-0378")),
-    person(given = "Norwegian Veterinary Institute",
-           role = "cph"))',
-    URL = paste0("https://github.com/NorwegianVeterinaryInstitute/", pkg),
-    BugReports = paste0("https://github.com/NorwegianVeterinaryInstitute/", pkg, "/issues"),
-    License = "BSD_3_clause + file LICENSE",
-    Language =  "en-GB"
-  )
-)
 
 description_titel <- desc::desc_get_field(key = "Title")
 description_descr <- desc::desc_get_field(key = "Description")
