@@ -30,6 +30,10 @@ knitr::opts_chunk$set(
 
 ```
 
+<!-- CONTRIBUTING.md and ./vignettes/Contribute_to_NVIpkg.Rmd. are generated 
+     from ./templates/Contribute_to_NVIpkg.Rmd in NVIpackager. 
+     Please edit that file -->
+
 Thank you for considering contributing to `r NVIpkg_inline`. 
 
 `r NVIpkg_inline` is one of several packages assembled under the name `NVIverse`, a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI). 

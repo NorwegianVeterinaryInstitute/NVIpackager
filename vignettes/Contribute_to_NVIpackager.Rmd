@@ -6,7 +6,7 @@ md_document:
   variant: markdown_github
   
 params:
-  NVIpkg: "NVIpackage"
+  NVIpkg: "NVIpackager"
 title: "Contribute to `r params$NVIpkg`"
 
 vignette: >
@@ -29,6 +29,10 @@ knitr::opts_chunk$set(
 )
 
 ```
+
+<!-- CONTRIBUTING.md and ./vignettes/Contribute_to_NVIpkg.Rmd. are generated 
+     from ./templates/Contribute_to_NVIpkg.Rmd in NVIpackagerr. 
+     Please edit that file -->
 
 Thank you for considering contributing to `r NVIpkg_inline`. 
 
