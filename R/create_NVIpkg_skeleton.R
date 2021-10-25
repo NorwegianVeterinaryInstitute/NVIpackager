@@ -15,7 +15,8 @@ options(
     URL = paste0("https://github.com/NorwegianVeterinaryInstitute/", pkg),
     BugReports = paste0("https://github.com/NorwegianVeterinaryInstitute/", pkg, "/issues"),
     License = "BSD_3_clause + file LICENSE",
-    Language =  "en-GB"
+    Language =  "en-GB",
+    Depends = "R (>= 4.0.0)"
   )
 )
 
