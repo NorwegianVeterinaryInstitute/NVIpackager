@@ -1,5 +1,5 @@
 # GENERATE DATA FRAME WITH ONE ROW PER NVI-package ----
-NVI_packages <- as.data.frame(rbind(c("NVIconfig", "Private",
+NVIpackages <- as.data.frame(rbind(c("NVIconfig", "Private",
                                   "Configuration information necessary for some NVIverse functions"),
                                 c("NVIdb", "Public",
                                   "Tools to facilitate the use of NVI's databases"),
@@ -13,7 +13,7 @@ NVI_packages <- as.data.frame(rbind(c("NVIconfig", "Private",
                                   "Tools to facilitate the planning of surveillance programmes for the NFSA"),
                                 c("OKcheck",  "Public",
                                   "Tools to facilitate checking of data from national surveillance programmes")))
-colnames(NVI_packages) <- c("Package", "Status", "Description")
+colnames(NVIpackages) <- c("Package", "Status", "Description")
 
 # SAVE IN PACKAGE DATA ----
-usethis::use_data(name = NVI_packages, overwrite = TRUE, internal = FALSE)
+usethis::use_data(name = NVIpackages, overwrite = TRUE, internal = FALSE)
