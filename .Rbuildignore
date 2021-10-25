@@ -1,3 +1,6 @@
-^NVIdevpkg\.Rproj$
+^NVIpackager\.Rproj$
 ^\.Rproj\.user$
 ^codecov\.yml$
+^notes$
+^CODE_OF_CONDUCT\.md$
+^data_raw$
