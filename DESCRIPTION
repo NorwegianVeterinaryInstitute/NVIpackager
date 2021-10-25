@@ -1,4 +1,4 @@
-Package: NVIdevpkg
+Package: NVIpackager
 Title: Tools to facilitate the Development of NVIverse Packages
 Version: 0.0.0.9000
 Authors@R: 
@@ -23,5 +23,14 @@ Depends: R (>= 4.0.0)
 Suggests: 
     knitr,
     rmarkdown,
-    covr
+    covr,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
+Imports: 
+    usethis,
+    stringi,
+    NVIcheckmate (>= 0.3.2),
+    checkmate (>= 2.0.0)
+Remotes: 
+    github::NorwegianVeterinaryInstitute/NVIcheckmate
+Config/testthat/edition: 3
