@@ -1,16 +1,24 @@
 #' @title Create the package skeleton for NVIverse packages
-#' @description Create the package skeleton for NVIverse packages. The function is
-#'     wrapper for several usethis-functions. In addition templates for standard
-#'     files are copied to the package directory.
+#' @description Creates the package skeleton in agreement with the conventions
+#'     developed for NVIverse packages. \code{create_NVIpkg_skeleton} should be
+#'     run once after a GitHub repository has been synchronized with the the
+#'     package directory and the \code{set_description_default} has been run.
 #'
-#' @details The function should be run after a GitHub repository has been syncronized
-#'     with the the directory and the set_description_default has been run.
+#' @details \code{create_NVIpkg_skeleton} is a wrapper for several \code{usethis}
+#'     -functions. It sets up the package directory with standard files and
+#'     standard sub-directories. Modifies the \code{DESCRIPTION}, \code{.gitignore},
+#'     and \code{.Rbuildignore} in agreement with standard dependencies for
+#'     NVIverse.
+#'
+#'     In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDUCT},
+#'     and the vignette \code{Contribute_to_NVIpkg} are copied to the package
+#'     directory.
 #'
 #' @param pkg The package name.
-#' @param pkg_path The path for the package
+#' @param pkg_path The path to the package directory.
 #'
-#' @return None. Writes the DESCRIPTION and set up various directories and updates
-#'     .gitignore, .Rbuildignore, README, CONTRIBUTING, etc.
+#' @return None.
+#'     Sets up the package directories and writes and modifies several files, see details.
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
@@ -26,6 +34,16 @@
 
 create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
                                    pkg_path = usethis::proj_path()) {
+
+  # ARGUMENT CHECKING ----
+  # Object to store check-results
+  checks <- checkmate::makeAssertCollection()
+  # assertions
+  assert_pkg_path(pkg = pkg, pkg_path = pkg_path)
+  # Report check-results
+  checkmate::reportAssertions(checks)
+
+  # RUN SCRIPT ----
 
   # Create standard R-package skeleton
   usethis::create_package(path = pkg_path, rstudio = FALSE, open = FALSE)
@@ -47,7 +65,7 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   # Prepare for vignettes ----
   # Use Contribute_to_mypkg as the name for an example vignette. This vigntte is created later based on a template
   usethis::use_vignette(name = paste0("Contribute_to_", pkg), title = paste("Contribute to", pkg))
-
+  usethis::use_build_ignore(files = "CONTRIBUTING.md", escape = TRUE)
 
   # set up test structure ----
   usethis::use_testthat()
@@ -66,7 +84,7 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   # INCLUDE TEMPLATES ----
   usethis::use_code_of_conduct()
 
-  update_contribute()
+  update_contributing()
 
     # README.Rmd
 
