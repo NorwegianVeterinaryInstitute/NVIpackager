@@ -1,17 +1,17 @@
-#' @title Set default Values for the \code{DESCRIPTION}
-#' @description Set default Values for the \code{DESCRIPTION}. The values are saved
+#' @title Set default Values for the \code{DESCRIPTION} file
+#' @description Set default Values for the \code{DESCRIPTION} file. The values are saved
 #'     as the option \code{usethis.description}.
 #'
-#' @details These options are used when creatingg the package skeleton by
-#'     \code{create_NVIpackage_skeleton}.
+#' @details These options are used when creating the package skeleton in the script
+#'     \code{create_NVIpackage_skeleton.R}.
 #'
 #'     There is a list of license keywords at
-#'     \link{GitHub}[https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository]
+#'     [GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
 #'
 #' @param pkg The package name.
-#' @param license_keyword The abbreviation for the license that the package will use.
+#' @param license_keyword The keyword for the package's license in accord with list of license keywords.
 #'
-#' @return None. Writes the options to the option  \code{usethis.description}.
+#' @return None. Writes the options to the option \code{usethis.description}.
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
@@ -24,6 +24,26 @@
 # set up standards for DESCRIPTION file ----
 set_description_default <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
                                     license_keyword = "BSD_3_clause") {
+  # ARGUMENT CHECKING ----
+  # Object to store check-results
+  checks <- checkmate::makeAssertCollection()
+
+  # Perform checks
+  # pkg
+  checkmate::assert_character(x = pkg, min.chars = 2, len = 1, add = checks)
+  # license_keyword
+  NVIcheckmate::assert_choice_character(x = license_keyword,
+                                        choices = c("apache-2.0", "bsd-3-clause", "bsd-3-clause-clear",
+                                                    "cc0-1.0", "cc-by-4.0", "cc-by-sa-4.0",
+                                                    "gpl-2.0", "gpl-3.0", "lgpl-2.1", "lgpl-3.0",
+                                                    "mit"),
+                                        ignore.case = TRUE,
+                                        add = checks)
+
+  # Report check-results
+  checkmate::reportAssertions(checks)
+
+  # RUN SCRIPT ----
   options(
     usethis.description = list(
       `Authors@R` = 'c(person(given = "Petter",

@@ -2,7 +2,7 @@
 % Please edit documentation in R/set_description_default.R
 \name{set_description_default}
 \alias{set_description_default}
-\title{Set default Values for the \code{DESCRIPTION}}
+\title{Set default Values for the \code{DESCRIPTION} file}
 \usage{
 set_description_default(
   pkg = stringi::stri_extract_last_words(usethis::proj_path()),
@@ -12,19 +12,19 @@ set_description_default(
 \arguments{
 \item{pkg}{The package name.}
 
-\item{license_keyword}{The abbreviation for the license that the package will use.}
+\item{license_keyword}{The keyword for the package's license in accord with list of license keywords.}
 }
 \value{
-None. Writes the options to the option  \code{usethis.description}.
+None. Writes the options to the option \code{usethis.description}.
 }
 \description{
-Set default Values for the \code{DESCRIPTION}. The values are saved
+Set default Values for the \code{DESCRIPTION} file. The values are saved
 as the option \code{usethis.description}.
 }
 \details{
-These options are used when creatingg the package skeleton by
-\code{create_NVIpackage_skeleton}.\preformatted{There is a list of license keywords at
-\link{GitHub}[https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository]
+These options are used when creating the package skeleton in the script
+\code{create_NVIpackage_skeleton.R}.\preformatted{There is a list of license keywords at
+[GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
 }
 }
 \examples{
