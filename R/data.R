@@ -1,8 +1,9 @@
 #' @title Data: Description of the NVIverse packages .
 #'
-#' @description A data frame with key information for the NVIverse packages. The information is used as input to \code{README.RMD} among others. 
-#'    The code for preparing of the data frame is written in
-#'    \code{./data-raw/generate_NVIpackages.R} and the raw data can be edited there.
+#' @description A data frame with key information for the NVIverse packages. The
+#'     information is mainly used as input to \code{CONTRIBUTING.md} and \code{README.Rmd}.
+#' @details The data frame is generated in \code{./data-raw/generate_NVIpackages.R}.
+#'     Edit this file to update the data frame with changes in the NVIverse packages.
 #'
 #' @format A data frame with 3 variables:
 #' \describe{
