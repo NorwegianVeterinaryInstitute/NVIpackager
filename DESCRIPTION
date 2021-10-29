@@ -9,7 +9,8 @@ Authors@R:
              comment = c(ORCID = "0000-0002-8695-0378")),
       person(given = "Norwegian Veterinary Institute",
              role = "cph"))
-Description: What the package does (one paragraph).
+Description: NVIpackager provide tools to facilitate the development of NVIverse 
+    packages. There is a high dependency on devtools and usethis. 
 License: BSD_3_clause + file LICENSE
 URL: https://github.com/NorwegianVeterinaryInstitute/NVIdevpkg
 BugReports: 
