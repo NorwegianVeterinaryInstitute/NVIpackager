@@ -28,8 +28,11 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Imports: 
+    devtools, 
+    remotes, 
     usethis,
     stringi,
+    styler (>= 1.3.2), 
     withr,
     NVIcheckmate (>= 0.3.2),
     checkmate (>= 2.0.0)
