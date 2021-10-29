@@ -31,7 +31,7 @@ knitr::opts_chunk$set(
 ```
 
 <!-- CONTRIBUTING.md and ./vignettes/Contribute_to_NVIpkg.Rmd. are generated 
-     from ./templates/Contribute_to_NVIpkg.Rmd in NVIpackagerr. 
+     from ./templates/Contribute_to_NVIpkg.Rmd in NVIpackager. 
      Please edit that file -->
 
 Thank you for considering contributing to `r NVIpkg_inline`. 
@@ -39,23 +39,9 @@ Thank you for considering contributing to `r NVIpkg_inline`.
 `r NVIpkg_inline` is one of several packages assembled under the name `NVIverse`, a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI). 
 
 ###  NVIverse packages
-```{r echo = FALSE, resuls = 'asis'}
-NVIverse <- as.data.frame(rbind(c("NVIconfig", "Private",
-                                  "Configuration information necessary for some NVIverse functions"),
-                                c("NVIdb", "Public",
-                                  "Tools to facilitate the use of NVI's databases"),
-                                c("NVIpretty",  "Public",
-                                  "Tools to make R-output pretty in accord with NVI's graphical profile"),
-                                c("NVIbatch",  "Public",
-                                  "Tools to facilitate the running of R-scripts in batch mode at NVI"),
-                                c("NVIcheckmate",  "Public",
-                                  "Extension of checkmate with additional functions for argument checking for use in NVIverse functions"),
-                                c("OKplan",  "Public",
-                                  "Tools to facilitate the planning of surveillance programmes for the NFSA"),
-                                c("OKcheck",  "Public",
-                                  "Tools to facilitate checking of data from national surveillance programmes")))
-colnames(NVIverse) <- c("Package", "Status", "Description")
-knitr::kable(x = NVIverse)
+```{r echo = FALSE, results = 'asis'}
+library(NVIpackager)
+knitr::kable(x = NVIpackages)
 ```
   
 ## How you can contribute

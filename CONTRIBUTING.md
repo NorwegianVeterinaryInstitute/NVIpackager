@@ -1,7 +1,7 @@
 # Contribute to NVIpackager
 
 <!-- CONTRIBUTING.md and ./vignettes/Contribute_to_NVIpkg.Rmd. are generated 
-     from ./templates/Contribute_to_NVIpkg.Rmd in NVIpackagerr. 
+     from ./templates/Contribute_to_NVIpkg.Rmd in NVIpackager. 
      Please edit that file -->
 
 Thank you for considering contributing to `NVIpackager`.
@@ -15,9 +15,9 @@ management and data reporting at the Norwegian Veterinary Institute
 
 <table>
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 6%" />
-<col style="width: 82%" />
+<col style="width: 13%" />
+<col style="width: 8%" />
+<col style="width: 78%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -50,7 +50,7 @@ management and data reporting at the Norwegian Veterinary Institute
 <tr class="odd">
 <td style="text-align: left;">NVIcheckmate</td>
 <td style="text-align: left;">Public</td>
-<td style="text-align: left;">Extension of checkmate with additional functions for argument checking for use in NVIverse functions</td>
+<td style="text-align: left;">Extension of checkmate with argument checking adapted for NVIverse</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">OKplan</td>
