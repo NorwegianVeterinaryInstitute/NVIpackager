@@ -2,4 +2,4 @@
 
 export(create_NVIpkg_skeleton)
 export(set_description_default)
-export(update_contribute)
+export(update_contributing)
