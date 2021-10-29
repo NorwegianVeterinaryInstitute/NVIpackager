@@ -30,6 +30,7 @@ VignetteBuilder: knitr
 Imports: 
     usethis,
     stringi,
+    withr,
     NVIcheckmate (>= 0.3.2),
     checkmate (>= 2.0.0)
 Remotes: 
