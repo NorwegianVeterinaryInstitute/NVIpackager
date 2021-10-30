@@ -6,9 +6,12 @@
 #'     If styling and generation of CONTRIBUTING. md and README
 #'     can be control led by input arguments.
 #'
+#' @param pkg The package name.
+#' @param pkg_path The path to the package directory.
 #' @param style {logical}, defaults to FALSE.
 #' @param contributing {logical}, defaults to FALSE.
 #' @param readme {logical}, defaults to FALSE.
+#' @param \dots	Other arguments to be passed to \code{styler::style_pkg} .
 #'
 #' @return none. Updated help files for all functions and,
 #'     depending on argument input, can updated style,
@@ -39,7 +42,8 @@ document_NVIpkg <- function(pkg,
   checkmate::reportAssertions(checks)
 
   if (isTrue(style)) {
-    styler::style()
+    styler::style_pkg(pkg = pkg_path, 
+transformers = tidyverse_style(scope = I(c("spaces", "indention", "tokens" )) ))
   }
   devtools::document()
   if (isTrue(contributing)) {
