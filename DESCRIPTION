@@ -30,6 +30,7 @@ VignetteBuilder: knitr
 Imports: 
     devtools, 
     remotes, 
+    roxygen2,
     usethis,
     stringi,
     styler (>= 1.3.2), 
