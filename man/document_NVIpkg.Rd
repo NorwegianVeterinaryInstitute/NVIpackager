@@ -14,11 +14,17 @@ document_NVIpkg(
 )
 }
 \arguments{
+\item{pkg}{The package name.}
+
+\item{pkg_path}{The path to the package directory.}
+
 \item{style}{{logical}, defaults to FALSE.}
 
 \item{contributing}{{logical}, defaults to FALSE.}
 
 \item{readme}{{logical}, defaults to FALSE.}
+
+\item{\dots}{Other arguments to be passed to \code{styler::style_pkg} .}
 }
 \value{
 none. Updated help files for all functions and,

@@ -41,16 +41,16 @@ document_NVIpkg <- function(pkg,
   # Report check-results
   checkmate::reportAssertions(checks)
 
-  if (isTrue(style)) {
-    styler::style_pkg(pkg = pkg_path, 
-transformers = tidyverse_style(scope = I(c("spaces", "indention", "tokens" )) ))
+  if (isTRUE(style)) {
+    styler::style_pkg(pkg = pkg_path,
+                      transformers = styler::tidyverse_style(scope = I(c("spaces", "indention", "tokens" ))),
+                      ...)
   }
   devtools::document()
-  if (isTrue(contributing)) {
-    use_contributing(pkg = pkg, pkg_path = pkg_path)
+  if (isTRUE(contributing)) {
+    update_contributing(pkg = pkg, pkg_path = pkg_path)
   }
-  if (isTrue(readme)) {
-    update_readme(pkg = pkg, pkg_path = pkg_path)
+  if (isTRUE(readme)) {
+    # update_readme(pkg = pkg, pkg_path = pkg_path)
   }
 }
-
