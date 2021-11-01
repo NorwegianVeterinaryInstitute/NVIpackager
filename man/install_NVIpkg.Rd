@@ -2,42 +2,62 @@
 % Please edit documentation in R/install_NVIpkg.R
 \name{install_NVIpkg}
 \alias{install_NVIpkg}
-\title{Update styling and documentation of a package}
+\title{Install an NVIverse Package during the Development Phase}
 \usage{
 install_NVIpkg(
   pkg,
   pkg_path,
-  Rlibrary = R.home(),
-  type,
-  repo = "NorwegianVeterinaryInstitute",
-  branch,
+  lib = R.home(),
+  source,
+  username = "NorwegianVeterinaryInstitute",
   ...
 )
 }
 \arguments{
-\item{Rlibrary, }{defaults to FALSE.}
+\item{pkg}{The package name.}
 
-\item{type, }{defaults to FALSE.}
+\item{pkg_path}{The path to the package directory.}
 
-\item{repo, }{defaults to FALSE.}
+\item{lib}{character giving the library directory where to install
+the package. If missing, defaults to the first element of
+\code{.libPaths()}.}
 
-\item{branch, }{defaults to FALSE.}
+\item{source, }{character with one of c("github", "local") .}
 
-\item{dots, }{defaults to FALSE.}
+\item{username, }{the github username to install from. Defaults to
+"NorwegianVeterinaryInstitute".}
+
+\item{\dots}{Other arguments to be passed to \code{remotes::install_github}
+or \code{devtools::install}.}
 }
 \value{
-none. Updated help files for all functions and,
-depending on argument input, can updated style,
-\code{CONTRIBUTING}, and \code{README}
+none. Installs a package.
 }
 \description{
-A wrapper around functions for styling,
-making the help files and updated vignettes and README.
+Installation of an NVIverse package from github or
+from local directory. Mainly intended for installation of a
+package during development to test new code in the package
+scripts .
 }
 \details{
-The help files for R-functions will always be generated.
-If styling and generation of CONTRIBUTING. md and README
-can be control led by input arguments.
+When \code{source = "github"}, the default is to install
+the latest version in the main branch at the NorwegianVeterinaryInstitute
+package repository. During package development one will usually
+change the username to your own.\preformatted{The repository can be changed by giving more arguments that
+will be passed to \code{install_github}, see
+\code{\link[remotes:install_github]} for full description
+of the arguments \code{repo =}, \code{username =}, and
+\code{ref =}.
+
+When \code{source = "local"}, it installs the package from a
+local copy of the package repository. It defaults to install
+the active branch. Use \code{source = "local"} to test new
+code during development.
+
+For installing the latest released versions of NVIverse
+packages, use \code{\link[remotes:install_github]} or
+\code\{\link[NVIbatch:use_NVIverse].
+}
 }
 \examples{
 \dontrun{

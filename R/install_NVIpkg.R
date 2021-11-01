@@ -1,20 +1,41 @@
-#' @title Update styling and documentation of a package
-#' @description A wrapper around functions for styling,
-#'     making the help files and updated vignettes and README.
+#' @title Install an NVIverse Package during the Development Phase
+#' @description Installation of an NVIverse package from github or
+#'     from local directory. Mainly intended for installation of a
+#'     package during development to test new code in the package
+#'     scripts .
 #'
-#' @details The help files for R-functions will always be generated.
-#'     If styling and generation of CONTRIBUTING. md and README
-#'     can be control led by input arguments.
+#' @details When \code{source = "github"}, the default is to install
+#'     the latest version in the main branch at the NorwegianVeterinaryInstitute
+#'     package repository. During package development one will usually
+#'     change the username to your own.
 #'
-#' @param Rlibrary, defaults to FALSE.
-#' @param type, defaults to FALSE.
-#' @param repo, defaults to FALSE.
-#' @param branch, defaults to FALSE.
-#' @param dots, defaults to FALSE.
+#'     The repository can be changed by giving more arguments that
+#'     will be passed to \code{install_github}, see
+#'     \code{\link[remotes:install_github]} for full description
+#'     of the arguments \code{repo =}, \code{username =}, and
+#'     \code{ref =}.
 #'
-#' @return none. Updated help files for all functions and,
-#'     depending on argument input, can updated style,
-#'     \code{CONTRIBUTING}, and \code{README}
+#'     When \code{source = "local"}, it installs the package from a
+#'     local copy of the package repository. It defaults to install
+#'     the active branch. Use \code{source = "local"} to test new
+#'     code during development.
+#'
+#'     For installing the latest released versions of NVIverse
+#'     packages, use \code{\link[remotes:install_github]} or
+#'     \code{\link[NVIbatch:use_NVIverse].
+#'
+#' @param pkg The package name.
+#' @param pkg_path The path to the package directory.
+#' @param lib character giving the library directory where to install
+#'     the package. If missing, defaults to the first element of
+#'     \code{.libPaths()}.
+#' @param source, character with one of c("github", "local") .
+#' @param username, the github username to install from. Defaults to
+#'     "NorwegianVeterinaryInstitute".
+#' @param \dots Other arguments to be passed to \code{remotes::install_github}
+#'     or \code{devtools::install}.
+#'
+#' @return none. Installs a package.
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
@@ -25,10 +46,9 @@
 #'
 install_NVIpkg <- function(pkg,
                            pkg_path,
-                           Rlibrary = R.home(),
-                           type,
-                           repo = "NorwegianVeterinaryInstitute",
-                           branch,
+                           lib = R.home(),
+                           source,
+                           username = "NorwegianVeterinaryInstitute",
                            ...) {
 
   # Argument checking
@@ -36,10 +56,9 @@ install_NVIpkg <- function(pkg,
   checks <- checkmate::makeAssertCollection()
   # Perform checks
   assert_pkg_path()
-  checkmate::assert_directory_exists(x = Rlibrary, add = checks)
-  checkmate::assert_character(x = type, add = checks)
-  checkmate::assert_character(x = repo, add = checks)
-  checkmate::assert_character(x = branch, add = checks)
+  checkmate::assert_directory_exists(x = lib, add = checks)
+  checkmate::assert_character(x = source, add = checks)
+  checkmate::assert_character(x = username, add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
 
@@ -53,18 +72,19 @@ install_NVIpkg <- function(pkg,
 
   # INSTALL PACKAGE ----
   # Install from working directory
-  if(type == "local") {
-    withr::with_libpaths(paste0(Rlibrary,"/library"),
+  if(source == "local") {
+    withr::with_libpaths(paste0(lib,"/library"),
                          devtools::install(pkg_path,
                                            dependencies = c("Depends", "Imports", "LinkingTo"),
                                            upgrade=FALSE,
-                                           build_vignettes = TRUE)
+                                           build_vignettes = TRUE,
+                                           ...)
     )
   }
 
-  if(type == "github") {
+  if(source == "github") {
     # Install from Github repository
-    remotes::install_github(paste0(repo, "/", pkg),
+    remotes::install_github(paste0(username, "/", pkg),
                             upgrade = FALSE,
                             build = TRUE,
                             build_manual = TRUE,
