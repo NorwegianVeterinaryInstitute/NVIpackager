@@ -22,13 +22,13 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Depends: R (>= 4.0.0)
 Suggests: 
-    knitr,
-    rmarkdown,
     covr,
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Imports: 
     devtools, 
+    knitr,
+    rmarkdown,
     remotes, 
     roxygen2,
     usethis,
