@@ -43,7 +43,7 @@ update_contributing <- function(pkg = stringi::stri_extract_last_words(usethis::
   # contribute <- readLines('./inst/templates/Contribute_to_NVIpkg.Rmd')
 
   # give correct package name
-  contribute <- gsub("packagename" , pkg, contribute)
+  contribute <- gsub("_package_name_" , pkg, contribute)
   # save with name of package in filename
   writeLines(contribute, paste0 (pkg_path, "/vignettes/Contribute_to_", pkg, ".Rmd"))
 
