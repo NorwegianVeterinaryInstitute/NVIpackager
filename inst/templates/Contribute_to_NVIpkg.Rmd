@@ -6,12 +6,12 @@ md_document:
   variant: markdown_github
   
 params:
-  NVIpkg: "packagename"
+  NVIpkg: "_package_name_"
 title: "Contribute to `r params$NVIpkg`"
 
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteIndexEntry{`r paste("Contribute to", params$NVIpkg)`}
+  %\VignetteIndexEntry{Contribute to _package_name_}
   %\VignetteEncoding
   
 ---
