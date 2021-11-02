@@ -5,7 +5,7 @@ output:
   variant: markdown_github
   
 params:
-  NVIpkg: "NVIpackage"
+  NVIpkg: "_package_name_"
 ---
 
 ```{r, include = FALSE}
@@ -89,6 +89,8 @@ cat(text, sep="", fill = TRUE)
 # Usage
 To come.
 
+```{r child=system.file('templates', "README_usage.Rmd", package = "NVIpackager")}
+```
 
 # Copyright and license
 
