@@ -14,8 +14,8 @@
 #'     and the vignette \code{Contribute_to_NVIpkg} are copied to the package
 #'     directory.
 #'
-#' @param pkg The package name.
-#' @param pkg_path The path to the package directory.
+#' @template pkg
+#' @template pkg_path
 #'
 #' @return None.
 #'     Sets up the package directories and writes and modifies several files, see details.

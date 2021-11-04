@@ -10,9 +10,11 @@ create_NVIpkg_skeleton(
 )
 }
 \arguments{
-\item{pkg}{The package name.}
+\item{pkg}{[\code{character}]\cr
+The package name, defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
 
-\item{pkg_path}{The path to the package directory.}
+\item{pkg_path}{[\code{character}]\cr
+The path to the package directory, defaults to \code{usethis::proj_path()}.}
 }
 \value{
 None.
