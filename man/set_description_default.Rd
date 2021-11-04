@@ -10,7 +10,8 @@ set_description_default(
 )
 }
 \arguments{
-\item{pkg}{The package name.}
+\item{pkg}{[\code{character}]\cr
+The package name, defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
 
 \item{license_keyword}{The keyword for the package's license in accord with list of license keywords.}
 }
@@ -29,6 +30,8 @@ These options are used when creating the package skeleton in the script
 }
 \examples{
 \dontrun{
+library(NVIpackager)
+set_description_default()
 }
 }
 \author{

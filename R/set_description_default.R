@@ -8,7 +8,7 @@
 #'     There is a list of license keywords at
 #'     [GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
 #'
-#' @param pkg The package name.
+#' @template pkg
 #' @param license_keyword The keyword for the package's license in accord with list of license keywords.
 #'
 #' @return None. Writes the options to the option \code{usethis.description}.
@@ -17,7 +17,8 @@
 #' @export
 #' @examples
 #' \dontrun{
-# set_description_default()
+#' library(NVIpackager)
+#' set_description_default()
 #' }
 
 
