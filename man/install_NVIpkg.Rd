@@ -14,9 +14,11 @@ install_NVIpkg(
 )
 }
 \arguments{
-\item{pkg}{The package name.}
+\item{pkg}{[\code{character}]\cr
+The package name, defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
 
-\item{pkg_path}{The path to the package directory.}
+\item{pkg_path}{[\code{character}]\cr
+The path to the package directory, defaults to \code{usethis::proj_path()}.}
 
 \item{lib}{character giving the library directory where to install
 the package. If missing, defaults to the first element of

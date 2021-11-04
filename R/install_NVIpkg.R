@@ -24,8 +24,8 @@
 #'     packages, use \code{\link[remotes:install_github]} or
 #'     \code{\link[NVIbatch:use_NVIverse].
 #'
-#' @param pkg The package name.
-#' @param pkg_path The path to the package directory.
+#' @template pkg
+#' @template pkg_path
 #' @param lib character giving the library directory where to install
 #'     the package. If missing, defaults to the first element of
 #'     \code{.libPaths()}.
