@@ -3,7 +3,7 @@ library(testthat)
 library(NVIpackager)
 
 test_that("Setting default options for DESCRIPTION", {
- 
+
   set_description_default(pkg = "NVIpkg", license_keyword = "cc-by-4.0")
 
   usethis.description <- getOption("usethis.description")
@@ -29,8 +29,8 @@ test_that("Setting default options for DESCRIPTION", {
   expect_identical(object = usethis.description$Language,
                    expected = "en-GB")
 
-  expect_identical(object = usethis.description$Language,
+  expect_identical(object = usethis.description$Depends,
                    expected = "R (>= 4.0.0)")
 })
 
- 
+
