@@ -5,8 +5,8 @@
 #' @details The template is found in \code{NVIpackager}. Any change in the text
 #'     must be done in the template.
 #'
-#' @param pkg The package name.
-#' @param pkg_path The path to the package directory.
+#' @template pkg
+#' @template pkg_path
 #'
 #' @return None.
 #'     Writes the vignette and the file \code{CONTRIBUTING.md}.
