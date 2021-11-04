@@ -5,8 +5,8 @@
 \title{Update styling and documentation of a package}
 \usage{
 document_NVIpkg(
-  pkg,
-  pkg_path,
+  pkg = stringi::stri_extract_last_words(usethis::proj_path()),
+  pkg_path = usethis::proj_path(),
   style = FALSE,
   contributing = FALSE,
   readme = FALSE,
@@ -14,9 +14,11 @@ document_NVIpkg(
 )
 }
 \arguments{
-\item{pkg}{The package name.}
+\item{pkg}{[\code{character}]\cr
+The package name, defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
 
-\item{pkg_path}{The path to the package directory.}
+\item{pkg_path}{[\code{character}]\cr
+The path to the package directory, defaults to \code{usethis::proj_path()}.}
 
 \item{style}{{logical}, defaults to FALSE.}
 

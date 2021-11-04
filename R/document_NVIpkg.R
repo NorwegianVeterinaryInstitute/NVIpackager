@@ -6,8 +6,8 @@
 #'     If styling and generation of CONTRIBUTING. md and README
 #'     can be control led by input arguments.
 #'
-#' @param pkg The package name.
-#' @param pkg_path The path to the package directory.
+#' @template pkg
+#' @template pkg_path
 #' @param style {logical}, defaults to FALSE.
 #' @param contributing {logical}, defaults to FALSE.
 #' @param readme {logical}, defaults to FALSE.
@@ -24,8 +24,8 @@
 #' # Reading from standard directory at NVI's network
 #' }
 #'
-document_NVIpkg <- function(pkg,
-                            pkg_path,
+document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
+                            pkg_path = usethis::proj_path(),
                             style = FALSE,
                             contributing = FALSE,
                             readme = FALSE,
