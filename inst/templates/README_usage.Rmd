@@ -1,12 +1,12 @@
 # Usage
 
-The `NVIdb` package needs to be attached.
+The `r NVIpkg_inline` package needs to be attached.
 
 ``` r
 library(NVIdb)
 ```
 
-NVIpkg provides tools to 
+`r NVIpkg_inline` provides tools to 
 - 
 - 
 
