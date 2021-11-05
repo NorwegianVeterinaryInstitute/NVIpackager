@@ -48,19 +48,24 @@ management and data reporting at the Norwegian Veterinary Institute
 <td style="text-align: left;">Tools to facilitate the running of R-scripts in batch mode at NVI</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">OKplan</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Tools to facilitate the planning of surveillance programmes for the NFSA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OKcheck</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Tools to facilitate checking of data from national surveillance programmes</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">NVIcheckmate</td>
 <td style="text-align: left;">Public</td>
 <td style="text-align: left;">Extension of checkmate with argument checking adapted for NVIverse</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">OKplan</td>
+<td style="text-align: left;">NVIpackager</td>
 <td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to facilitate the planning of surveillance programmes for the NFSA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">OKcheck</td>
-<td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to facilitate checking of data from national surveillance programmes</td>
+<td style="text-align: left;">Tools to facilitate the development of NVIverse packages</td>
 </tr>
 </tbody>
 </table>
