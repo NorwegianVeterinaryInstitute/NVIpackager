@@ -92,12 +92,19 @@ To come.
 ```{r child=system.file('templates', "README_usage.Rmd", package = "NVIpackager")}
 ```
 
+```{r child=system.file('templates', "README_copyright_and_license.Rmd", package = "NVIpackager")}
+```
 # Copyright and license
 
 Copyright (c) 2021 Norwegian Veterinary Institute.  
 Licensed under the BSD 3-Clause [License](`r  paste0("https://github.com/NorwegianVeterinaryInstitute/", NVIpkg, "/blob/main/LICENSE")` ).
   
 
+```{r child=system.file('templates', "README_contributing.Rmd", package = "NVIpackager")}
+```
+
+```{r child=system.file('templates', "README_code_of_conduct.Rmd", package = "NVIpackager")}
+```
 # Contributing
 
 Contributions to develop `r NVIpkg_inline` is highly appreciated. There are several 
