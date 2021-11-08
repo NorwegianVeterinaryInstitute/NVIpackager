@@ -31,33 +31,24 @@ knitr::opts_chunk$set(
   - [Contributing](#contributing)
 
 ## Overview
-`r NVIpkg_inline` provide tools to ...
+`r paste0(NVIpkg_inline, 
+   "", 
+   desc::desc_get_field(key = "Description"))`
 
 The package is under development. [Contributions](#contributing) to enhance the package is highly appreciated.  
 
 `r NVIpkg_inline` is part of `NVIverse`, a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI).  
+`r paste(NVIpackager::NVIpackages$Package, collapse = ",")`
 
 ####  Table 1. NVIverse packages
 ```{r echo = FALSE, resuls = 'asis'}
-# NVIverse <- as.data.frame(rbind(c("NVIconfig", "Private",
-#                                   "Configuration information necessary for some NVIverse functions"),
-#                                 c("NVIdb", "Public",
-#                                   "Tools to facilitate the use of NVI's databases"),
-#                                 c("NVIpretty",  "Public",
-#                                   "Tools to make R-output pretty in accord with NVI's graphical profile"),
-#                                 c("NVIbatch",  "Public",
-#                                   "Tools to facilitate the running of R-scripts in batch mode at NVI"),
-#                                 c("NVIcheckmate",  "Public",
-#                                   "Extension of checkmate with argument checking adapted for NVIverse"),
-#                                 c("OKplan",  "Public",
-#                                   "Tools to facilitate the planning of surveillance programmes for the NFSA"),
-#                                 c("OKcheck",  "Public",
-#                                   "Tools to facilitate checking of data from national surveillance programmes")))
-# colnames(NVIverse) <- c("Package", "Status", "Description")
 knitr::kable(x = NVIpackager::NVIpackages)
 ```
 
 ## Installation
+```{r child=system.file('templates', "README_installation.Rmd", package = "NVIpackager")}
+```
+
 `r NVIpkg_inline`  is available at [GitHub](https://github.com/NorwegianVeterinaryInstitute). 
 To install `r NVIpkg_inline` you will need:
 
@@ -83,8 +74,6 @@ cat(text, sep="", fill = TRUE)
 ```
 
 ## Usage
-To come.
-
 ```{r child=system.file('templates', "README_usage.Rmd", package = "NVIpackager")}
 ```
 
@@ -97,7 +86,6 @@ To come.
 ```
 
 -----
-
 ```{r child=system.file('templates', "README_code_of_conduct.Rmd", package = "NVIpackager")}
 ```
 
