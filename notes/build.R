@@ -15,6 +15,12 @@ library(roxygen2)
 # Should be run before git push when documentation for functions have been changed
 devtools::document()
 
+# For updating README.md when the Rmd-file has been updated.
+rmarkdown::render(input = paste0("./inst/templates/README.Rmd"),
+                  # output_format = "md_document",
+                  output_file = "README.md",
+                  output_dir = "./inst/templates/")
+
 # For updating CONTRIBUTE.md when the vignette has been updated.
 rmarkdown::render(input = paste0("./vignettes/Contribute_to_", pkg, ".Rmd"),
                   output_format = "md_document",
