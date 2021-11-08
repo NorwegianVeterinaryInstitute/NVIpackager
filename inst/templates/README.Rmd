@@ -24,17 +24,13 @@ knitr::opts_chunk$set(
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-  <!-- badges: start -->
-  [![Codecov test coverage](https://codecov.io/gh/PetterHopp/NVIdevpkg/branch/master/graph/badge.svg)](https://codecov.io/gh/PetterHopp/NVIdevpkg?branch=master)
-  <!-- badges: end -->
-
   - [Overview](#overview)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Copyright and license](#copyright-and-license)
   - [Contributing](#contributing)
 
-# Overview
+## Overview
 `r NVIpkg_inline` provide tools to ...
 
 The package is under development. [Contributions](#contributing) to enhance the package is highly appreciated.  
@@ -43,25 +39,25 @@ The package is under development. [Contributions](#contributing) to enhance the 
 
 ####  Table 1. NVIverse packages
 ```{r echo = FALSE, resuls = 'asis'}
-NVIverse <- as.data.frame(rbind(c("NVIconfig", "Private",
-                                  "Configuration information necessary for some NVIverse functions"),
-                                c("NVIdb", "Public",
-                                  "Tools to facilitate the use of NVI's databases"),
-                                c("NVIpretty",  "Public",
-                                  "Tools to make R-output pretty in accord with NVI's graphical profile"),
-                                c("NVIbatch",  "Public",
-                                  "Tools to facilitate the running of R-scripts in batch mode at NVI"),
-                                c("NVIcheckmate",  "Public",
-                                  "Extension of checkmate with argument checking adapted for NVIverse"),
-                                c("OKplan",  "Public",
-                                  "Tools to facilitate the planning of surveillance programmes for the NFSA"),
-                                c("OKcheck",  "Public",
-                                  "Tools to facilitate checking of data from national surveillance programmes")))
-colnames(NVIverse) <- c("Package", "Status", "Description")
-knitr::kable(x = NVIverse)
+# NVIverse <- as.data.frame(rbind(c("NVIconfig", "Private",
+#                                   "Configuration information necessary for some NVIverse functions"),
+#                                 c("NVIdb", "Public",
+#                                   "Tools to facilitate the use of NVI's databases"),
+#                                 c("NVIpretty",  "Public",
+#                                   "Tools to make R-output pretty in accord with NVI's graphical profile"),
+#                                 c("NVIbatch",  "Public",
+#                                   "Tools to facilitate the running of R-scripts in batch mode at NVI"),
+#                                 c("NVIcheckmate",  "Public",
+#                                   "Extension of checkmate with argument checking adapted for NVIverse"),
+#                                 c("OKplan",  "Public",
+#                                   "Tools to facilitate the planning of surveillance programmes for the NFSA"),
+#                                 c("OKcheck",  "Public",
+#                                   "Tools to facilitate checking of data from national surveillance programmes")))
+# colnames(NVIverse) <- c("Package", "Status", "Description")
+knitr::kable(x = NVIpackager::NVIpackages)
 ```
 
-# Installation
+## Installation
 `r NVIpkg_inline`  is available at [GitHub](https://github.com/NorwegianVeterinaryInstitute). 
 To install `r NVIpkg_inline` you will need:
 
@@ -86,33 +82,22 @@ text <- paste(paste0('remotes::install_github("NorwegianVeterinaryInstitute/', N
 cat(text, sep="", fill = TRUE)
 ```
 
-# Usage
+## Usage
 To come.
 
 ```{r child=system.file('templates', "README_usage.Rmd", package = "NVIpackager")}
 ```
 
+## Copyright and license
 ```{r child=system.file('templates', "README_copyright_and_license.Rmd", package = "NVIpackager")}
 ```
-# Copyright and license
 
-Copyright (c) 2021 Norwegian Veterinary Institute.  
-Licensed under the BSD 3-Clause [License](`r  paste0("https://github.com/NorwegianVeterinaryInstitute/", NVIpkg, "/blob/main/LICENSE")` ).
-  
-
+## Contributing
 ```{r child=system.file('templates', "README_contributing.Rmd", package = "NVIpackager")}
 ```
 
-```{r child=system.file('templates', "README_code_of_conduct.Rmd", package = "NVIpackager")}
-```
-# Contributing
-
-Contributions to develop `r NVIpkg_inline` is highly appreciated. There are several 
-ways you can contribute to this project: ask a question, propose an idea, report 
-a bug, improve the documentation, or contribute code. The vignette 
-"Contribute to `r NVIpkg`" gives more information.
-
 -----
 
-Please note that the `r NVIpkg` project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By 
-contributing to this project, you agree to abide by its terms.
+```{r child=system.file('templates', "README_code_of_conduct.Rmd", package = "NVIpackager")}
+```
+

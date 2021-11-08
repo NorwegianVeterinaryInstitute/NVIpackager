@@ -7,8 +7,7 @@ library(NVIdb)
 ```
 
 `r NVIpkg_inline` provides tools to 
-- 
-- 
+
 
 The list of available functions and datasets can be accessed by typing
 
