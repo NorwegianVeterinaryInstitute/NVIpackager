@@ -51,7 +51,9 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   # Modify the description ----
   # usethis::use_package(package = "devtools", type = "Suggests")
   usethis::use_package(package = "checkmate", type = "Imports", min_version = "2.0.0")
-  usethis::use_dev_package(package = "NVIcheckmate", type = "Imports", remote = "github::NorwegianVeterinaryInstitute/NVIcheckmate")
+  usethis::use_dev_package(package = "NVIcheckmate",
+                           type = "Imports",
+                           remote = "github::NorwegianVeterinaryInstitute/NVIcheckmate")
 
   # Add files to .gitignore
   usethis::use_git_ignore(ignores = "*.Rproj")
@@ -61,6 +63,10 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   # Add files to .Rbuildignore
   usethis::use_build_ignore(files = "notes", escape = TRUE)
 
+
+  # Add dummy for package level documentation.
+  # Package level documentation based on DESCRIPTION will be added as an Rd-file when running devtools::document
+  usethis::use_package_doc(open = FALSE)
 
   # Prepare for vignettes ----
   # Use Contribute_to_mypkg as the name for an example vignette. This vigntte is created later based on a template
@@ -82,11 +88,18 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
 
 
   # INCLUDE TEMPLATES ----
+  # Add README.Rmd template
+  # read template
+  readme <- readLines(system.file('templates', "README.Rmd", package = "NVIpackager"))
+  # contribute <- readLines('./inst/templates/Contribute_to_NVIpkg.Rmd')
+  # give correct package name
+  readme <- gsub("_package_name_" , pkg, readme)
+  # save with name of package in filename
+  writeLines(readme, paste0 (pkg_path, "/README.Rmd"))
+
   usethis::use_code_of_conduct()
 
   update_contributing()
-
-    # README.Rmd
 
   # NEWS.md
   # usethis::use_template("NEWS.md",
@@ -96,11 +109,4 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   # Seems like changes must be committed before use_news_md() is run
   # usethis::use_news_md(open = FALSE)
 
-
-
-  # description_titel <- desc::desc_get_field(key = "Title")
-  # description_descr <- desc::desc_get_field(key = "Description")
-
-  # use_logo(img, geometry = "240x278", retina = TRUE)
-  # use_package_doc(open = FALSE)
 }
