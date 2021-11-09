@@ -11,7 +11,7 @@ title: "Contribute to `r params$NVIpkg`"
 
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteIndexEntry{`r paste("Contribute to", params$NVIpkg)`}
+  %\VignetteIndexEntry{Contribute to NVIpackager}
   %\VignetteEncoding
   
 ---
