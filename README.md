@@ -1,5 +1,3 @@
-# READ ME
-
 NVIpackager: Tools to facilitate Development of NVIverse Packages
 =================================================================
 
