@@ -37,7 +37,7 @@ Imports:
     styler (>= 1.3.2), 
     usethis,
     withr,
-    NVIcheckmate (>= 0.3.2)
+    NVIcheckmate (>= 0.3.3)
 Suggests: 
     covr,
     testthat (>= 3.0.0)
