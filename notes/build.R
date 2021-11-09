@@ -9,6 +9,7 @@ Rlibrary <- R.home()
 
 library(devtools)
 library(roxygen2)
+library(NVIpackager)
 # library(withr)
 
 # Creates new help files
@@ -42,15 +43,13 @@ writeLines(c(header,readLines("./CONTRIBUTING.md")),"./CONTRIBUTING.md")
 # Run tests included in ./tests.
 devtools::test()
 
-# Build the vignette
-# devtools::build_vignettes()
-# vignetteRDS <- readRDS("./Meta/vignette.rds")
+# Test package coverage
+code_coverage <- covr::package_coverage(group = "functions")
+print(x = code_coverage, group = "functions")
 
-# devtools::build_manual(pkg = "../NVIdb", path = "./vignettes")
+# devtools::build_manual(pkg = "../NVIpackager", path = "./vignettes")
 
 # Build the package
-# system("R CMD build ../NVIdb")
-# devtools::build(binary = TRUE)
 devtools::build(binary = FALSE, manual = TRUE, vignettes = TRUE)
 
 version <- packageVersion(pkg, lib.loc = paste0(getwd(),"/.."))
