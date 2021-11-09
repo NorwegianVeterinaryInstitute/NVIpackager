@@ -51,6 +51,6 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
     update_contributing(pkg = pkg, pkg_path = pkg_path)
   }
   if (isTRUE(readme)) {
-    # update_readme(pkg = pkg, pkg_path = pkg_path)
+    update_readme(pkg = pkg, pkg_path = pkg_path)
   }
 }
