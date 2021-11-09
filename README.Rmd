@@ -1,0 +1,65 @@
+--- 
+title: "README"
+output: 
+  md_document:
+  variant: markdown_github
+  
+params:
+  NVIpkg: "NVIpackager"
+---
+
+```{r, include = FALSE}
+NVIpkg <- params$NVIpkg
+# NVIpkg <- stringi::stri_extract_last_words(usethis::proj_path())
+NVIpkg_inline <- paste0("`", NVIpkg, "`")
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+`r paste0(NVIpkg, ": ", desc::desc_get_field(key = "Title"))`
+================
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+  - [Overview](#overview)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Copyright and license](#copyright-and-license)
+  - [Contributing](#contributing)
+
+## Overview
+```{r, include = FALSE}
+description <- desc::desc_get_field(key = "Description")
+```
+`r paste0(NVIpkg_inline, 
+   "", 
+   sub(substr(description,1,1), tolower(substr(description,1,1)), description))`
+
+The package is under development. [Contributions](#contributing) to enhance the package is highly appreciated.  
+
+```{r child=system.file('templates', "README_NVIverse.Rmd", package = "NVIpackager")}
+```
+
+## Installation
+```{r child=system.file('templates', "README_installation.Rmd", package = "NVIpackager")}
+```
+
+## Usage
+```{r child=system.file('templates', "README_usage.Rmd", package = "NVIpackager")}
+```
+
+## Copyright and license
+```{r child=system.file('templates', "README_copyright_and_license.Rmd", package = "NVIpackager")}
+```
+
+## Contributing
+```{r child=system.file('templates', "README_contributing.Rmd", package = "NVIpackager")}
+```
+
+-----
+```{r child=system.file('templates', "README_code_of_conduct.Rmd", package = "NVIpackager")}
+```
+
