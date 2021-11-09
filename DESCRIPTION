@@ -9,8 +9,13 @@ Authors@R:
              comment = c(ORCID = "0000-0002-8695-0378")),
       person(given = "Norwegian Veterinary Institute",
              role = "cph"))
-Description: Provides tools to facilitate the development of NVIverse 
-    packages. There is a high dependency on devtools and usethis. 
+Description: Provides tools to facilitate development of NVIverse packages. Use
+    create_NVIpkg_skeleton to make a package skeleton in accord with NVIverse
+    standards.  Several functions are for maintainance of the  NVIverse package,
+    like update documentation and to streamline testing and intallation of the
+    package. The NVIpackager functions are to a large extent wrappers for
+    devtools and usethis functions. In addition, the templates folder keeps
+    templates for standard files like sections OF README and CONTRIBUTING.
 License: BSD_3_clause + file LICENSE
 URL: https://github.com/NorwegianVeterinaryInstitute/NVIdevpkg
 BugReports: 
@@ -21,22 +26,22 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Depends: R (>= 4.0.0)
+Imports: 
+    checkmate (>= 2.0.0),
+    devtools, 
+    knitr,
+    remotes, 
+    rmarkdown,
+    roxygen2,
+    stringi,
+    styler (>= 1.3.2), 
+    usethis,
+    withr,
+    NVIcheckmate (>= 0.3.2)
 Suggests: 
     covr,
     testthat (>= 3.0.0)
-VignetteBuilder: knitr
-Imports: 
-    devtools, 
-    knitr,
-    rmarkdown,
-    remotes, 
-    roxygen2,
-    usethis,
-    stringi,
-    styler (>= 1.3.2), 
-    withr,
-    NVIcheckmate (>= 0.3.2),
-    checkmate (>= 2.0.0)
 Remotes: 
     github::NorwegianVeterinaryInstitute/NVIcheckmate
+VignetteBuilder: knitr
 Config/testthat/edition: 3
