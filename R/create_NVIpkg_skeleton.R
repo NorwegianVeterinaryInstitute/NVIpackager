@@ -97,6 +97,9 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   # save with name of package in filename
   writeLines(readme, paste0 (pkg_path, "/README.Rmd"))
 
+  usethis::use_build_ignore(files = "README.Rmd", escape = TRUE)
+
+
   usethis::use_code_of_conduct()
 
   update_contributing()
