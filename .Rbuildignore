@@ -6,3 +6,4 @@
 ^data_raw$
 ^CONTRIBUTING\.md$
 ^man-roxygen$
+^README\.Rmd$
