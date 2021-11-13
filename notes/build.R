@@ -38,7 +38,13 @@ NVIpackager::document_NVIpkg(style = FALSE,
 devtools::test()
 
 # Test package coverage
-code_coverage <- covr::package_coverage(group = "functions")
+# DETACH PACKAGE ----
+# The package must be detached to install it.
+if(pkg %in% (.packages())){
+  pkgname <- paste0("package:", pkg)
+  detach(pkgname, unload=TRUE, character.only = TRUE)
+}
+code_coverage <- covr::package_coverage(path = ".", group = "functions")
 print(x = code_coverage, group = "functions")
 
 # devtools::build_manual(pkg = "../NVIpackager", path = "./vignettes")
