@@ -14,8 +14,12 @@
 #'     and the vignette \code{Contribute_to_NVIpkg} are copied to the package
 #'     directory.
 #'
+#'     There is a list of license keywords at
+#'     [GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
+#'
 #' @template pkg
 #' @template pkg_path
+#' @param license_keyword The keyword for the package's license in accord with list of license keywords.
 #'
 #' @return None.
 #'     Sets up the package directories and writes and modifies several files, see details.
@@ -33,19 +37,28 @@
 # pkg <- stringi::stri_extract_last_words(usethis::proj_path())
 
 create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
-                                   pkg_path = usethis::proj_path()) {
+                                   pkg_path = usethis::proj_path(),
+                                   license_keyword = "BSD-3-clause") {
 
   # ARGUMENT CHECKING ----
   # Object to store check-results
   checks <- checkmate::makeAssertCollection()
   # assertions
   assert_pkg_path(pkg = pkg, pkg_path = pkg_path)
+  # license_keyword
+  NVIcheckmate::assert_choice_character(x = license_keyword,
+                                        choices = c("apache-2.0", "bsd-3-clause", "bsd-3-clause-clear",
+                                                    "cc0-1.0", "cc-by-4.0", "cc-by-sa-4.0",
+                                                    "gpl-2.0", "gpl-3.0", "lgpl-2.1", "lgpl-3.0",
+                                                    "mit"),
+                                        ignore.case = TRUE,
+                                        add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
 
   # RUN SCRIPT ----
-
   # Create standard R-package skeleton
+  set_description_default(pkg = pkg, license_keyword = license_keyword)
   usethis::create_package(path = pkg_path, rstudio = FALSE, open = FALSE)
 
   # Modify the description ----
@@ -99,8 +112,17 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
 
   usethis::use_build_ignore(files = "README.Rmd", escape = TRUE)
 
-
-  usethis::use_code_of_conduct()
+  author <- eval(str2expression(desc::desc_get_field(key = "Authors@R")))
+  email <- NA
+  for (i in 1:length(author)) {
+    while(is.na(email)) {
+      if (grep("cre", author[i])) {
+      email <- unlist(author[i])
+    email <- email["email"]
+    }
+   }
+  }
+  usethis::use_code_of_conduct(contact = email)
 
   update_contributing()
 
