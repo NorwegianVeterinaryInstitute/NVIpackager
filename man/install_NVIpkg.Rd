@@ -5,10 +5,10 @@
 \title{Install an NVIverse Package during the Development Phase}
 \usage{
 install_NVIpkg(
-  pkg,
-  pkg_path,
+  pkg = stringi::stri_extract_last_words(usethis::proj_path()),
+  pkg_path = usethis::proj_path(),
   lib = R.home(),
-  source,
+  rsource,
   username = "NorwegianVeterinaryInstitute",
   ...
 )
@@ -24,7 +24,7 @@ The path to the package directory, defaults to \code{usethis::proj_path()}.}
 the package. If missing, defaults to the first element of
 \code{.libPaths()}.}
 
-\item{source, }{character with one of c("github", "local") .}
+\item{rsource, }{character with one of c("github", "local") .}
 
 \item{username, }{the github username to install from. Defaults to
 "NorwegianVeterinaryInstitute".}
@@ -42,7 +42,7 @@ package during development to test new code in the package
 scripts .
 }
 \details{
-When \code{source = "github"}, the default is to install
+When \code{rsource = "github"}, the default is to install
 the latest version in the main branch at the NorwegianVeterinaryInstitute
 package repository. During package development one will usually
 change the username to your own.\preformatted{The repository can be changed by giving more arguments that
@@ -51,9 +51,9 @@ will be passed to \code{install_github}, see
 of the arguments \code{repo =}, \code{username =}, and
 \code{ref =}.
 
-When \code{source = "local"}, it installs the package from a
+When \code{rsource = "local"}, it installs the package from a
 local copy of the package repository. It defaults to install
-the active branch. Use \code{source = "local"} to test new
+the active branch. Use \code{rsource = "local"} to test new
 code during development.
 
 For installing the latest released versions of NVIverse
