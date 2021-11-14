@@ -6,7 +6,8 @@
 \usage{
 create_NVIpkg_skeleton(
   pkg = stringi::stri_extract_last_words(usethis::proj_path()),
-  pkg_path = usethis::proj_path()
+  pkg_path = usethis::proj_path(),
+  license_keyword = "BSD-3-clause"
 )
 }
 \arguments{
@@ -15,6 +16,8 @@ The package name, defaults to \code{stringi::stri_extract_last_words(usethis::pr
 
 \item{pkg_path}{[\code{character}]\cr
 The path to the package directory, defaults to \code{usethis::proj_path()}.}
+
+\item{license_keyword}{The keyword for the package's license in accord with list of license keywords.}
 }
 \value{
 None.
@@ -34,6 +37,9 @@ and \code{.Rbuildignore} in agreement with standard dependencies for
 NVIverse.\preformatted{In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDUCT},
 and the vignette \code{Contribute_to_NVIpkg} are copied to the package
 directory.
+
+There is a list of license keywords at
+[GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
 }
 }
 \examples{

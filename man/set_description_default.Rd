@@ -6,7 +6,7 @@
 \usage{
 set_description_default(
   pkg = stringi::stri_extract_last_words(usethis::proj_path()),
-  license_keyword = "BSD_3_clause"
+  license_keyword = "BSD-3-clause"
 )
 }
 \arguments{
