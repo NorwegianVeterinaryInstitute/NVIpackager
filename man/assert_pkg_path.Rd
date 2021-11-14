@@ -10,6 +10,8 @@ assert_pkg_path(pkg, pkg_path, checks = checks)
 \item{pkg}{Argument to the add-function to be asserted.}
 
 \item{pkg_path}{Argument to the add-function to be asserted.}
+
+\item{checks}{AssertCollection, defaults to checks.}
 }
 \value{
 \code{TRUE } if none of the assertions failed. If any of the assertions
@@ -20,6 +22,24 @@ Assertions for pkg and pkg_path in packager_functions.
 }
 \details{
 The function does not set up and report the assertCollection.
+This need to be done separately, see example.
+}
+\examples{
+# Attach package and make temporary directory
+library(NVIpackager)
+td <- tempdir()
+if (!dir.exists(file.path(td, "NVItest"))) {
+   dir.create(file.path(td, "NVItest"))
+}
+# ARGUMENT CHECKING
+# Object to store check-results
+checks <- checkmate::makeAssertCollection()
+# Perform checks
+assert_pkg_path(pkg = "NVItest",
+                pkg_path = paste0(td, "/NVItest"))
+# Report check-results
+checkmate::reportAssertions(checks)
+
 }
 \author{
 Petter Hopp Petter.Hopp@vetinst.no

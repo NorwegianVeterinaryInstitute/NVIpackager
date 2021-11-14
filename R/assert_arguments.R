@@ -22,10 +22,10 @@
 #' @export
 #'
 #' @examples
-#' Attach package and make temporary directory
+#' # Attach package and make temporary directory
 #' library(NVIpackager)
 #' td <- tempdir()
-#' if (!dir.exist(file.path(td, "NVItest"))) {
+#' if (!dir.exists(file.path(td, "NVItest"))) {
 #'    dir.create(file.path(td, "NVItest"))
 #' }
 #' # ARGUMENT CHECKING
@@ -33,7 +33,7 @@
 #' checks <- checkmate::makeAssertCollection()
 #' # Perform checks
 #' assert_pkg_path(pkg = "NVItest",
-#' pkg_path = paste0(td, "/NVItest"))
+#'                 pkg_path = paste0(td, "/NVItest"))
 #' # Report check-results
 #' checkmate::reportAssertions(checks)
 #'
