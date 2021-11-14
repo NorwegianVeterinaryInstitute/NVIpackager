@@ -1,0 +1,5 @@
+The `r NVIpkg_inline` package needs to be attached.
+
+``` r
+library(NVIdb)
+```

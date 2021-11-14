@@ -46,7 +46,14 @@ description <- desc::desc_get_field(key = "Description")
 ```
 
 ## Usage
-```{r child=system.file('templates', "README_usage.Rmd", package = "NVIpackager")}
+```{r child=system.file('templates', "README_usage_attach.Rmd", package = "NVIpackager")}
+```
+
+`r paste0(NVIpkg_inline, 
+   "", 
+   sub(substr(description,1,1), tolower(substr(description,1,1)), description))`
+
+```{r child=system.file('templates', "README_usage_help.Rmd", package = "NVIpackager")}
 ```
 
 ## Copyright and license

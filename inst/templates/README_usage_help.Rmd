@@ -1,19 +1,6 @@
-# Usage
-
-The `r NVIpkg_inline` package needs to be attached.
-
-``` r
-library(NVIdb)
-```
-
-`r NVIpkg_inline` provides tools to 
-
-
 The list of available functions and datasets can be accessed by typing
 
 ``` r
 help(package="NVIdb")
 ```
 Please check the NEWS for information on new features, bug fixes and other changes.
-
-
