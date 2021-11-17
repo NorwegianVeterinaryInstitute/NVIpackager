@@ -8,8 +8,7 @@
 #' @template pkg
 #' @template pkg_path
 #'
-#' @return None.
-#'     Writes the file \code{README.md}.
+#' @return None. Writes the file \code{README.md}.
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
@@ -18,12 +17,16 @@
 #' # Attach packages and set up with temporary directory
 #' library(NVIpackager)
 #' td <- tempdir()
+#' if (!dir.exists(file.path(td, "NVItest"))) {
+#'   dir.create(file.path(td, "NVItest"))
+#' }
 #'
-#'  update_readme(pkg = "pkg")
+#'  update_readme(pkg = "NVItest",
+#'                pkg_path = file.path(td, "NVItest"))
 #' }
 
 update_readme <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
-                                pkg_path = usethis::proj_path()) {
+                          pkg_path = usethis::proj_path()) {
 
   # ARGUMENT CHECKING ----
   # Object to store check-results

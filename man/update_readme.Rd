@@ -17,8 +17,7 @@ The package name, defaults to \code{stringi::stri_extract_last_words(usethis::pr
 The path to the package directory, defaults to \code{usethis::proj_path()}.}
 }
 \value{
-None.
-Writes the file \code{README.md}.
+None. Writes the file \code{README.md}.
 }
 \description{
 Update \code{README.md}
@@ -33,8 +32,12 @@ text must be done in the templates.
 # Attach packages and set up with temporary directory
 library(NVIpackager)
 td <- tempdir()
+if (!dir.exists(file.path(td, "NVItest"))) {
+  dir.create(file.path(td, "NVItest"))
+}
 
- update_readme(pkg = "pkg")
+ update_readme(pkg = "NVItest",
+               pkg_path = file.path(td, "NVItest"))
 }
 }
 \author{
