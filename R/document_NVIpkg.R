@@ -1,27 +1,46 @@
 #' @title Update styling and documentation of a package
-#' @description A wrapper around functions for styling,
-#'     making the help files and updated vignettes and README.
+#' @description A wrapper around functions for styling, write the help files
+#'     and update README and CONTRIBUTING.md.
 #'
-#' @details The help files for R-functions will always be generated.
-#'     If styling and generation of CONTRIBUTING. md and README
-#'     can be control led by input arguments.
+#' @details The help files for R-functions will always be generated. Whether
+#'     styling should be performed and CONTRIBUTING.md and README
+#'     should be updated are controlled by input arguments.
 #'
 #' @template pkg
 #' @template pkg_path
-#' @param style {logical}, defaults to FALSE.
-#' @param contributing {logical}, defaults to FALSE.
-#' @param readme {logical}, defaults to FALSE.
+#' @param style \[\code{logical}\]\cr
+#'     Should the package be styled, defaults to \code{FALSE}.
+#' @param contributing \[\code{logical}\]\cr
+#'     Should \code{CONTRIBUTING.md} and the vignette "Contribute to NVIpkg" be
+#'     updated, defaults to \code{FALSE}.
+#' @param readme \[\code{logical}\]\cr
+#'     Should \code{README} be updated, defaults to \code{FALSE}.
 #' @param \dots	Other arguments to be passed to \code{styler::style_pkg} .
 #'
 #' @return none. Updated help files for all functions and,
 #'     depending on argument input, can updated style,
-#'     \code{CONTRIBUTING}, and \code{README}
+#'     \code{CONTRIBUTING.md}, and \code{README}
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
 #' @examples
 #' \dontrun{
-#' # Reading from standard directory at NVI's network
+#'
+#' # Attach packages and set up with temporary directory
+#' library(NVIpackager)
+#' td <- tempdir()
+#' if (!dir.exists(file.path(td, "NVItest"))) {
+#'   dir.create(file.path(td, "NVItest"))
+#' }
+#' if (!dir.exists(file.path(td, "NVItest", "vignettes" ))) {
+#'   dir.create(file.path(td, "NVItest", "vignettes"))
+#' }
+#'
+#' update_contributing(pkg = "NVItest",
+#'                     pkg_path = file.path(td, "NVItest"),
+#'                     style = FALSE,
+#'                     contributing = TRUE,
+#'                     readme = TRUE)
 #' }
 #'
 document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
