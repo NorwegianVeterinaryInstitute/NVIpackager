@@ -9,13 +9,13 @@ Authors@R:
              comment = c(ORCID = "0000-0002-8695-0378")),
       person(given = "Norwegian Veterinary Institute",
              role = "cph"))
-Description: Provides tools to facilitate development of NVIverse packages. Use
-    create_NVIpkg_skeleton to make a package skeleton in accord with NVIverse
-    standards.  Several functions are for maintainance of the  NVIverse package,
-    like update documentation and to streamline testing and intallation of the
-    package. The NVIpackager functions are to a large extent wrappers for
-    devtools and usethis functions. In addition, the templates folder keeps
-    templates for standard files like sections OF README and CONTRIBUTING.
+Description: Provides tools to facilitate development of NVIverse packages. You 
+    should use 'create_NVIpkg_skeleton' to make a package skeleton in accord with 
+    NVIverse standards. For further development and maintainance there are 
+    tools for updating documentation and installing development versions. The 
+    NVIpackager functions are to a large extent wrappers for devtools and usethis
+    functions. In addition, the templates folder keeps templates for standard 
+    files like sections OF README and CONTRIBUTING.
 License: BSD_3_clause + file LICENSE
 URL: https://github.com/NorwegianVeterinaryInstitute/NVIdevpkg
 BugReports: 
