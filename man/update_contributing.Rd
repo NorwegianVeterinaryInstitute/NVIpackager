@@ -17,11 +17,10 @@ The package name, defaults to \code{stringi::stri_extract_last_words(usethis::pr
 The path to the package directory, defaults to \code{usethis::proj_path()}.}
 }
 \value{
-None.
-Writes the vignette and the file \code{CONTRIBUTING.md}.
+None. Writes the vignette "Contribute_to_NVIpkg.Rmd" and the file \code{CONTRIBUTING.md}.
 }
 \description{
-Update \code{CONTRIBUTING.md} and the vignette \code{Contribute_to_NVIpkg.Rmd}
+Update \code{CONTRIBUTING.md} and the vignette "Contribute_to_NVIpkg.Rmd"
 from the template in \code{NVIpackager}. If the files don't exist, they are created.
 }
 \details{
@@ -33,8 +32,15 @@ must be done in the template.
 # Attach packages and set up with temporary directory
 library(NVIpackager)
 td <- tempdir()
+if (!dir.exists(file.path(td, "NVItest"))) {
+  dir.create(file.path(td, "NVItest"))
+}
+if (!dir.exists(file.path(td, "NVItest", "vignettes" ))) {
+  dir.create(file.path(td, "NVItest", "vignettes"))
+}
 
- use_contributing(pkg = "pkg")
+ use_contributing(pkg = "NVItest",
+                  pkg_path = file.path(td, "NVItest"))
 }
 }
 \author{

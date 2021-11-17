@@ -1,5 +1,5 @@
 #' @title Update \code{CONTRIBUTING.md}
-#' @description Update \code{CONTRIBUTING.md} and the vignette \code{Contribute_to_NVIpkg.Rmd}
+#' @description Update \code{CONTRIBUTING.md} and the vignette "Contribute_to_NVIpkg.Rmd"
 #'     from the template in \code{NVIpackager}. If the files don't exist, they are created.
 #'
 #' @details The template is found in \code{NVIpackager}. Any change in the text
@@ -8,8 +8,7 @@
 #' @template pkg
 #' @template pkg_path
 #'
-#' @return None.
-#'     Writes the vignette and the file \code{CONTRIBUTING.md}.
+#' @return None. Writes the vignette "Contribute_to_NVIpkg.Rmd" and the file \code{CONTRIBUTING.md}.
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
@@ -18,8 +17,15 @@
 #' # Attach packages and set up with temporary directory
 #' library(NVIpackager)
 #' td <- tempdir()
+#' if (!dir.exists(file.path(td, "NVItest"))) {
+#'   dir.create(file.path(td, "NVItest"))
+#' }
+#' if (!dir.exists(file.path(td, "NVItest", "vignettes" ))) {
+#'   dir.create(file.path(td, "NVItest", "vignettes"))
+#' }
 #'
-#'  use_contributing(pkg = "pkg")
+#'  use_contributing(pkg = "NVItest",
+#'                   pkg_path = file.path(td, "NVItest"))
 #' }
 
 update_contributing <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
