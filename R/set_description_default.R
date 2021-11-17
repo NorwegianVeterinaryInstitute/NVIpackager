@@ -3,13 +3,25 @@
 #'     as the option \code{usethis.description}.
 #'
 #' @details These options are used when creating the package skeleton in the script
-#'     \code{create_NVIpackage_skeleton.R}.
+#'     \code{create_NVIpackage_skeleton.R}. The following standard values are given:
 #'
+#' \itemize{
+#'   \item "Petter Hopp" with role c("aut", "cre")
+#'   \item "Norwegian Veterinary Institute" with role = cph"
+#'   \item registertype (categories for locations and addresses)
+#'   \item URL: "https://github.com/NorwegianVeterinaryInstitute/NVIpkg"
+#'   \item BugReports: "https://github.com/NorwegianVeterinaryInstitute/NVIpkg/issues"
+#'   \item License: license_keyword "+ file LICENSE",
+#'   \item Language: "en-GB",
+#'   \item Depends:= "R (>= 4.0.0)"
+#' }
 #'     There is a list of license keywords at
 #'     [GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
 #'
 #' @template pkg
-#' @param license_keyword The keyword for the package's license in accord with list of license keywords.
+#' @param license_keyword  \[\code{character}\]\cr
+#'     The keyword for the package's license in accord with list of license keywords,
+#'     defaults to "BSD-3-clause".
 #'
 #' @return None. Writes the options to the option \code{usethis.description}.
 #'
