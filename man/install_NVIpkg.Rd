@@ -20,13 +20,14 @@ The package name, defaults to \code{stringi::stri_extract_last_words(usethis::pr
 \item{pkg_path}{[\code{character}]\cr
 The path to the package directory, defaults to \code{usethis::proj_path()}.}
 
-\item{lib}{character giving the library directory where to install
-the package. If missing, defaults to the first element of
-\code{.libPaths()}.}
+\item{lib}{[\code{character}]\cr
+The library directory where to install, defaults to \code{R.home()}.}
 
-\item{rsource, }{character with one of c("github", "local") .}
+\item{rsource}{[\code{character}]\cr
+One of c("github", "local").}
 
-\item{username, }{the github username to install from. Defaults to
+\item{username}{[\code{character}]\cr
+The github username where the repository is found, defaults to
 "NorwegianVeterinaryInstitute".}
 
 \item{\dots}{Other arguments to be passed to \code{remotes::install_github}
@@ -63,7 +64,13 @@ packages, use \code{\link[remotes:install_github]} or
 }
 \examples{
 \dontrun{
-# Reading from standard directory at NVI's network
+# Installs a package from local PC
+# You need to be in a package directory at you PC for the code to work.
+pkg <- stringi::stri_extract_last_words(usethis::proj_path())
+pkg_path = usethis::proj_path()
+
+NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "local")
+
 }
 
 }
