@@ -20,14 +20,14 @@
 #' if (!dir.exists(file.path(td, "NVItest"))) {
 #'   dir.create(file.path(td, "NVItest"))
 #' }
-#' if (!dir.exists(file.path(td, "NVItest", "vignettes" ))) {
+#' if (!dir.exists(file.path(td, "NVItest", "vignettes"))) {
 #'   dir.create(file.path(td, "NVItest", "vignettes"))
 #' }
 #'
 #'  use_contributing(pkg = "NVItest",
 #'                   pkg_path = file.path(td, "NVItest"))
 #' }
-
+#'
 update_contributing <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
                                 pkg_path = usethis::proj_path()) {
 
@@ -49,9 +49,9 @@ update_contributing <- function(pkg = stringi::stri_extract_last_words(usethis::
   # contribute <- readLines('./inst/templates/Contribute_to_NVIpkg.Rmd')
 
   # give correct package name
-  contribute <- gsub("_package_name_" , pkg, contribute)
+  contribute <- gsub("_package_name_", pkg, contribute)
   # save with name of package in filename
-  writeLines(contribute, paste0 (pkg_path, "/vignettes/Contribute_to_", pkg, ".Rmd"))
+  writeLines(contribute, paste0(pkg_path, "/vignettes/Contribute_to_", pkg, ".Rmd"))
 
   # For updating CONTRIBUTING.md after the vignette has been updated.
   rmarkdown::render(input = paste0(pkg_path, "/vignettes/Contribute_to_", pkg, ".Rmd"),
@@ -60,6 +60,6 @@ update_contributing <- function(pkg = stringi::stri_extract_last_words(usethis::
                     output_dir = pkg_path)
   header <- paste0("# Contribute to ", pkg, "\n")
 
-  writeLines(c(header,readLines(paste0(pkg_path, "/CONTRIBUTING.md"))),
+  writeLines(c(header, readLines(paste0(pkg_path, "/CONTRIBUTING.md"))),
              paste0(pkg_path, "/CONTRIBUTING.md"))
 }

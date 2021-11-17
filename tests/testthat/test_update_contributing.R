@@ -7,7 +7,7 @@ td <- tempdir()
 if (!dir.exists(file.path(td, "NVItest"))) {
   dir.create(file.path(td, "NVItest"))
 }
-if (!dir.exists(file.path(td, "NVItest", "vignettes" ))) {
+if (!dir.exists(file.path(td, "NVItest", "vignettes"))) {
   dir.create(file.path(td, "NVItest", "vignettes"))
 }
 
@@ -17,5 +17,5 @@ test_that("Update contributing", {
 
   expect_true(file.exists(paste0(td, "/NVItest/vignettes/Contribute_to_NVItest.Rmd")))
 
-  expect_true(file.exists(paste0 (td, "/NVItest/CONTRIBUTING.md")))
+  expect_true(file.exists(paste0(td, "/NVItest/CONTRIBUTING.md")))
 })

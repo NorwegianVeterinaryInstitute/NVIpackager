@@ -32,7 +32,7 @@
 #' if (!dir.exists(file.path(td, "NVItest"))) {
 #'   dir.create(file.path(td, "NVItest"))
 #' }
-#' if (!dir.exists(file.path(td, "NVItest", "vignettes" ))) {
+#' if (!dir.exists(file.path(td, "NVItest", "vignettes"))) {
 #'   dir.create(file.path(td, "NVItest", "vignettes"))
 #' }
 #'
@@ -62,7 +62,7 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
 
   if (isTRUE(style)) {
     styler::style_pkg(pkg = pkg_path,
-                      transformers = styler::tidyverse_style(scope = I(c("spaces", "indention", "tokens" ))),
+                      transformers = styler::tidyverse_style(scope = I(c("spaces", "indention", "tokens"))),
                       ...)
   }
 

@@ -21,10 +21,10 @@
 #'   dir.create(file.path(td, "NVItest"))
 #' }
 #'
-#'  update_readme(pkg = "NVItest",
+#' update_readme(pkg = "NVItest",
 #'                pkg_path = file.path(td, "NVItest"))
 #' }
-
+#'
 update_readme <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
                           pkg_path = usethis::proj_path()) {
 

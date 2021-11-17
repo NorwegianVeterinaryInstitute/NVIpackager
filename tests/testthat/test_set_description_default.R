@@ -32,5 +32,3 @@ test_that("Setting default options for DESCRIPTION", {
   expect_identical(object = usethis.description$Depends,
                    expected = "R (>= 4.0.0)")
 })
-
-

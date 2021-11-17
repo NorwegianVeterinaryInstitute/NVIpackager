@@ -36,7 +36,6 @@
 #'                 pkg_path = paste0(td, "/NVItest"))
 #' # Report check-results
 #' checkmate::reportAssertions(checks)
-#'
 #' @export
 
 assert_pkg_path <- function(pkg,

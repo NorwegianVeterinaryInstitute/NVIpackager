@@ -48,7 +48,6 @@
 #' pkg_path = usethis::proj_path()
 #'
 #' NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "local")
-#'
 #' }
 #'
 install_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
@@ -72,24 +71,24 @@ install_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj_
 
   # DETACH PACKAGE ----
   # The package must be detached to install it.
-  if(pkg %in% (.packages())){
+  if (pkg %in% (.packages())) {
     pkgname <- paste0("package:", pkg)
-    detach(pkgname, unload=TRUE, character.only = TRUE)
+    detach(pkgname, unload = TRUE, character.only = TRUE)
   }
 
   # INSTALL PACKAGE ----
   # Install from working directory
-  if(rsource == "local") {
-    withr::with_libpaths(paste0(lib,"/library"),
+  if (rsource == "local") {
+    withr::with_libpaths(paste0(lib, "/library"),
                          devtools::install(pkg_path,
                                            dependencies = c("Depends", "Imports", "LinkingTo"),
-                                           upgrade=FALSE,
+                                           upgrade = FALSE,
                                            build_vignettes = TRUE,
                                            ...)
     )
   }
 
-  if(rsource == "github") {
+  if (rsource == "github") {
     # Install from Github repository
     remotes::install_github(paste0(username, "/", pkg),
                             upgrade = FALSE,

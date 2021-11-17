@@ -41,9 +41,8 @@
 #' }
 #' # Create package skeleton in temporary directory
 #' create_NVIpkg_skeleton(pkg = "NVItest", pkg_path = file.path(td, "NVItest"))
-#'
 #' }
-
+#'
 create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
                                    pkg_path = usethis::proj_path(),
                                    license_keyword = "BSD-3-clause") {
@@ -80,7 +79,7 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   usethis::use_git_ignore(ignores = "*.Rproj")
 
   # Make extra directories
-  usethis::use_directory(path = "notes" , ignore = FALSE)
+  usethis::use_directory(path = "notes", ignore = FALSE)
   # Add files to .Rbuildignore
   usethis::use_build_ignore(files = "notes", escape = TRUE)
 
@@ -114,16 +113,16 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   readme <- readLines(system.file('templates', "README.Rmd", package = "NVIpackager"))
   # contribute <- readLines('./inst/templates/Contribute_to_NVIpkg.Rmd')
   # give correct package name
-  readme <- gsub("_package_name_" , pkg, readme)
+  readme <- gsub("_package_name_", pkg, readme)
   # save with name of package in filename
-  writeLines(readme, paste0 (pkg_path, "/README.Rmd"))
+  writeLines(readme, paste0(pkg_path, "/README.Rmd"))
 
   usethis::use_build_ignore(files = "README.Rmd", escape = TRUE)
 
   author <- eval(str2expression(desc::desc_get_field(key = "Authors@R")))
   email <- NA
   for (i in 1:length(author)) {
-    while(is.na(email)) {
+    while (is.na(email)) {
       if (grep("cre", author[i])) {
       email <- unlist(author[i])
     email <- email["email"]

@@ -32,9 +32,9 @@
 #' library(NVIpackager)
 #' set_description_default()
 #' }
-
-
-# set up standards for DESCRIPTION file ----
+#'
+#'
+#' # set up standards for DESCRIPTION file ----
 set_description_default <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
                                     license_keyword = "BSD-3-clause") {
   # ARGUMENT CHECKING ----
@@ -69,7 +69,7 @@ set_description_default <- function(pkg = stringi::stri_extract_last_words(useth
       URL = paste0("https://github.com/NorwegianVeterinaryInstitute/", pkg),
       BugReports = paste0("https://github.com/NorwegianVeterinaryInstitute/", pkg, "/issues"),
       License = paste(license_keyword, "+ file LICENSE"),
-      Language =  "en-GB",
+      Language = "en-GB",
       Depends = "R (>= 4.0.0)"
     )
   )
