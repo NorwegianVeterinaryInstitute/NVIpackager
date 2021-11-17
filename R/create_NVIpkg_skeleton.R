@@ -2,13 +2,16 @@
 #' @description Creates the package skeleton in agreement with the conventions
 #'     developed for NVIverse packages. \code{create_NVIpkg_skeleton} should be
 #'     run once after a GitHub repository has been synchronized with the the
-#'     package directory and the \code{set_description_default} has been run.
+#'     package directory.
 #'
 #' @details \code{create_NVIpkg_skeleton} is a wrapper for several \code{usethis}
 #'     -functions. It sets up the package directory with standard files and
 #'     standard sub-directories. Modifies the \code{DESCRIPTION}, \code{.gitignore},
 #'     and \code{.Rbuildignore} in agreement with standard dependencies for
 #'     NVIverse.
+#'
+#'     Standard values are input to \code{DESCRIPTION}. For modifying these values,
+#'     you need to modify \code{set_description_default}.
 #'
 #'     In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDUCT},
 #'     and the vignette \code{Contribute_to_NVIpkg} are copied to the package
@@ -19,7 +22,9 @@
 #'
 #' @template pkg
 #' @template pkg_path
-#' @param license_keyword The keyword for the package's license in accord with list of license keywords.
+#' @param license_keyword  \[\code{character}\]\cr
+#'     The keyword for the package's license in accord with list of license keywords,
+#'     defaults to "BSD-3-clause".
 #'
 #' @return None.
 #'     Sets up the package directories and writes and modifies several files, see details.
@@ -31,10 +36,13 @@
 #' # Attach packages and set up with temporary directory
 #' library(NVIpackager)
 #' td <- tempdir()
+#' if (!dir.exists(file.path(td, "NVItest"))) {
+#'   dir.create(file.path(td, "NVItest"))
+#' }
+#' # Create package skeleton in temporary directory
+#' create_NVIpkg_skeleton(pkg = "NVItest", pkg_path = file.path(td, "NVItest"))
 #'
 #' }
-
-# pkg <- stringi::stri_extract_last_words(usethis::proj_path())
 
 create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
                                    pkg_path = usethis::proj_path(),
@@ -47,10 +55,10 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   assert_pkg_path(pkg = pkg, pkg_path = pkg_path)
   # license_keyword
   NVIcheckmate::assert_choice_character(x = license_keyword,
-                                        choices = c("apache-2.0", "bsd-3-clause", "bsd-3-clause-clear",
-                                                    "cc0-1.0", "cc-by-4.0", "cc-by-sa-4.0",
+                                        choices = c("Apache-2.0", "BSD-3-clause", "BSD-3-clause-clear",
+                                                    "CC0-1.0", "CC-by-4.0", "CC-by-sa-4.0",
                                                     "gpl-2.0", "gpl-3.0", "lgpl-2.1", "lgpl-3.0",
-                                                    "mit"),
+                                                    "MIT"),
                                         ignore.case = TRUE,
                                         add = checks)
   # Report check-results

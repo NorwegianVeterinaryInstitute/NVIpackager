@@ -17,7 +17,9 @@ The package name, defaults to \code{stringi::stri_extract_last_words(usethis::pr
 \item{pkg_path}{[\code{character}]\cr
 The path to the package directory, defaults to \code{usethis::proj_path()}.}
 
-\item{license_keyword}{The keyword for the package's license in accord with list of license keywords.}
+\item{license_keyword}{[\code{character}]\cr
+The keyword for the package's license in accord with list of license keywords,
+defaults to "BSD-3-clause".}
 }
 \value{
 None.
@@ -27,14 +29,17 @@ Sets up the package directories and writes and modifies several files, see detai
 Creates the package skeleton in agreement with the conventions
 developed for NVIverse packages. \code{create_NVIpkg_skeleton} should be
 run once after a GitHub repository has been synchronized with the the
-package directory and the \code{set_description_default} has been run.
+package directory.
 }
 \details{
 \code{create_NVIpkg_skeleton} is a wrapper for several \code{usethis}
 -functions. It sets up the package directory with standard files and
 standard sub-directories. Modifies the \code{DESCRIPTION}, \code{.gitignore},
 and \code{.Rbuildignore} in agreement with standard dependencies for
-NVIverse.\preformatted{In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDUCT},
+NVIverse.\preformatted{Standard values are input to \code{DESCRIPTION}. For modifying these values,
+you need to modify \code{set_description_default}.
+
+In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDUCT},
 and the vignette \code{Contribute_to_NVIpkg} are copied to the package
 directory.
 
@@ -47,6 +52,11 @@ There is a list of license keywords at
 # Attach packages and set up with temporary directory
 library(NVIpackager)
 td <- tempdir()
+if (!dir.exists(file.path(td, "NVItest"))) {
+  dir.create(file.path(td, "NVItest"))
+}
+# Create package skeleton in temporary directory
+create_NVIpkg_skeleton(pkg = "NVItest", pkg_path = file.path(td, "NVItest"))
 
 }
 }
