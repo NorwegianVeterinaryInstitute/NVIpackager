@@ -4,7 +4,7 @@
 library(NVIpackager)
 td <- tempdir()
 
-if (!dir.exists(file.path(td, "NVIpkg"))) {
+if (!dir.exists(file.path(td, "NVItest"))) {
   dir.create(file.path(td, "NVItest"))
 }
 if (!dir.exists(file.path(td, "NVItest", "vignettes" ))) {
