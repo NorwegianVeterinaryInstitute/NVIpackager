@@ -26,7 +26,7 @@
 #' library(NVIpackager)
 #' td <- tempdir()
 #' if (!dir.exists(file.path(td, "NVItest"))) {
-#'    dir.create(file.path(td, "NVItest"))
+#'   dir.create(file.path(td, "NVItest"))
 #' }
 #' # ARGUMENT CHECKING
 #' # Object to store check-results
