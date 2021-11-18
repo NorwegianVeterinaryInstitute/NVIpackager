@@ -25,7 +25,7 @@
 #' }
 #'
 #' use_contributing(pkg = "NVItest",
-#'                   pkg_path = file.path(td, "NVItest"))
+#'                  pkg_path = file.path(td, "NVItest"))
 #' }
 #'
 update_contributing <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
