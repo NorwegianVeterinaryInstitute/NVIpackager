@@ -22,7 +22,7 @@
 #' }
 #'
 #' update_readme(pkg = "NVItest",
-#'                pkg_path = file.path(td, "NVItest"))
+#'               pkg_path = file.path(td, "NVItest"))
 #' }
 #'
 update_readme <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
