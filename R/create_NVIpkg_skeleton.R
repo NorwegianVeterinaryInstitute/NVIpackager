@@ -124,10 +124,10 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   for (i in 1:length(author)) {
     while (is.na(email)) {
       if (grep("cre", author[i])) {
-      email <- unlist(author[i])
-    email <- email["email"]
+        email <- unlist(author[i])
+        email <- email["email"]
+      }
     }
-   }
   }
   usethis::use_code_of_conduct(contact = email)
 
