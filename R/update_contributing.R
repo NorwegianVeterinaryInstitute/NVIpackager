@@ -24,7 +24,7 @@
 #'   dir.create(file.path(td, "NVItest", "vignettes"))
 #' }
 #'
-#'  use_contributing(pkg = "NVItest",
+#' use_contributing(pkg = "NVItest",
 #'                   pkg_path = file.path(td, "NVItest"))
 #' }
 #'
