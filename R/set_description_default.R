@@ -15,13 +15,14 @@
 #'   \item Language: "en-GB",
 #'   \item Depends:= "R (>= 4.0.0)"
 #' }
-#'     There is a list of license keywords at
-#'     [GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
+#'     The function accepts a short list of the listed license keywords accepted
+#'     at Cran in "./share/license/license.db" in R home. If you need any  other
+#'     license than in the short list, submit an issue.
 #'
 #' @template pkg
 #' @param license_keyword  \[\code{character}\]\cr
 #'     The keyword for the package's license in accord with list of license keywords,
-#'     defaults to "BSD-3-clause".
+#'     defaults to "BSD_3_clause".
 #'
 #' @return None. Writes the options to the option \code{usethis.description}.
 #'
@@ -36,7 +37,7 @@
 #'
 #' # set up standards for DESCRIPTION file ----
 set_description_default <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
-                                    license_keyword = "BSD-3-clause") {
+                                    license_keyword = "BSD_3_clause") {
   # ARGUMENT CHECKING ----
   # Object to store check-results
   checks <- checkmate::makeAssertCollection()
@@ -46,10 +47,10 @@ set_description_default <- function(pkg = stringi::stri_extract_last_words(useth
   checkmate::assert_character(x = pkg, min.chars = 2, len = 1, add = checks)
   # license_keyword
   NVIcheckmate::assert_choice_character(x = license_keyword,
-                                        choices = c("apache-2.0", "bsd-3-clause", "bsd-3-clause-clear",
-                                                    "cc0-1.0", "cc-by-4.0", "cc-by-sa-4.0",
-                                                    "gpl-2.0", "gpl-3.0", "lgpl-2.1", "lgpl-3.0",
-                                                    "mit"),
+                                        choices = c("BSD_2_clause", "BSD_3_clause",
+                                                    "CC BY 4.0", "CC BY-SA 4.0",
+                                                    "GPL-2", "GPL-3", "LGPL-2.1", "LGPL-3",
+                                                    "MIT"),
                                         ignore.case = TRUE,
                                         add = checks)
 
