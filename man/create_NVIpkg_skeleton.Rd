@@ -57,8 +57,8 @@ if (!dir.exists(file.path(td, "NVItest"))) {
 }
 # Create package skeleton in temporary directory
 create_NVIpkg_skeleton(pkg = "NVItest", pkg_path = file.path(td, "NVItest"))
-
 }
+
 }
 \author{
 Petter Hopp Petter.Hopp@vetinst.no

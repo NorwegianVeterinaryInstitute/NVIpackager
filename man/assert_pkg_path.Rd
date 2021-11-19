@@ -29,7 +29,7 @@ This need to be done separately, see example.
 library(NVIpackager)
 td <- tempdir()
 if (!dir.exists(file.path(td, "NVItest"))) {
-   dir.create(file.path(td, "NVItest"))
+  dir.create(file.path(td, "NVItest"))
 }
 # ARGUMENT CHECKING
 # Object to store check-results
@@ -39,7 +39,6 @@ assert_pkg_path(pkg = "NVItest",
                 pkg_path = paste0(td, "/NVItest"))
 # Report check-results
 checkmate::reportAssertions(checks)
-
 }
 \author{
 Petter Hopp Petter.Hopp@vetinst.no

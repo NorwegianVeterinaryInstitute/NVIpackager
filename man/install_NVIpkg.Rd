@@ -70,7 +70,6 @@ pkg <- stringi::stri_extract_last_words(usethis::proj_path())
 pkg_path = usethis::proj_path()
 
 NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "local")
-
 }
 
 }

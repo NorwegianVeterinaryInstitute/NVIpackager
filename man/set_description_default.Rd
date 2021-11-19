@@ -46,6 +46,9 @@ There is a list of license keywords at
 library(NVIpackager)
 set_description_default()
 }
+
+
+# set up standards for DESCRIPTION file ----
 }
 \author{
 Petter Hopp Petter.Hopp@vetinst.no

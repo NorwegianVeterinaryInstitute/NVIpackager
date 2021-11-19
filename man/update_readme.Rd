@@ -36,9 +36,10 @@ if (!dir.exists(file.path(td, "NVItest"))) {
   dir.create(file.path(td, "NVItest"))
 }
 
- update_readme(pkg = "NVItest",
-               pkg_path = file.path(td, "NVItest"))
+update_readme(pkg = "NVItest",
+              pkg_path = file.path(td, "NVItest"))
 }
+
 }
 \author{
 Petter Hopp Petter.Hopp@vetinst.no
