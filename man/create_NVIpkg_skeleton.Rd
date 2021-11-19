@@ -7,7 +7,7 @@
 create_NVIpkg_skeleton(
   pkg = stringi::stri_extract_last_words(usethis::proj_path()),
   pkg_path = usethis::proj_path(),
-  license_keyword = "BSD-3-clause"
+  license_keyword = "BSD_3_clause"
 )
 }
 \arguments{
@@ -19,7 +19,7 @@ The path to the package directory, defaults to \code{usethis::proj_path()}.}
 
 \item{license_keyword}{[\code{character}]\cr
 The keyword for the package's license in accord with list of license keywords,
-defaults to "BSD-3-clause".}
+defaults to "BSD_3_clause".}
 }
 \value{
 None.
@@ -43,8 +43,9 @@ In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDU
 and the vignette \code{Contribute_to_NVIpkg} are copied to the package
 directory.
 
-There is a list of license keywords at
-[GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
+The function accepts a short list of the listed license keywords accepted
+at Cran in "./share/license/license.db" in R home. If you need any  other
+license than in the short list, submit an issue.
 }
 }
 \examples{
