@@ -111,7 +111,6 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   # Add README.Rmd template
   # read template
   readme <- readLines(system.file('templates', "README.Rmd", package = "NVIpackager"))
-  # contribute <- readLines('./inst/templates/Contribute_to_NVIpkg.Rmd')
   # give correct package name
   readme <- gsub("_package_name_", pkg, readme)
   # save with name of package in filename
