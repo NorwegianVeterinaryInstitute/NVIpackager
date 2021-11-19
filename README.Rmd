@@ -38,8 +38,6 @@ description <- desc::desc_get_field(key = "Description")
    "", 
    sub(substr(description,1,1), tolower(substr(description,1,1)), description))`
 
-The package is under development. [Contributions](#contributing) to enhance the package is highly appreciated.  
-
 ```{r child=system.file('templates', "README_NVIverse.Rmd", package = "NVIpackager")}
 ```
 
@@ -48,7 +46,14 @@ The package is under development. [Contributions](#contributing) to enhance the 
 ```
 
 ## Usage
-```{r child=system.file('templates', "README_usage.Rmd", package = "NVIpackager")}
+```{r child=system.file('templates', "README_usage_attach.Rmd", package = "NVIpackager")}
+```
+
+`r paste0(NVIpkg_inline, 
+   "", 
+   sub(substr(description,1,1), tolower(substr(description,1,1)), description))`
+
+```{r child=system.file('templates', "README_usage_help.Rmd", package = "NVIpackager")}
 ```
 
 ## Copyright and license
@@ -59,6 +64,7 @@ The package is under development. [Contributions](#contributing) to enhance the 
 ```{r child=system.file('templates', "README_contributing.Rmd", package = "NVIpackager")}
 ```
 
+<!-- Code of conduct -->
 -----
 ```{r child=system.file('templates', "README_code_of_conduct.Rmd", package = "NVIpackager")}
 ```

@@ -13,16 +13,13 @@ Overview
 --------
 
 `NVIpackager`provides tools to facilitate development of NVIverse
-packages. Use create\_NVIpkg\_skeleton to make a package skeleton in
-accord with NVIverse standards. Several functions are for maintainance
-of the NVIverse package, like update documentation and to streamline
-testing and intallation of the package. The NVIpackager functions are to
-a large extent wrappers for devtools and usethis functions. In addition,
-the templates folder keeps templates for standard files like sections OF
-README and CONTRIBUTING.
-
-The package is under development. [Contributions](#contributing) to
-enhance the package is highly appreciated.
+packages. You should use ‘create\_NVIpkg\_skeleton’ to make a package
+skeleton in accord with NVIverse standards. For further development and
+maintainance there are tools for updating documentation and installing
+development versions. The NVIpackager functions are to a large extent
+wrappers for devtools and usethis functions. In addition, the templates
+folder keeps templates for standard files like sections OF README and
+CONTRIBUTING.
 
 `NVIpackager` is part of `NVIverse`, a collection of R-packages with
 tools to facilitate data management and data reporting at the Norwegian
@@ -58,14 +55,18 @@ code:
 Usage
 -----
 
-Usage
-=====
-
 The `NVIpackager` package needs to be attached.
 
     library(NVIdb)
 
-`NVIpackager` provides tools to
+`NVIpackager`provides tools to facilitate development of NVIverse
+packages. You should use ‘create\_NVIpkg\_skeleton’ to make a package
+skeleton in accord with NVIverse standards. For further development and
+maintainance there are tools for updating documentation and installing
+development versions. The NVIpackager functions are to a large extent
+wrappers for devtools and usethis functions. In addition, the templates
+folder keeps templates for standard files like sections OF README and
+CONTRIBUTING.
 
 The list of available functions and datasets can be accessed by typing
 
@@ -78,7 +79,7 @@ Copyright and license
 ---------------------
 
 Copyright (c) 2021 Norwegian Veterinary Institute.  
-Licensed under the BSD 3-Clause License. See
+Licensed under the BSD\_3\_clause License. See
 [License](https://github.com/NorwegianVeterinaryInstitute/NVIpackager/blob/main/LICENSE)
 for details.
 
@@ -90,9 +91,10 @@ several ways you can contribute to this project: ask a question, propose
 an idea, report a bug, improve the documentation, or contribute code.
 The vignette “Contribute to NVIpackager” gives more information.
 
-------------------------------------------------------------------------
+<!-- Code of conduct -->
+------------------------
 
 Please note that the NVIpackager project is released with a [Contributor
 Code of
-Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+Conduct](https://github.com/NorwegianVeterinaryInstitute/NVIpackager/blob/main/CODE_OF_CONDUCT.md).
 By contributing to this project, you agree to abide by its terms.
