@@ -30,7 +30,7 @@ updated, defaults to \code{FALSE}.}
 \item{readme}{[\code{logical}]\cr
 Should \code{README} be updated, defaults to \code{FALSE}.}
 
-\item{\dots}{Other arguments to be passed to \code{styler::style_pkg} .}
+\item{\dots}{Other arguments to be passed to \code{styler::style_pkg}.}
 }
 \value{
 none. Updated help files for all functions and,
@@ -44,7 +44,11 @@ and update README and CONTRIBUTING.md.
 \details{
 The help files for R-functions will always be generated. Whether
 styling should be performed and CONTRIBUTING.md and README
-should be updated are controlled by input arguments.
+should be updated are controlled by input arguments.\preformatted{Default value for styling is \code{scope = "spaces"}. Input to
+\code{scope} can be any subset of c("spaces", "indention", "line_breaks", "tokens").
+For indention, rather use \code{Ctrl+I} than \code{scope = "indention"}.
+Be careful if using \code{scope = "tokens"} as code may be broken.
+}
 }
 \examples{
 \dontrun{
@@ -59,11 +63,11 @@ if (!dir.exists(file.path(td, "NVItest", "vignettes"))) {
   dir.create(file.path(td, "NVItest", "vignettes"))
 }
 
-update_contributing(pkg = "NVItest",
-                    pkg_path = file.path(td, "NVItest"),
-                    style = FALSE,
-                    contributing = TRUE,
-                    readme = TRUE)
+document_NVIpkg(pkg = "NVItest",
+                pkg_path = file.path(td, "NVItest"),
+                style = FALSE,
+                contributing = TRUE,
+                readme = TRUE)
 }
 
 }

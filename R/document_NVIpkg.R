@@ -5,11 +5,11 @@
 #' @details The help files for R-functions will always be generated. Whether
 #'     styling should be performed and CONTRIBUTING.md and README
 #'     should be updated are controlled by input arguments.
-#' 
+#'
 #'     Default value for styling is \code{scope = "spaces"}. Input to
-#'     \code{scope} can be any subset of c("spaces", "indention", "line_breaks", "tokens"). 
+#'     \code{scope} can be any subset of c("spaces", "indention", "line_breaks", "tokens").
 #'     For indention, rather use \code{Ctrl+I} than \code{scope = "indention"}.
-#'     Be careful if using \code{scope = "tokens"} as code may be broken. 
+#'     Be careful if using \code{scope = "tokens"} as code may be broken.
 #'
 #' @template pkg
 #' @template pkg_path
@@ -20,8 +20,8 @@
 #'     updated, defaults to \code{FALSE}.
 #' @param readme \[\code{logical}\]\cr
 #'     Should \code{README} be updated, defaults to \code{FALSE}.
-#' @param \dots	Other arguments to be passed to \code{styler::style_pkg}. 
-#' 
+#' @param \dots	Other arguments to be passed to \code{styler::style_pkg}.
+#'
 #' @return none. Updated help files for all functions and,
 #'     depending on argument input, can updated style,
 #'     \code{CONTRIBUTING.md}, and \code{README}
@@ -62,18 +62,18 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
   checkmate::assert_logical(x = style, add = checks)
   checkmate::assert_logical(x = contributing, add = checks)
   checkmate::assert_logical(x = readme, add = checks)
-  if (exists(scope)) {
-    NVIcheckmate::assert_subset_character(x = scope, 
-                                        choices = c("spaces", "indention", "line_breaks", "tokens"), 
-                                        add = checks)
-} 
-# Report assertions 
+  if (exists("scope")) {
+    NVIcheckmate::assert_subset_character(x = scope,
+                                          choices = c("spaces", "indention", "line_breaks", "tokens"),
+                                          add = checks)
+}
+# Report assertions
   checkmate::reportAssertions(checks)
 
   if (isTRUE(style)) {
-    if (!exists(scope)) {
-      scope <- "spaces" 
-} 
+    if (!exists("scope")) {
+      scope <- "spaces"
+}
     styler::style_pkg(pkg = pkg_path,
                       transformers = styler::tidyverse_style(scope = I(c(scope))),
                       ...)
