@@ -7,22 +7,22 @@ pkg <- stringi::stri_extract_last_words(usethis::proj_path())
 
 Rlibrary <- R.home()
 
-library(devtools)
-library(roxygen2)
+# library(devtools)
+# library(roxygen2)
 library(NVIpackager)
-# library(withr)
+library(spelling)
+
 
 # Creates new help files
 # Should be run before git push when documentation for functions have been changed
 NVIpackager::document_NVIpkg(style = FALSE,
                              contributing = FALSE,
-                             readme = FALSE)
-# devtools::document()
-#
-# # For updating README.md when the Rmd-file has been updated.
-# NVIpackager::update_readme()
-#
-# NVIpackager::update_contributing()
+                             readme = FALSE,
+                             scope = c("spaces", "line_breaks"))
+
+
+spelling::spell_check_package(vignettes = TRUE, use_wordlist = TRUE)
+
 
 # Alternative for creating the PDF-manual. The manual is not put in the correct directory
 # system(paste(shQuote(file.path(R.home("bin"), "R")),
