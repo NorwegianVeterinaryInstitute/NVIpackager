@@ -4,7 +4,7 @@ library(NVIpackager)
 
 test_that("Setting default options for DESCRIPTION", {
 
-  set_description_default(pkg = "NVIpkg", license_keyword = "cc-by-4.0")
+  set_description_default(pkg = "NVIpkg", license_keyword = "CC BY 4.0")
 
   usethis.description <- getOption("usethis.description")
 
@@ -24,7 +24,7 @@ test_that("Setting default options for DESCRIPTION", {
                    expected = "https://github.com/NorwegianVeterinaryInstitute/NVIpkg/issues")
 
   expect_identical(object = usethis.description$License,
-                   expected = "cc-by-4.0 + file LICENSE")
+                   expected = "CC BY 4.0 + file LICENSE")
 
   expect_identical(object = usethis.description$Language,
                    expected = "en-GB")
