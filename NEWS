@@ -16,4 +16,4 @@ Tools to facilitate development of NVIverse packages.
 
   - 'install_NVIpkg' installs an NVIverse package during the development phase.
 
-  - Includes templates for "CONTRIBUTING.md" and "README.md".
+  - Includes templates for "CONTRIBUTING.md" and "README.Rmd".
