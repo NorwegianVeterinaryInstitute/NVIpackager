@@ -68,9 +68,10 @@ wrappers for devtools and usethis functions. In addition, the templates
 folder keeps templates for standard files like sections OF README and
 CONTRIBUTING.
 
-The list of available functions and datasets can be accessed by typing
+The full list of all available functions and datasets can be accessed by
+typing
 
-    help(package="NVIdb")
+    help(package="NVIpackager")
 
 Please check the NEWS for information on new features, bug fixes and
 other changes.
