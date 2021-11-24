@@ -154,7 +154,7 @@ adhere to some principles and style convention used for
     Please don’t restyle code that has nothing to do with your pull
     request.
 
--   You should add a bullet point to `NEWS.md` motivating the change.
+-   You should add a bullet point to `NEWS` motivating the change.
 
 -   You should add yourself as a contributor to the `DESCRIPTION`.
 
