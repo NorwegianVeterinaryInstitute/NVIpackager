@@ -1,5 +1,14 @@
 NVIpackager 0.1.0.9000 - (2021-11-##)
 
+Other changes:
+
+  - template "Contribute_to_NVIpkg.Rmd" was modified.
+
+  - template "README_usage_help.Rmd" was corrected.
+
+
+NVIpackager 0.1.0 - (2021-11-21)
+
 First release:
 
 Tools to facilitate development of NVIverse packages.
