@@ -49,8 +49,7 @@ description <- desc::desc_get_field(key = "Description")
 ```{r child=system.file('templates', "README_usage_attach.Rmd", package = "NVIpackager")}
 ```
 
-`r paste0(NVIpkg_inline, 
-   "", 
+`r paste(NVIpkg_inline, 
    sub(substr(description,1,1), tolower(substr(description,1,1)), description))`
 
 ```{r child=system.file('templates', "README_usage_help.Rmd", package = "NVIpackager")}
@@ -64,8 +63,8 @@ description <- desc::desc_get_field(key = "Description")
 ```{r child=system.file('templates', "README_contributing.Rmd", package = "NVIpackager")}
 ```
 
+-----------------
 <!-- Code of conduct -->
------
 ```{r child=system.file('templates', "README_code_of_conduct.Rmd", package = "NVIpackager")}
 ```
 
