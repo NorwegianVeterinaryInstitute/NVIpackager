@@ -57,7 +57,7 @@ Usage
 
 The `NVIpackager` package needs to be attached.
 
-    library(NVIdb)
+    library(NVIpackager)
 
 `NVIpackager`provides tools to facilitate development of NVIverse
 packages. You should use ‘create\_NVIpkg\_skeleton’ to make a package
@@ -71,7 +71,7 @@ CONTRIBUTING.
 The full list of all available functions and datasets can be accessed by
 typing
 
-    help(package="NVIpackager")
+    help(package = "NVIpackager")
 
 Please check the NEWS for information on new features, bug fixes and
 other changes.
