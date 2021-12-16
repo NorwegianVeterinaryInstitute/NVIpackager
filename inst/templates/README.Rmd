@@ -14,10 +14,6 @@ NVIpkg <- params$NVIpkg
 # NVIpkg <- stringi::stri_extract_last_words(usethis::proj_path())
 NVIpkg_inline <- paste0("`", NVIpkg, "`")
 
-first_copyright_year <- params$first_copyright_year
-copyright_year <- format(Sys.Date(), "%Y")
-if (first_copyright_year < copyright_year) {copyright_year <- paste(first_copyright_year, copyright_year, sep = "-")}
-
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"

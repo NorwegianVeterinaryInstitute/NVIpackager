@@ -1,3 +1,8 @@
+```{r, include = FALSE}
+first_copyright_year <- params$first_copyright_year
+copyright_year <- format(Sys.Date(), "%Y")
+if (first_copyright_year < copyright_year) {copyright_year <- paste(first_copyright_year, "-", copyright_year)}
+```
 Copyright (c) `r copyright_year` Norwegian Veterinary Institute.  
 Licensed under the `r stringr::word(desc::desc_get_field(key = "License"), 1)` License. See [License](`r  paste0("https://github.com/NorwegianVeterinaryInstitute/", NVIpkg, "/blob/main/LICENSE")` ) for details.
 
