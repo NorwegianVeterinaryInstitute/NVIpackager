@@ -114,7 +114,9 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   readme <- readLines(system.file('templates', "README.Rmd", package = "NVIpackager"))
   # give correct package name
   readme <- gsub("_package_name_", pkg, readme)
-  # save with name of package in filename
+  # give first license year
+  readme <- gsub("20##", format(Sys.Date(), "%Y"), readme)
+# save with name of package in filename
   writeLines(readme, paste0(pkg_path, "/README.Rmd"))
 
   usethis::use_build_ignore(files = "README.Rmd", escape = TRUE)
