@@ -6,7 +6,7 @@ output:
   
 params:
   NVIpkg: "_package_name_"
-  first_copyright_year: "2020"
+  first_copyright_year: "20##"
 ---
 
 ```{r, include = FALSE}
