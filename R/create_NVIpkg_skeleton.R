@@ -72,6 +72,8 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   # Modify the description ----
   # usethis::use_package(package = "devtools", type = "Suggests")
   usethis::use_package(package = "checkmate", type = "Imports", min_version = "2.0.0")
+  usethis::use_package(package = "knitr", type = "Imports")
+  usethis::use_package(package = "rmarkdown", type = "Imports")
   usethis::use_dev_package(package = "NVIcheckmate",
                            type = "Imports",
                            remote = "github::NorwegianVeterinaryInstitute/NVIcheckmate")
