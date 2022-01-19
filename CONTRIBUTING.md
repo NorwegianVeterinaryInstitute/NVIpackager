@@ -70,8 +70,7 @@ management and data reporting at the Norwegian Veterinary Institute
 </tbody>
 </table>
 
-How you can contribute
-----------------------
+## How you can contribute
 
 There are several ways you can contribute to this project: ask a
 question, propose an idea, report a bug, improve the documentation, or
@@ -137,8 +136,7 @@ list](https://github.com/NorwegianVeterinaryInstitute/NVIpackager/issues)
 and leave a comment on the things you want to work on. See also the
 development guidelines below.
 
-Development guidelines
-----------------------
+## Development guidelines
 
 If you want to contribute code, you are welcome to do so. Please try to
 adhere to some principles and style convention used for
@@ -200,15 +198,13 @@ The start of commit messages should be one of the following:
 
 Do not capitalize the first letter.
 
-Code of conduct
----------------
+## Code of conduct
 
 Please note that this project is released with a [Contributor Code of
 Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
 By participating to this project, you agree to abide by its terms.
 
-References
-----------
+## References
 
 This document is adapted from a
 [template](https://gist.github.com/peterdesmet/e90a1b0dc17af6c12daf6e8b2f044e7c)
