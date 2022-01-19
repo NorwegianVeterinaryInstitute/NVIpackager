@@ -67,6 +67,11 @@ management and data reporting at the Norwegian Veterinary Institute
 <td style="text-align: left;">Public</td>
 <td style="text-align: left;">Tools to facilitate the development of NVIverse packages</td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">NVIrpackages</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Keeps a table of the R-Packages in NVIverse</td>
+</tr>
 </tbody>
 </table>
 
