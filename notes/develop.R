@@ -11,7 +11,7 @@ library(NVIpackager)
 
 # Global variables
 
-pkg_path = here::here()
+pkg_path = usethis::proj_path()
 pkg <- stringi::stri_extract_last_words(pkg_path)
 # Rlibrary <- R.home()
 
