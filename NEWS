@@ -1,6 +1,11 @@
-NVIpackager 0.1.0.9000 - (2021-11-##)
+NVIpackager 0.2.0 - (2022-01-20)
 
-Other changes:
+New features:
+
+  - parameterized copyright year and set first_copyright_year to sysdata when creating package skeleton.
+
+
+Bug fixes:
 
   - template "Contribute_to_NVIpkg.Rmd" was modified.
 
@@ -8,7 +13,12 @@ Other changes:
 
   - template "README_usage_attach.Rmd" was corrected.
 
-  - parameterized copyright year.
+  - template "README_installation.Rmd" was corrected.
+
+
+BREAKING CHANGES
+
+  - NVIpackages was moved to the separate package NVIrpackages
 
 
 NVIpackager 0.1.0 - (2021-11-21)
