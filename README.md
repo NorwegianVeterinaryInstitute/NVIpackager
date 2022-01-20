@@ -44,7 +44,7 @@ First install and attach the `remotes` package.
 To install (or update) the `NVIpackager` package, run the following
 code:
 
-    remotes::install_github("NorwegianVeterinaryInstitute/NVIpackager")
+    remotes::install_github("NorwegianVeterinaryInstitute/NVIpackager",
         upgrade = FALSE,
         build = TRUE,
         build_manual = TRUE)
