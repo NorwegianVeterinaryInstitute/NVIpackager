@@ -1,5 +1,6 @@
 The `r NVIpkg_inline` package needs to be attached.
 
-``` r
-library(NVIdb)
+``` {r attachtext, message=FALSE, warnings=FALSE, echo=FALSE, prompt = FALSE, comment = ""} 
+attachtext <- paste0('library(', NVIpkg, ')')
+cat(attachtext, sep="", fill = TRUE)
 ```

@@ -46,13 +46,12 @@ set_description_default <- function(pkg = stringi::stri_extract_last_words(useth
   # pkg
   checkmate::assert_character(x = pkg, min.chars = 2, len = 1, add = checks)
   # license_keyword
-  NVIcheckmate::assert_choice_character(x = license_keyword,
-                                        choices = c("BSD_2_clause", "BSD_3_clause",
-                                                    "CC BY 4.0", "CC BY-SA 4.0",
-                                                    "GPL-2", "GPL-3", "LGPL-2.1", "LGPL-3",
-                                                    "MIT"),
-                                        ignore.case = TRUE,
-                                        add = checks)
+  checkmate::assert_choice(x = license_keyword,
+                           choices = c("BSD_2_clause", "BSD_3_clause",
+                                       "CC BY 4.0", "CC BY-SA 4.0",
+                                       "GPL-2", "GPL-3", "LGPL-2.1", "LGPL-3",
+                                       "MIT"),
+                           add = checks)
 
   # Report check-results
   checkmate::reportAssertions(checks)

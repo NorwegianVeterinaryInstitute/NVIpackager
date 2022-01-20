@@ -1,6 +1,7 @@
-The list of available functions and datasets can be accessed by typing
-
-``` r
-help(package="NVIdb")
+The full list of all available functions and datasets can be accessed by typing
+``` {r helptext, message=FALSE, warnings=FALSE, echo=FALSE, prompt = FALSE, comment = ""} 
+helptext <- paste0('help(package = "', NVIpkg, '")')
+cat(helptext, sep="", fill = TRUE)
 ```
 Please check the NEWS for information on new features, bug fixes and other changes.
+

@@ -21,8 +21,6 @@ vignette: >
 NVIpkg <- params$NVIpkg
 NVIpkg_inline <- paste0("`", NVIpkg, "`")
 NVIpkg_code <- "/tree/main/R"
-# pkg_name <- NVIpkg_inline
-# pkg_name <- "`NVIcheckmate`"
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -40,8 +38,8 @@ Thank you for considering contributing to `r NVIpkg_inline`.
 
 ###  NVIverse packages
 ```{r echo = FALSE, results = 'asis'}
-library(NVIpackager)
-knitr::kable(x = NVIpackages)
+# library(NVIrpackages)
+knitr::kable(x = NVIrpackages::NVIpackages)
 ```
   
 ## How you can contribute
@@ -95,7 +93,7 @@ I recommend to use the [`styler`](https://CRAN.R-project.org/package=styler)
 package to apply spaces: `styler::style_file(filename, scope = "spaces")`. 
 Please don't restyle code that has nothing to do with your pull request.
 
-*   You should add a bullet point to `NEWS.md` motivating the change.
+*   You should add a bullet point to `NEWS` motivating the change.
 
 *   You should add yourself as a contributor to the `DESCRIPTION`.
 

@@ -48,7 +48,7 @@ assert_pkg_path <- function(pkg,
   checkmate::assert_directory_exists(x = pkg_path,
                                      add = checks)
   # pkg
-  NVIcheckmate::assert_choice_character(x = pkg,
-                                        choices = stringi::stri_extract_last_words(pkg_path),
-                                        add = checks)
+  checkmate::assert_choice(x = pkg,
+                           choices = stringi::stri_extract_last_words(pkg_path),
+                           add = checks)
 }

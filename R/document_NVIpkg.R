@@ -63,17 +63,17 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
   checkmate::assert_logical(x = contributing, add = checks)
   checkmate::assert_logical(x = readme, add = checks)
   if (exists("scope")) {
-    NVIcheckmate::assert_subset_character(x = scope,
-                                          choices = c("spaces", "indention", "line_breaks", "tokens"),
-                                          add = checks)
-}
-# Report assertions
+    checkmate::assert_subset(x = scope,
+                             choices = c("spaces", "indention", "line_breaks", "tokens"),
+                             add = checks)
+  }
+  # Report assertions
   checkmate::reportAssertions(checks)
 
   if (isTRUE(style)) {
     if (!exists("scope")) {
       scope <- "spaces"
-}
+    }
     styler::style_pkg(pkg = pkg_path,
                       transformers = styler::tidyverse_style(scope = I(c(scope))),
                       ...)

@@ -54,13 +54,12 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   # assertions
   assert_pkg_path(pkg = pkg, pkg_path = pkg_path)
   # license_keyword
-  NVIcheckmate::assert_choice_character(x = license_keyword,
-                                        choices = c("BSD_2_clause", "BSD_3_clause",
-                                                    "CC BY 4.0", "CC BY-SA 4.0",
-                                                    "GPL-2", "GPL-3", "LGPL-2.1", "LGPL-3",
-                                                    "MIT"),
-                                        ignore.case = TRUE,
-                                        add = checks)
+  checkmate::assert_choice(x = license_keyword,
+                           choices = c("BSD_2_clause", "BSD_3_clause",
+                                       "CC BY 4.0", "CC BY-SA 4.0",
+                                       "GPL-2", "GPL-3", "LGPL-2.1", "LGPL-3",
+                                       "MIT"),
+                           add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
 
@@ -72,6 +71,8 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   # Modify the description ----
   # usethis::use_package(package = "devtools", type = "Suggests")
   usethis::use_package(package = "checkmate", type = "Imports", min_version = "2.0.0")
+  usethis::use_package(package = "knitr", type = "Imports")
+  usethis::use_package(package = "rmarkdown", type = "Imports")
   usethis::use_dev_package(package = "NVIcheckmate",
                            type = "Imports",
                            remote = "github::NorwegianVeterinaryInstitute/NVIcheckmate")
@@ -114,6 +115,8 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   readme <- readLines(system.file('templates', "README.Rmd", package = "NVIpackager"))
   # give correct package name
   readme <- gsub("_package_name_", pkg, readme)
+  # give first license year
+  readme <- gsub("20##", format(Sys.Date(), "%Y"), readme)
   # save with name of package in filename
   writeLines(readme, paste0(pkg_path, "/README.Rmd"))
 

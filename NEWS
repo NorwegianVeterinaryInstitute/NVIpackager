@@ -1,3 +1,26 @@
+NVIpackager 0.2.0 - (2022-01-20)
+
+New features:
+
+  - parameterized copyright year and set first_copyright_year to sysdata when creating package skeleton.
+
+
+Bug fixes:
+
+  - template "Contribute_to_NVIpkg.Rmd" was modified.
+
+  - template "README_usage_help.Rmd" was corrected.
+
+  - template "README_usage_attach.Rmd" was corrected.
+
+  - template "README_installation.Rmd" was corrected.
+
+
+BREAKING CHANGES
+
+  - NVIpackages was moved to the separate package NVIrpackages
+
+
 NVIpackager 0.1.0 - (2021-11-21)
 
 First release:
@@ -16,4 +39,4 @@ Tools to facilitate development of NVIverse packages.
 
   - 'install_NVIpkg' installs an NVIverse package during the development phase.
 
-  - Includes templates for "CONTRIBUTING.md" and "README.md".
+  - Includes templates for "CONTRIBUTING.md" and "README.Rmd".

@@ -1,4 +1,4 @@
 `r NVIpkg_inline` is part of `NVIverse`, a collection of R-packages with tools to facilitate data management
 and data reporting at the Norwegian Veterinary Institute (NVI). The NVIverse consists of the following packages:
-`r paste(NVIpackager::NVIpackages$Package, collapse = ", ")`. See the vignette "Contribute to `r NVIpkg`" for
+`r paste(NVIrpackages::NVIpackages$Package, collapse = ", ")`. See the vignette "Contribute to `r NVIpkg`" for
 more information.
