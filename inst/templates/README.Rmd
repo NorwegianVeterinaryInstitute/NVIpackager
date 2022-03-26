@@ -13,6 +13,10 @@ params:
 NVIpkg <- params$NVIpkg
 # NVIpkg <- stringi::stri_extract_last_words(usethis::proj_path())
 NVIpkg_inline <- paste0("`", NVIpkg, "`")
+logo_path <- ""
+if (file.exists(paste0("./man/figures/", NVIpkg, "_logo.png"))) {
+  logo_path <- paste0(' <img src="man/figures/', NVIpkg, '_logo.png" align="right" height="138" />')
+}
 
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -20,7 +24,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-`r paste0(NVIpkg, ": ", desc::desc_get_field(key = "Title"))`
+`r paste0(NVIpkg, ": ", desc::desc_get_field(key = "Title"), logo_path)`  
 ================
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
