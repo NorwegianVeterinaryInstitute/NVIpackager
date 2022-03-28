@@ -1,4 +1,10 @@
 NVIpackager 0.2.0.9000 - (2022-##-##)
+-------------------------------------
+
+New features:
+
+- update_logo created for updating a package logo from 'NVIrpackages'.
+
 
 Other changes:
 
@@ -8,6 +14,7 @@ Other changes:
 
 
 NVIpackager 0.2.0 - (2022-01-20)
+-------------------------------------
 
 New features:
 
@@ -31,6 +38,7 @@ BREAKING CHANGES
 
 
 NVIpackager 0.1.0 - (2021-11-21)
+-------------------------------------
 
 First release:
 
