@@ -35,6 +35,11 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
   writeLines(asis, con = file.path(pkg_path, "vignettes", paste0(pkg, ".pdf.asis")))
 
   usethis::use_package(package = "R.rsp", type = "Imports")
+
+
+  # must update description vignettebuilder.
+  # MUST UPDATE GITIGNORE TO KEEP VIGNETTES/*.PDF
+
   # library(desc)
   # x <- desc::description$new(pkg_path)
   # x$get("VignetteBuilder")
