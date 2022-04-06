@@ -25,15 +25,21 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
 
 
   devtools::build_manual(path = file.path(pkg_path, "vignettes"))
- filelist <- list.files(path = file.path(pkg_path, "vignettes"), pattern = "pdf")
-filelist <- grepl(paste0("$", pkg, "[digit]", "pdf"), filelist)
-  file.rename(from = file.path(pkg_path, "vignettes", filelist[1]), to = file.path(pkg_path, "vignettes", paste0(pkg, ".pdf")))
+
+  file.rename(from = file.path(pkg_path, "vignettes", paste0(pkg, "_", desc::desc_get_field(key = "Version"), ".pdf")),
+                              to = file.path(pkg_path, "vignettes", paste0(pkg, ".pdf")))
 
   asis <- rbind(paste0("%\\VignetteIndexEntry{", pkg, " reference manual}"),
                 "%\\VignetteEngine{R.rsp::asis}",
                 "%\\VignetteKeyword{PDF}")
   writeLines(asis, con = file.path(pkg_path, "vignettes", paste0(pkg, ".pdf.asis")))
 
+  usethis::use_package(package = "R.rsp", type = "Imports")
+  # library(desc)
+  # x <- desc::description$new(pkg_path)
+  # x$get("VignetteBuilder")
+  # x$set("VignetteBuilder" = c("knitr", "R.rsp"))
+  # x$fields()
   # Rd2md::ReferenceManual(outdir = "./vignettes")
   # NVIpkg <- "NVIdb"
 
