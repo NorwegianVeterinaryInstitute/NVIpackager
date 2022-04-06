@@ -30,7 +30,7 @@ update_logo <- function(pkg = stringi::stri_extract_last_words(usethis::proj_pat
   checkmate::reportAssertions(checks)
 
   # RUN SCRIPT ----
-  # Set up vignettes
+  # Copy logo to package if exists in NVIrpackages
   if (file.exists(system.file(paste0('logos/', pkg, "_logo.png"), package = "NVIrpackages"))) {
     if (!dir.exists(paths = file.path(pkg_path, "man"))) {
       dir.create(file.path(pkg_path, "man"))
