@@ -41,11 +41,10 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
   # MUST UPDATE GITIGNORE TO KEEP VIGNETTES/*.PDF
 
   # library(desc)
-  # x <- desc::description$new(pkg_path)
-  # x$get("VignetteBuilder")
-  # x$set("VignetteBuilder" = c("knitr", "R.rsp"))
-  # x$fields()
-  # Rd2md::ReferenceManual(outdir = "./vignettes")
+  desc::desc_set_list(key = "VignetteBuilder", list_value = c("knitr", "R.rsp"))
+  
+  # Rd2md::ReferenceManual(outdir = "./vignettes") # Makes a md-file. Don't manage to transform easily to PDF and have in vignette.
   # NVIpkg <- "NVIdb"
 
 }
+usethis:::use_description_field()
