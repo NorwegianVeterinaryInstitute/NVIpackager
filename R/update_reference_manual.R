@@ -37,14 +37,10 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
   usethis::use_package(package = "R.rsp", type = "Imports")
 
 
-  # must update description vignettebuilder.
-  # MUST UPDATE GITIGNORE TO KEEP VIGNETTES/*.PDF
-
   # library(desc)
   desc::desc_set_list(key = "VignetteBuilder", list_value = c("knitr", "R.rsp"))
   
-  # Rd2md::ReferenceManual(outdir = "./vignettes") # Makes a md-file. Don't manage to transform easily to PDF and have in vignette.
-  # NVIpkg <- "NVIdb"
+  # MUST UPDATE GITIGNORE TO KEEP VIGNETTES/*.PDF
+
 
 }
-usethis:::use_description_field()
