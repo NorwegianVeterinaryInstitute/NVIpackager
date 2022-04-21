@@ -39,7 +39,7 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
 
   # library(desc)
   desc::desc_set_list(key = "VignetteBuilder", list_value = c("knitr", "R.rsp"))
-  
+
   # MUST UPDATE GITIGNORE TO KEEP VIGNETTES/*.PDF
 
 
