@@ -1,3 +1,25 @@
+#' @title Update reference manual
+#' @description Update the PDF reference manual.
+#'
+#' @details If the package logo has been created, the logo is copied from
+#'     \code{NVIrpackages} to the package directory "./man/figures/. If the logo
+#'     already exists, the logo is overwritten.
+#'
+#' @template pkg
+#' @template pkg_path
+#' @param manual Can be c("include", "update", "remove")
+#'
+#' @return None. Creates or updates the PDF reference manual in directory "./vignettes/.
+#'     The reference manual is given the name pkgname.pdf.
+#'
+#' @author Petter Hopp Petter.Hopp@@vetinst.no
+#' @export
+#' @examples
+#' \dontrun{
+#' # Update the reference manual if it already exists
+#' library(NVIpackager)
+#' update_reference_manual(manual = "update")
+#' }
 update_reference_manual <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
                                     pkg_path = usethis::proj_path(),
                                     manual) {
@@ -8,7 +30,7 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
   # assertions
   assert_pkg_path(pkg = pkg, pkg_path = pkg_path)
 
-  NVIcheckmate::assert_choice_character(manual, choices = c("include", "update", "remove"), add = checks)
+  checkmate::assert_choice(manual, choices = c("include", "update", "remove"), add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
 
