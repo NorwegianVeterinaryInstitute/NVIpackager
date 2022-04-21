@@ -5,6 +5,8 @@ New features:
 
 - update_logo created for updating a package logo from 'NVIrpackages'.
 
+- update_reference_manual for creating or updating the PDF-reference manual and save it as a vignette.
+
 
 Other changes:
 
