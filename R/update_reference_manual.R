@@ -1,4 +1,5 @@
 #' @title Update reference manual
+<<<<<<< HEAD
 #' @description Update the PDF reference manual and save it together with vignettes.
 #'
 #' @details Standard is \code{manual = "update"} that will update the  reference
@@ -79,10 +80,10 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
       VignetteBuilder <- c(VignetteBuilder, "R.rsp")
       desc::desc_set_list(key = "VignetteBuilder", list_value = VignetteBuilder)
     }
-    # library(desc)
-
-    # MUST UPDATE GITIGNORE TO KEEP VIGNETTES/*.PDF
   }
+  # library(desc)
+
+  # MUST UPDATE GITIGNORE TO KEEP VIGNETTES/*.PDF
 
   if (manual = "remove") {
     if (file.exists(file.path(pkg_path, "vignettes", paste0(pkg, ".pdf.asis")))) {
