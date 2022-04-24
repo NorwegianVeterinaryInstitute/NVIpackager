@@ -1,5 +1,4 @@
 #' @title Update reference manual
-<<<<<<< HEAD
 #' @description Update the PDF reference manual and save it together with vignettes.
 #'
 #' @details Standard is \code{manual = "update"} that will update the  reference
@@ -35,45 +34,45 @@
 update_reference_manual <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
                                     pkg_path = usethis::proj_path(),
                                     manual = "update") {
-
+  
   # ARGUMENT CHECKING ----
   # Object to store check-results
   checks <- checkmate::makeAssertCollection()
   # assertions
   assert_pkg_path(pkg = pkg, pkg_path = pkg_path, checks = checks)
-
+  
   checkmate::assert_choice(manual, choices = c("include", "update", "remove"), add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
-
+  
   # RUN SCRIPT ----
-
+  
   # If manual = "update" and the manual exists, then do exactly the same as for manual = "install"
   if (manual = "update") {
     if (file.exists(file.path(pkg_path, "vignettes", paste0(pkg, ".pdf")))) {
       manual <- "install"
     }
   }
-
+  
   # If manual = "install" update manual and ensure that all settings are as they should be
   if (manual = "install") {
     # Create manual. The file name includes version number.
     devtools::build_manual(path = file.path(pkg_path, "vignettes"))
-
+    
     # Rename to file name without version number. If the file already exists, it is replaced.
     file.rename(from = file.path(pkg_path, "vignettes", paste0(pkg, "_", desc::desc_get_field(key = "Version"), ".pdf")),
                 to = file.path(pkg_path, "vignettes", paste0(pkg, ".pdf")))
-
+    
     # Create and replace file with instructions for R.rsp to include pdf-file among vignettes.
     asis <- rbind(paste0("%\\VignetteIndexEntry{", pkg, " reference manual}"),
                   "%\\VignetteEngine{R.rsp::asis}",
                   "%\\VignetteKeyword{PDF}")
     writeLines(asis, con = file.path(pkg_path, "vignettes", paste0(pkg, ".pdf.asis")))
-
+    
     # Update DESCRIPTION
     # Include R.rsp in import
     usethis::use_package(package = "R.rsp", type = "Imports")
-
+    
     # Include R.rsp in vignettebuilder if not already included
     VignetteBuilder <- desc::desc_get_field(key = "VignetteBuilder", default = NULL)
     if (length(grep("R.rsp", VignetteBuilder)) == 0) {
@@ -82,21 +81,28 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
     }
   }
   # library(desc)
-
+  
   # MUST UPDATE GITIGNORE TO KEEP VIGNETTES/*.PDF
-
+  
   if (manual = "remove") {
     if (file.exists(file.path(pkg_path, "vignettes", paste0(pkg, ".pdf.asis")))) {
       file.remove(file.path(pkg_path, "vignettes", paste0(pkg, ".pdf.asis")))
     }
-    if (file.exists(file.path(pkg_path, "vignettes", paste0(pkg, ".pdf")))) {
-      file.remove(file.path(pkg_path, "vignettes", paste0(pkg, ".pdf")))
+    # if (file.exists(file.path(pkg_path, "vignettes", paste0(pkg, ".pdf")))) {
+    #   file.remove(file.path(pkg_path, "vignettes", paste0(pkg, ".pdf")))
+    # }
+    # Consider to remove all files that consists of pkgname, version numbers and pdf
+    filename <- list.files(path = path, pattern = pkg , ignore.case = TRUE, include.dirs = FALSE)
+    ## In accord with pattern
+    filename <- filename[grepl("\.pdf$", tolower(filename))]
+    if (length(filename) > 0) {
+      filelist <- as.data.frame(filename)
+      fillelist$manual <- grepl(paste0("^", pkg, "[123456789\\.]", "pdf$"), filelist$filename)
+      for (i in c(1:dim(filelist)[1])) {
+        if (fillelist[i, "manual"]) {
+          file.remove(file.path(pkg_path, "vignettes", fillelist[i, "filename"]))
+        }
+      }
     }
-    # # Consider to remove all files that consists of pkgname, version numbers and pdf
-    # filename <- list.files(path = path, pattern = pkg , ignore.case = TRUE, include.dirs = FALSE)
-    # ## In accord with pattern
-    # filename <- filename[grepl(paste0(".", "pdf", "$"), tolower(filename))]
-    # filelist <- as.data.frame(filename)
-    # paste0(^,pkg, [123456789\\.], pdf$)
   }
 }
