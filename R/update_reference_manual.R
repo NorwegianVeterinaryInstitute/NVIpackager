@@ -97,7 +97,7 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
     filename <- filename[grepl("\.pdf$", tolower(filename))]
     if (length(filename) > 0) {
       filelist <- as.data.frame(filename)
-      fillelist$manual <- grepl(paste0("^", pkg, "[123456789\\.]", "pdf$"), filelist$filename)
+      fillelist$manual <- grepl(paste0("^", pkg, "[123456789\\.]{1,17}", "pdf$"), filelist$filename)
       for (i in c(1:dim(filelist)[1])) {
         if (fillelist[i, "manual"]) {
           file.remove(file.path(pkg_path, "vignettes", fillelist[i, "filename"]))
