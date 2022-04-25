@@ -79,6 +79,16 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
       VignetteBuilder <- c(VignetteBuilder, "R.rsp")
       desc::desc_set_list(key = "VignetteBuilder", list_value = VignetteBuilder)
     }
+    
+    # read .gitignore 
+    gitignore <- readLines(file.path(pkg_path, ".gitignore")) 
+    # save with name of package in filename
+    if (identical(grep(paste0("!vignettes/", pkg, ".pdf"), gitignore, fixed = TRUE), integer(0))) {
+    gitignore <- c(gitignore, paste0("!vignettes/", pkg, ".pdf"), "") 
+    writeLines(gitignore, file.path(pkg_path, ".gitignore"))
+    }
+    
+    
   }
   # library(desc)
   
