@@ -92,8 +92,6 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
   }
   # library(desc)
   
-  # MUST UPDATE GITIGNORE TO KEEP VIGNETTES/*.PDF
-  
   if (manual = "remove") {
     if (file.exists(file.path(pkg_path, "vignettes", paste0(pkg, ".pdf.asis")))) {
       file.remove(file.path(pkg_path, "vignettes", paste0(pkg, ".pdf.asis")))
