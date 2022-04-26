@@ -15,6 +15,10 @@
 #' @template pkg_path
 #' @param style \[\code{logical}\]\cr
 #'     Should the package be styled, defaults to \code{FALSE}.
+#' @param manual \[\code{character}\]\cr
+#'     Should a reference manual be included, updated or removed. Defaults to
+#'     \code{manual = "update"} that will update the manual if exists and do
+#'     nothing if it doesn't exist.
 #' @param contributing \[\code{logical}\]\cr
 #'     Should \code{CONTRIBUTING.md} and the vignette "Contribute to NVIpkg" be
 #'     updated, defaults to \code{FALSE}.
@@ -51,6 +55,7 @@
 document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
                             pkg_path = usethis::proj_path(),
                             style = FALSE,
+                            manual = "update",
                             contributing = FALSE,
                             readme = FALSE,
                             ...) {
@@ -60,6 +65,7 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
   # Perform checks
   assert_pkg_path(pkg = pkg, pkg_path = pkg_path)
   checkmate::assert_logical(x = style, add = checks)
+  checkmate::assert_choice(x = manual, choices = c("include", "update", "remove"))
   checkmate::assert_logical(x = contributing, add = checks)
   checkmate::assert_logical(x = readme, add = checks)
   if (exists("scope")) {
@@ -80,6 +86,8 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
   }
 
   devtools::document(pkg = pkg_path)
+
+  update_reference_manual(pkg = pkg, pkg_path = pkg_path, manual = manual)
 
   if (isTRUE(contributing)) {
     update_contributing(pkg = pkg, pkg_path = pkg_path)
