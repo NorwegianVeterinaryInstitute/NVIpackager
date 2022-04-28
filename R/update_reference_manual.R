@@ -51,12 +51,12 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
   # If manual = "update" and the manual exists, then do exactly the same as for manual = "install"
   if (manual == "update") {
     if (file.exists(file.path(pkg_path, "vignettes", paste0(pkg, ".pdf")))) {
-      manual <- "install"
+      manual <- "include"
     }
   }
 
-  # If manual = "install" update manual and ensure that all settings are as they should be
-  if (manual == "install") {
+  # If manual = "include" update manual and ensure that all settings are as they should be
+  if (manual == "include") {
     # Create manual. The file name includes version number.
     devtools::build_manual(path = file.path(pkg_path, "vignettes"))
 
