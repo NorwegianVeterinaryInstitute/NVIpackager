@@ -8,6 +8,7 @@ document_NVIpkg(
   pkg = stringi::stri_extract_last_words(usethis::proj_path()),
   pkg_path = usethis::proj_path(),
   style = FALSE,
+  manual = "update",
   contributing = FALSE,
   readme = FALSE,
   ...
@@ -22,6 +23,11 @@ The path to the package directory, defaults to \code{usethis::proj_path()}.}
 
 \item{style}{[\code{logical}]\cr
 Should the package be styled, defaults to \code{FALSE}.}
+
+\item{manual}{[\code{character}]\cr
+Should a reference manual be included, updated or removed. Defaults to
+\code{manual = "update"} that will update the manual if exists and do
+nothing if it doesn't exist.}
 
 \item{contributing}{[\code{logical}]\cr
 Should \code{CONTRIBUTING.md} and the vignette "Contribute to NVIpkg" be

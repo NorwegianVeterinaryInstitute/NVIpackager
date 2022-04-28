@@ -5,6 +5,10 @@ New features:
 
 - update_logo created for updating a package logo from 'NVIrpackages'.
 
+- update_reference_manual created for including, updating or removing the PDF reference maual from the vignettes.
+
+- document_NVIpkg updated so it includes a call to update_reference_manual.
+
 
 Other changes:
 
