@@ -23,6 +23,7 @@ pkg <- stringi::stri_extract_last_words(pkg_path)
 NVIpackager::document_NVIpkg(pkg = pkg,
                              pkg_path = pkg_path,
                              style = TRUE,
+                             manual = "update",
                              contributing = FALSE,
                              readme = FALSE,
                              scope = c("spaces", "line_breaks"))
@@ -30,16 +31,6 @@ NVIpackager::document_NVIpkg(pkg = pkg,
 
 # spelling::spell_check_package(vignettes = TRUE, use_wordlist = TRUE)
 
-
-# Alternative for creating the PDF-manual. The manual is not put in the correct directory
-# system(paste(shQuote(file.path(R.home("bin"), "R")),
-#              "CMD",
-#              "Rd2pdf",
-#              paste0("../", pkg)))
-# file.copy(from = paste0(pkg, ".pdf"), to = "./vignettes", overwrite = TRUE)
-# file.remove(".Rd2pdf16372")
-# file.remove("NVIdb.pdf")
-# check .install_extras
 
 # TEST PACKAGE ----
 # Run tests included in ./tests.
