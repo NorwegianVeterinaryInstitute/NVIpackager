@@ -1,7 +1,7 @@
 Package: NVIpackager
 Title: Tools to facilitate Development of NVIverse Packages
-Version: 0.2.0.9000
-Date: 2022-##-##
+Version: 0.3.0
+Date: 2022-06-08
 Authors@R: 
     c(person(given = "Petter",
              family = "Hopp",

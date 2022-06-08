@@ -1,4 +1,4 @@
-NVIpackager 0.2.0.9000 - (2022-##-##)
+NVIpackager 0.3.0 - (2022-06-08)
 -------------------------------------
 
 New features:
@@ -9,12 +9,18 @@ New features:
 
 - document_NVIpkg updated so it includes a call to update_reference_manual.
 
+- created update_develop that copies a template for develop.R to notes.
+
+_ included a call to update_develop in create_NVIpkg_skeleton.
+
 
 Other changes:
 
   - template "Contribute_to_NVIpkg.Rmd" was modified with more precise guidelines for styling code.
 
   - template README.Rmd was prepared for hexagon sticker logo.
+
+  - README and CONTRIBUTING were updated.
 
 
 NVIpackager 0.2.0 - (2022-01-20)
