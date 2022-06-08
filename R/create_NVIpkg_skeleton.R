@@ -15,7 +15,7 @@
 #'
 #'     In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDUCT},
 #'     and the vignette \code{Contribute_to_NVIpkg} are copied to the package
-#'     directory.
+#'     directory and +code{develop.R} is copied to "./notes/".
 #'
 #'     The function accepts a short list of the listed license keywords accepted
 #'     at Cran in "./share/license/license.db" in R home. If you need any  other
@@ -135,6 +135,8 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   usethis::use_code_of_conduct(contact = email)
 
   update_contributing()
+
+  update_develop(pkg = pkg, pkg_path = pkg_path)
 
   # NEWS.md
   # usethis::use_template("NEWS.md",

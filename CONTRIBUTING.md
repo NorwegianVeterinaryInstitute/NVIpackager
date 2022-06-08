@@ -151,11 +151,20 @@ adhere to some principles and style convention used for
     The use of base functions is much appreciated.
 
 -   New code should generally follow the tidyverse [style
-    guide](http://style.tidyverse.org). I recommend to use the
-    [`styler`](https://CRAN.R-project.org/package=styler) package to
-    apply spaces: `styler::style_file(filename, scope = "spaces")`.
-    Please don’t restyle code that has nothing to do with your pull
-    request.
+    guide](http://style.tidyverse.org) with some modifications.
+
+    -   use snake\_case for variable names, column names, function names
+        etc.
+    -   function names should start with a verb and should be
+        descriptive and can be long. Avoid strange abbreviations.
+    -   to indent the code you may use the short cut keys Ctrl+a (select
+        all) and Ctrl+i (indent) when you are in R-studio.
+    -   I recommend to use the
+        [`styler`](https://CRAN.R-project.org/package=styler) package to
+        apply spaces:
+        `styler::style_file(filename, scope = c("spaces", "line_breaks"))`.
+        Please don’t restyle code that has nothing to do with your pull
+        request.
 
 -   You should add a bullet point to `NEWS` motivating the change.
 

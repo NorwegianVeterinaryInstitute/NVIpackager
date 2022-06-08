@@ -41,7 +41,7 @@ you need to modify \code{set_description_default}.
 
 In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDUCT},
 and the vignette \code{Contribute_to_NVIpkg} are copied to the package
-directory.
+directory and +code\{develop.R\} is copied to "./notes/".
 
 The function accepts a short list of the listed license keywords accepted
 at Cran in "./share/license/license.db" in R home. If you need any  other

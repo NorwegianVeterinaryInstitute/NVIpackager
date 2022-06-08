@@ -1,7 +1,7 @@
 # CREATE, DOCUMENT, TEST AND INSTALL THE PACKAGE
 
 # Update this file with the template in NVIpackager
-NVIpackager::update_develop()
+# NVIpackager::update_develop()
 
 # SET UP ENVIRONMENT ----
 # rm(list = ls())    # Use this to empty the environment
@@ -28,9 +28,9 @@ pkg <- stringi::stri_extract_last_words(pkg_path)
 NVIpackager::document_NVIpkg(pkg = pkg,
                              pkg_path = pkg_path,
                              style = TRUE,
-                             manual = "update",
                              contributing = FALSE,
                              readme = FALSE,
+                             manual = "update",
                              scope = c("spaces", "line_breaks"))
 
 # spelling::spell_check_package(vignettes = TRUE, use_wordlist = TRUE)
