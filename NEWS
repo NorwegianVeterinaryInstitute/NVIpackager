@@ -8,7 +8,7 @@ New features:
 
 Other changes:
 
-  -
+- Removed build_manual = TRUE from installation guide in README as caused problems for those without mixtex.
 
 
 NVIpackager 0.3.0 - (2022-06-08)
