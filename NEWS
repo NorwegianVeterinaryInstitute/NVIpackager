@@ -10,10 +10,12 @@ Bug fixes:
 
 - Removed build_manual = TRUE from install_NVIpkg as could cause problems for those without MiKTeX for generating PDF-files.
 
+- Included build_vignettes = TRUE in README installation guide as vignettes will not be installed without.
+
 
 Other changes:
 
-- Removed build_manual = TRUE from installation guide in README as caused problems for those without MiKTeX for generating PDF-files.
+- Removed build_manual = TRUE from README installation guide as caused problems for those without MiKTeX for generating PDF-files.
 
 
 NVIpackager 0.3.0 - (2022-06-08)
