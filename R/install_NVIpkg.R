@@ -63,7 +63,7 @@ install_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj_
   # Perform checks
   assert_pkg_path(pkg = pkg, pkg_path = pkg_path)
   checkmate::assert_directory_exists(x = lib, add = checks)
-  checkmate::assert_character(x = rsource, add = checks)
+  checkmate::assert_choice(x = rsource, choices = c("github", "local"), add = checks)
   checkmate::assert_character(x = username, add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
@@ -93,7 +93,6 @@ install_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj_
     remotes::install_github(paste0(username, "/", pkg),
                             upgrade = FALSE,
                             build = TRUE,
-                            build_manual = TRUE,
                             build_vignettes = TRUE,
                             ...)
   }
