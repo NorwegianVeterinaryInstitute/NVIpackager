@@ -22,9 +22,9 @@ CONTRIBUTING.
 `NVIpackager` is part of `NVIverse`, a collection of R-packages with
 tools to facilitate data management and data reporting at the Norwegian
 Veterinary Institute (NVI). The NVIverse consists of the following
-packages: NVIconfig, NVIdb, NVIpretty, NVIbatch, OKplan, OKcheck,
-NVIcheckmate, NVIpackager, NVIrpackages. See the vignette “Contribute to
-NVIpackager” for more information.
+packages: NVIconfig, NVIdb, NVIspatial, NVIpretty, NVIbatch, OKplan,
+OKcheck, NVIcheckmate, NVIpackager, NVIrpackages. See the vignette
+“Contribute to NVIpackager” for more information.
 
 ## Installation
 
@@ -32,7 +32,7 @@ NVIpackager” for more information.
 [GitHub](https://github.com/NorwegianVeterinaryInstitute). To install
 `NVIpackager` you will need:
 
--   R version > 4.0.0
+-   R version &gt; 4.0.0
 -   R package `remotes`
 -   Rtools 4.0
 
@@ -47,7 +47,7 @@ code:
     remotes::install_github("NorwegianVeterinaryInstitute/NVIpackager",
         upgrade = FALSE,
         build = TRUE,
-        build_manual = TRUE)
+        build_vignettes = TRUE)
 
 ## Usage
 
