@@ -3,7 +3,7 @@ To install `r NVIpkg_inline` you will need:
 
 - R version > 4.0.0
 - R package `remotes`
-- Rtools 4.0
+- Rtools 4.0 or Rtools 4.2 depending on R version
 
 First install and attach the `remotes` package.  
 
