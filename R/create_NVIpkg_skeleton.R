@@ -15,7 +15,7 @@
 #'
 #'     In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDUCT},
 #'     and the vignette \code{Contribute_to_NVIpkg} are copied to the package
-#'     directory and +code{develop.R} is copied to "./notes/".
+#'     directory and \code{develop.R} is copied to "./notes/".
 #'
 #'     The function accepts a short list of the listed license keywords accepted
 #'     at Cran in "./share/license/license.db" in R home. If you need any  other
@@ -23,7 +23,7 @@
 #'
 #' @template pkg
 #' @template pkg_path
-#' @param license_keyword  \[\code{character}\]\cr
+#' @param license_keyword  [\code{character}]\cr
 #'     The keyword for the package's license in accord with list of license keywords,
 #'     defaults to "BSD_3_clause".
 #'
