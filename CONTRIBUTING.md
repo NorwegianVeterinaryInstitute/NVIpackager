@@ -175,25 +175,23 @@ adhere to some principles and style convention used for
 
 -   You should add yourself as a contributor to the `DESCRIPTION`.
 
--   If you’re adding a new function or new arguments to an existing
-    function, you’ll also need to document them. `NVIverse`-packages use
+Although not expected from all contributors, it will be highly
+appreciated if you also are willing to suggest:
+
+-   documentation for new functions or new arguments to existing
+    functions The `NVIverse`-packages use
     [`roxygen2`](https://cran.r-project.org/package=roxygen2) for
-    documentation. Make sure to re-run `devtools::document()` on the
-    code before submitting.
+    documentation.
 
--   `NVIverse`-packages use the assert-functions from
+-   argument checking of the function arguments. The `NVIverse`-packages
+    use the assert-functions from the
     [`checkmate`](https://CRAN.R-project.org/package=checkmate) package
-    for argument checking as well as some additional assert\_functions
-    in
+    for argument checking as well as some additional assert-functions in
     [`NVIcheckmate`](https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate).
-    Adding argument checking for new functions and/or arguments will be
-    highly appreciated.
 
--   If you can, also write a test. `NVIverse`-packages use
+-   one or more tests ensuring that the function works as intended. The
+    `NVIverse`-packages use
     [`testthat`](https://cran.r-project.org/package=testthat) for tests.
-
--   Also run `devtools::check()` to make sure your function doesn’t
-    imply downstream errors or warnings.
 
 ### Git commit standards
 
