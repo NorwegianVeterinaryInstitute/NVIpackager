@@ -2,7 +2,7 @@
 #' @description Update \code{develop.R} from the template in \code{NVIpackager}.
 #'     If the file already exist, it is overwritten.
 #'
-#' @details develop.R is a script comprising code for creating, documenting,
+#' @details "develop.R" is a script comprising code for creating, documenting,
 #'     testing and installing a package during development and maintainance. All
 #'     code should be written without reference to a specific package, so that
 #'     the script can be used without modification in development and maintainance
@@ -15,7 +15,7 @@
 #' @template pkg
 #' @template pkg_path
 #'
-#' @return None. Writes the R script \code{develop.R} to ./notes.
+#' @return None. Writes the R script "develop.R" to "./notes/".
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
