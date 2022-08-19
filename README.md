@@ -16,7 +16,7 @@ skeleton in accord with NVIverse standards. For further development and
 maintainance there are tools for updating documentation and installing
 development versions. The NVIpackager functions are to a large extent
 wrappers for devtools and usethis functions. In addition, the templates
-folder keeps templates for standard files like sections OF README and
+folder keeps templates for standard files like sections of README and
 CONTRIBUTING.
 
 `NVIpackager` is part of `NVIverse`, a collection of R-packages with
@@ -32,9 +32,9 @@ OKcheck, NVIcheckmate, NVIpackager, NVIrpackages. See the vignette
 [GitHub](https://github.com/NorwegianVeterinaryInstitute). To install
 `NVIpackager` you will need:
 
--   R version &gt; 4.0.0
+-   R version > 4.0.0
 -   R package `remotes`
--   Rtools 4.0
+-   Rtools 4.0 or Rtools 4.2 depending on R version
 
 First install and attach the `remotes` package.
 
@@ -61,7 +61,7 @@ skeleton in accord with NVIverse standards. For further development and
 maintainance there are tools for updating documentation and installing
 development versions. The NVIpackager functions are to a large extent
 wrappers for devtools and usethis functions. In addition, the templates
-folder keeps templates for standard files like sections OF README and
+folder keeps templates for standard files like sections of README and
 CONTRIBUTING.
 
 The full list of all available functions and datasets can be accessed by
