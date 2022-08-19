@@ -1,27 +1,27 @@
 #' @title Update reference manual
-#' @description Update the PDF reference manual and save it together with vignettes.
+#' @description Update the PDF reference manual and save it together with the vignettes.
 #'
 #' @details Standard is \code{manual = "update"} that will update the  reference
 #'     manual if it exists, but will do nothing if it doesn't exist. Use
 #'     \code{manual = "include"} to make the reference manual for the first time.
-#'     For both \code{manual = c("include", "update") }, the DESCRIPTION and
-#'     .gitignore will be checked and modified if necessary and the "pkgname.pdf.asis"
+#'     For both \code{manual = c("include", "update") }, the \code{DESCRIPTION} and
+#'     \code{.gitignore} will be checked and modified if necessary and the "pkgname.pdf.asis"
 #'     will be created in addition to the reference manual "pkgname.pdf".
 #'
 #'     Use \code{manual = "remove"} to remove the reference manual. This will remove
-#'     the reference manual "pkgname.pdf" and the file "pkgname.pdf.asis" and modify the
-#'     .gitignore file. Any changes that have been done to the DESCRIPTION will not
+#'     the reference manual "pkgname.pdf" and the file "pkgname.pdf.asis" and modify
+#'     \code{.gitignore}. Any changes that have been done to the \code{DESCRIPTION} will not
 #'     be redone as these may also be used by other processes. If these should be
 #'     removed, it must be done manually.
 #'
 #' @template pkg
 #' @template pkg_path
 #' @param manual Can be c("include", "update", "remove"), see details. Standard
-#'     is \code{manual = update} that will update the  reference manual if it
+#'     is \code{manual = "update"} that will update the  reference manual if it
 #'     exists, but will do nothing if it doesn't exist.
 #'
-#' @return None. Creates or updates the PDF reference manual in directory "./vignettes/.
-#'     The reference manual is given the name" pkgname.pdf" where "pkgname" is
+#' @return None. Creates or updates the PDF reference manual in directory "./vignettes/".
+#'     The reference manual is given the name "pkgname.pdf" where "pkgname" is
 #'     the name of the package.
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
