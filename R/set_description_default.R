@@ -7,7 +7,7 @@
 #'
 #' \itemize{
 #'   \item "Petter Hopp" with role c("aut", "cre")
-#'   \item "Norwegian Veterinary Institute" with role = cph"
+#'   \item "Norwegian Veterinary Institute" with role = "cph"
 #'   \item registertype (categories for locations and addresses)
 #'   \item URL: "https://github.com/NorwegianVeterinaryInstitute/NVIpkg"
 #'   \item BugReports: "https://github.com/NorwegianVeterinaryInstitute/NVIpkg/issues"
@@ -20,7 +20,7 @@
 #'     license than in the short list, submit an issue.
 #'
 #' @template pkg
-#' @param license_keyword  \[\code{character}\]\cr
+#' @param license_keyword  [\code{character}]\cr
 #'     The keyword for the package's license in accord with list of license keywords,
 #'     defaults to "BSD_3_clause".
 #'
