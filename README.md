@@ -84,7 +84,9 @@ for details.
 Contributions to develop `NVIpackager` is highly appreciated. There are
 several ways you can contribute to this project: ask a question, propose
 an idea, report a bug, improve the documentation, or contribute code.
-The vignette “Contribute to NVIpackager” gives more information.
+See [Contribute to
+NVIpackager](https://github.com/NorwegianVeterinaryInstitute/NVIpackager/blob/main/CONTRIBUTING.md)
+for more information.
 
 ## <!-- Code of conduct -->
 
