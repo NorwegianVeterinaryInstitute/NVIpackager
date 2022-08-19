@@ -1,9 +1,9 @@
 #' @title Update styling and documentation of a package
 #' @description A wrapper around functions for styling, write the help files
-#'     and update README and CONTRIBUTING.md.
+#'     and update \code{README} and \code{CONTRIBUTING.md}.
 #'
 #' @details The help files for R-functions will always be generated. Whether
-#'     styling should be performed and CONTRIBUTING.md and README
+#'     styling should be performed and \code{README} and \code{CONTRIBUTING.md}
 #'     should be updated are controlled by input arguments.
 #'
 #'     Default value for styling is \code{scope = "spaces"}. Input to
@@ -13,16 +13,16 @@
 #'
 #' @template pkg
 #' @template pkg_path
-#' @param style \[\code{logical}\]\cr
+#' @param style [\code{logical}]\cr
 #'     Should the package be styled, defaults to \code{FALSE}.
-#' @param manual \[\code{character}\]\cr
+#' @param manual [\code{character}]\cr
 #'     Should a reference manual be included, updated or removed. Defaults to
 #'     \code{manual = "update"} that will update the manual if exists and do
 #'     nothing if it doesn't exist.
-#' @param contributing \[\code{logical}\]\cr
+#' @param contributing [\code{logical}]\cr
 #'     Should \code{CONTRIBUTING.md} and the vignette "Contribute to NVIpkg" be
 #'     updated, defaults to \code{FALSE}.
-#' @param readme \[\code{logical}\]\cr
+#' @param readme [\code{logical}]\cr
 #'     Should \code{README} be updated, defaults to \code{FALSE}.
 #' @param \dots	Other arguments to be passed to \code{styler::style_pkg}.
 #'
