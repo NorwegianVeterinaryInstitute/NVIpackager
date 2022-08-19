@@ -2,13 +2,13 @@
 #' @description Update the logo to be used in the README file.
 #'
 #' @details If the package logo has been created, the logo is copied from
-#'     \code{NVIrpackages} to the package directory "./man/figures/. If the logo
+#'     \code{NVIrpackages} to the package directory "./man/figures/". If the logo
 #'     already exists, the logo is overwritten.
 #'
 #' @template pkg
 #' @template pkg_path
 #'
-#' @return None. Copies the the logo file to the directory "./man/figures/.
+#' @return None. Copies the the logo file to the directory "./man/figures/".
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
