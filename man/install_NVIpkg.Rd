@@ -28,39 +28,40 @@ One of c("github", "local").}
 
 \item{username}{[\code{character}]\cr
 The github username where the repository is found, defaults to
-"NorwegianVeterinaryInstitute".}
+ "NorwegianVeterinaryInstitute".}
 
 \item{\dots}{Other arguments to be passed to \code{remotes::install_github}
 or \code{devtools::install}.}
 }
 \value{
-none. Installs a package.
+None. Installs a package.
 }
 \description{
 Installation of an NVIverse package from github or
-from local directory. Mainly intended for installation of a
-package during development to test new code in the package
-scripts .
+    from local directory. Mainly intended for installation of a
+    package during development to test new code in the package
+    scripts .
 }
 \details{
 When \code{rsource = "github"}, the default is to install
-the latest version in the main branch at the NorwegianVeterinaryInstitute
-package repository. During package development one will usually
-change the username to your own.\preformatted{The repository can be changed by giving more arguments that
-will be passed to \code{install_github}, see
-\code{\link[remotes:install_github]} for full description
-of the arguments \code{repo =}, \code{username =}, and
-\code{ref =}.
+    the latest version in the main branch at the NorwegianVeterinaryInstitute
+    package repository. During package development one will usually
+    change the username to your own.
+
+The repository can be changed by giving more arguments that
+    will be passed to \code{install_github}, see
+    \link[remotes]{install_github} for full description
+    of the arguments \code{repo = }, \code{username = }, and
+    \code{ref = }.
 
 When \code{rsource = "local"}, it installs the package from a
-local copy of the package repository. It defaults to install
-the active branch. Use \code{rsource = "local"} to test new
-code during development.
+    local copy of the package repository. It defaults to install
+    the active branch. Use \code{rsource = "local"} to test new
+    code during development.
 
 For installing the latest released versions of NVIverse
-packages, use \code{\link[remotes:install_github]} or
-\code\{\link[NVIbatch:use_NVIverse].
-}
+    packages, use \link[remotes]{install_github} or
+    \link[NVIbatch]{use_NVIverse}.
 }
 \examples{
 \dontrun{
