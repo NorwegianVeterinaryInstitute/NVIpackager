@@ -6,7 +6,7 @@
 \alias{NVIpackager-package}
 \title{NVIpackager: Tools to facilitate Development of NVIverse Packages}
 \description{
-Provides tools to facilitate development of NVIverse packages. You should use 'create_NVIpkg_skeleton' to make a package skeleton in accord with NVIverse standards. For further development and maintainance there are tools for updating documentation and installing development versions. The NVIpackager functions are to a large extent wrappers for devtools and usethis functions. In addition, the templates folder keeps templates for standard files like sections OF README and CONTRIBUTING.
+Provides tools to facilitate development of NVIverse packages. You should use 'create_NVIpkg_skeleton' to make a package skeleton in accord with NVIverse standards. For further development and maintainance there are tools for updating documentation and installing development versions. The NVIpackager functions are to a large extent wrappers for devtools and usethis functions. In addition, the templates folder keeps templates for standard files like sections of README and CONTRIBUTING.
 }
 \seealso{
 Useful links:
