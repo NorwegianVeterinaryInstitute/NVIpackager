@@ -1,11 +1,6 @@
 NVIpackager 0.3.0.9000 - (2022-##-##)
 -------------------------------------
 
-New features:
-
--
-
-
 Bug fixes:
 
 - Removed build_manual = TRUE from install_NVIpkg as could cause problems for those without MiKTeX for generating PDF-files.
@@ -16,6 +11,8 @@ Bug fixes:
 Other changes:
 
 - Removed build_manual = TRUE from README installation guide as caused problems for those without MiKTeX for generating PDF-files.
+
+- Minor other improvements in help documents, README and CONTRIBUTING.
 
 
 NVIpackager 0.3.0 - (2022-06-08)
