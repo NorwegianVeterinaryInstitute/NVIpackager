@@ -15,14 +15,14 @@ assert_pkg_path(pkg, pkg_path, checks = checks)
 }
 \value{
 \code{TRUE } if none of the assertions failed. If any of the assertions
-failed, one or more error messages are returned.
+    failed, one or more error messages are returned.
 }
 \description{
 Assertions for pkg and pkg_path in packager_functions.
 }
 \details{
 The function does not set up and report the assertCollection.
-This need to be done separately, see example.
+  This need to be done separately, see example.
 }
 \examples{
 # Attach package and make temporary directory
