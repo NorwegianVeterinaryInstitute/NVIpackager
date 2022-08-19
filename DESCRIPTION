@@ -16,7 +16,7 @@ Description: Provides tools to facilitate development of NVIverse packages. You
     tools for updating documentation and installing development versions. The 
     NVIpackager functions are to a large extent wrappers for devtools and usethis
     functions. In addition, the templates folder keeps templates for standard 
-    files like sections OF README and CONTRIBUTING.
+    files like sections of README and CONTRIBUTING.
 License: BSD_3_clause + file LICENSE
 URL: https://github.com/NorwegianVeterinaryInstitute/NVIdevpkg
 BugReports: 
@@ -24,8 +24,8 @@ BugReports:
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+Roxygen: list(markdown = FALSE)
+RoxygenNote: 7.2.1
 Depends: R (>= 4.0.0)
 Imports: 
     checkmate (>= 2.0.0),
