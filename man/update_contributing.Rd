@@ -21,11 +21,11 @@ None. Writes the vignette "Contribute_to_NVIpkg.Rmd" and the file \code{CONTRIBU
 }
 \description{
 Update \code{CONTRIBUTING.md} and the vignette "Contribute_to_NVIpkg.Rmd"
-from the template in \code{NVIpackager}. If the files don't exist, they are created.
+    from the template in \code{NVIpackager}. If the files don't exist, they are created.
 }
 \details{
 The template is found in \code{NVIpackager}. Any change in the text
-must be done in the template.
+    must be done in the template.
 }
 \examples{
 \dontrun{
