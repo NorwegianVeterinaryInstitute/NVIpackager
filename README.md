@@ -22,8 +22,9 @@ CONTRIBUTING.
 `NVIpackager` is part of `NVIverse`, a collection of R-packages with
 tools to facilitate data management and data reporting at the Norwegian
 Veterinary Institute (NVI). The `NVIverse` consists of the following
-packages: NVIconfig, NVIdb, NVIspatial, NVIpretty, NVIbatch, OKplan,
-OKcheck, NVIcheckmate, NVIpackager, NVIrpackages. See [Contribute to
+packages: `NVIconfig`, `NVIdb`, `NVIspatial`, `NVIpretty`, `NVIbatch`,
+`OKplan`, `OKcheck`, `NVIcheckmate`, `NVIpackager`, `NVIrpackages`. See
+[Contribute to
 NVIpackager](https://github.com/NorwegianVeterinaryInstitute/NVIpackager/blob/main/CONTRIBUTING.md)
 for more information.
 
