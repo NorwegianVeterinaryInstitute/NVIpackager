@@ -40,21 +40,22 @@ Should \code{README} be updated, defaults to \code{FALSE}.}
 }
 \value{
 none. Updated help files for all functions and,
-depending on argument input, can updated style,
-\code{CONTRIBUTING.md}, and \code{README}
+    depending on argument input, can updated style,
+    \code{CONTRIBUTING.md}, and \code{README}
 }
 \description{
 A wrapper around functions for styling, write the help files
-and update README and CONTRIBUTING.md.
+    and update \code{README} and \code{CONTRIBUTING.md}.
 }
 \details{
 The help files for R-functions will always be generated. Whether
-styling should be performed and CONTRIBUTING.md and README
-should be updated are controlled by input arguments.\preformatted{Default value for styling is \code{scope = "spaces"}. Input to
-\code{scope} can be any subset of c("spaces", "indention", "line_breaks", "tokens").
-For indention, rather use \code{Ctrl+I} than \code{scope = "indention"}.
-Be careful if using \code{scope = "tokens"} as code may be broken.
-}
+    styling should be performed and \code{README} and \code{CONTRIBUTING.md}
+    should be updated are controlled by input arguments.
+
+    Default value for styling is \code{scope = "spaces"}. Input to
+    \code{scope} can be any subset of c("spaces", "indention", "line_breaks", "tokens").
+    For indention, rather use \code{Ctrl+I} than \code{scope = "indention"}.
+    Be careful if using \code{scope = "tokens"} as code may be broken.
 }
 \examples{
 \dontrun{

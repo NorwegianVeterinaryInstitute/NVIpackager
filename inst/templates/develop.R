@@ -20,7 +20,7 @@ pkg <- stringi::stri_extract_last_words(pkg_path)
 
 
 # DOCUMENTATION AND STYLING ----
-# update_loge should be run if a logo has been created (or updated). Thereafter use "readme = TRUE"
+# update_logo should be run if a logo has been created (or updated). Thereafter run "document_NVIpkg" with "readme = TRUE".
 # update_logo(pkg = pkg, pkg_path = pkg_path)
 
 # Creates new help files

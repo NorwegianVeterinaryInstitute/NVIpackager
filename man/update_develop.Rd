@@ -17,21 +17,22 @@ The package name, defaults to \code{stringi::stri_extract_last_words(usethis::pr
 The path to the package directory, defaults to \code{usethis::proj_path()}.}
 }
 \value{
-None. Writes the R script \code{develop.R} to ./notes.
+None. Writes the R script "develop.R" to "./notes/".
 }
 \description{
 Update \code{develop.R} from the template in \code{NVIpackager}.
-If the file already exist, it is overwritten.
+    If the file already exist, it is overwritten.
 }
 \details{
-develop.R is a script comprising code for creating, documenting,
-testing and installing a package during development and maintainance. All
-code should be written without reference to a specific package, so that
-the script can be used without modification in development and maintainance
-of all NVIverse packages.\preformatted{The template is found in \code{NVIpackager}. Any change in the script
-should be done in the template. Thereby, it is easier to keep the script
-updated in all packages.
-}
+"develop.R" is a script comprising code for creating, documenting,
+    testing and installing a package during development and maintainance. All
+    code should be written without reference to a specific package, so that
+    the script can be used without modification in development and maintainance
+    of all NVIverse packages.
+
+    The template is found in \code{NVIpackager}. Any change in the script
+    should be done in the template. Thereby, it is easier to keep the script
+    updated in all packages.
 }
 \examples{
 \dontrun{

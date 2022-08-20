@@ -21,11 +21,11 @@ None. Writes the file \code{README.md}.
 }
 \description{
 Update \code{README.md}
-from \code{README.Rmd} and child templates in \code{NVIpackager}. If the file don't exist, it is created.
+    from \code{README.Rmd} and child templates in \code{NVIpackager}. If the file don't exist, it is created.
 }
 \details{
 The child templates are found in \code{NVIpackager}. Any change in this
-text must be done in the templates.
+    text must be done in the templates.
 }
 \examples{
 \dontrun{

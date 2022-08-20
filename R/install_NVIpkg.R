@@ -9,34 +9,34 @@
 #'     package repository. During package development one will usually
 #'     change the username to your own.
 #'
-#'     The repository can be changed by giving more arguments that
+#' The repository can be changed by giving more arguments that
 #'     will be passed to \code{install_github}, see
-#'     \code{\link[remotes:install_github]} for full description
-#'     of the arguments \code{repo =}, \code{username =}, and
-#'     \code{ref =}.
+#'     \link[remotes]{install_github} for full description
+#'     of the arguments \code{repo = }, \code{username = }, and
+#'     \code{ref = }.
 #'
-#'     When \code{rsource = "local"}, it installs the package from a
+#' When \code{rsource = "local"}, it installs the package from a
 #'     local copy of the package repository. It defaults to install
 #'     the active branch. Use \code{rsource = "local"} to test new
 #'     code during development.
 #'
-#'     For installing the latest released versions of NVIverse
-#'     packages, use \code{\link[remotes:install_github]} or
-#'     \code{\link[NVIbatch:use_NVIverse].
+#' For installing the latest released versions of NVIverse
+#'     packages, use \link[remotes]{install_github} or
+#'     \link[NVIbatch]{use_NVIverse}.
 #'
 #' @template pkg
 #' @template pkg_path
-#' @param lib \[\code{character}\]\cr
+#' @param lib [\code{character}]\cr
 #'   The library directory where to install, defaults to \code{R.home()}.
-#' @param rsource \[\code{character}\]\cr
+#' @param rsource [\code{character}]\cr
 #'    One of c("github", "local").
-#' @param username \[\code{character}\]\cr
+#' @param username [\code{character}]\cr
 #'    The github username where the repository is found, defaults to
 #'     "NorwegianVeterinaryInstitute".
 #' @param \dots Other arguments to be passed to \code{remotes::install_github}
 #'     or \code{devtools::install}.
 #'
-#' @return none. Installs a package.
+#' @return None. Installs a package.
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
@@ -63,7 +63,7 @@ install_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj_
   # Perform checks
   assert_pkg_path(pkg = pkg, pkg_path = pkg_path)
   checkmate::assert_directory_exists(x = lib, add = checks)
-  checkmate::assert_character(x = rsource, add = checks)
+  checkmate::assert_choice(x = rsource, choices = c("github", "local"), add = checks)
   checkmate::assert_character(x = username, add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
@@ -93,7 +93,6 @@ install_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj_
     remotes::install_github(paste0(username, "/", pkg),
                             upgrade = FALSE,
                             build = TRUE,
-                            build_manual = TRUE,
                             build_vignettes = TRUE,
                             ...)
   }

@@ -1,7 +1,7 @@
 # CREATE, DOCUMENT, TEST AND INSTALL THE PACKAGE
 
 # Update this file with the template in NVIpackager
-NVIpackager::update_develop()
+# NVIpackager::update_develop()
 
 # SET UP ENVIRONMENT ----
 # rm(list = ls())    # Use this to empty the environment

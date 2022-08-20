@@ -3,7 +3,7 @@ To install `r NVIpkg_inline` you will need:
 
 - R version > 4.0.0
 - R package `remotes`
-- Rtools 4.0
+- Rtools 4.0 or Rtools 4.2 depending on R version
 
 First install and attach the `remotes` package.  
 
@@ -16,8 +16,9 @@ To install (or update) the `r NVIpkg_inline` package, run the following code:
 
 ``` {r text, message=FALSE, warnings=FALSE, echo=FALSE, prompt = FALSE, comment = ""} 
 text <- paste(paste0('remotes::install_github("NorwegianVeterinaryInstitute/', NVIpkg, '",'), 
-	'    upgrade = FALSE,', 
-	'    build = TRUE,',
-	'    build_manual = TRUE)', sep = '\n')
+              '    upgrade = FALSE,', 
+              '    build = TRUE,', 
+              '    build_vignettes = TRUE)', 
+              sep = '\n')
 cat(text, sep="", fill = TRUE)
 ```

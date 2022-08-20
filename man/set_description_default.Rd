@@ -22,25 +22,25 @@ None. Writes the options to the option \code{usethis.description}.
 }
 \description{
 Set default Values for the \code{DESCRIPTION} file. The values are saved
-as the option \code{usethis.description}.
+    as the option \code{usethis.description}.
 }
 \details{
 These options are used when creating the package skeleton in the script
-\code{create_NVIpackage_skeleton.R}. The following standard values are given:
+    \code{create_NVIpackage_skeleton.R}. The following standard values are given:
 
 \itemize{
-\item "Petter Hopp" with role c("aut", "cre")
-\item "Norwegian Veterinary Institute" with role = cph"
-\item registertype (categories for locations and addresses)
-\item URL: "https://github.com/NorwegianVeterinaryInstitute/NVIpkg"
-\item BugReports: "https://github.com/NorwegianVeterinaryInstitute/NVIpkg/issues"
-\item License: license_keyword "+ file LICENSE",
-\item Language: "en-GB",
-\item Depends:= "R (>= 4.0.0)"
+  \item "Petter Hopp" with role c("aut", "cre")
+  \item "Norwegian Veterinary Institute" with role = "cph"
+  \item registertype (categories for locations and addresses)
+  \item URL: "https://github.com/NorwegianVeterinaryInstitute/NVIpkg"
+  \item BugReports: "https://github.com/NorwegianVeterinaryInstitute/NVIpkg/issues"
+  \item License: license_keyword "+ file LICENSE",
+  \item Language: "en-GB",
+  \item Depends:= "R (>= 4.0.0)"
 }
-The function accepts a short list of the listed license keywords accepted
-at Cran in "./share/license/license.db" in R home. If you need any  other
-license than in the short list, submit an issue.
+    The function accepts a short list of the listed license keywords accepted
+    at Cran in "./share/license/license.db" in R home. If you need any  other
+    license than in the short list, submit an issue.
 }
 \examples{
 \dontrun{

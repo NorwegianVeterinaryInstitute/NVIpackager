@@ -16,15 +16,17 @@ skeleton in accord with NVIverse standards. For further development and
 maintainance there are tools for updating documentation and installing
 development versions. The NVIpackager functions are to a large extent
 wrappers for devtools and usethis functions. In addition, the templates
-folder keeps templates for standard files like sections OF README and
+folder keeps templates for standard files like sections of README and
 CONTRIBUTING.
 
 `NVIpackager` is part of `NVIverse`, a collection of R-packages with
 tools to facilitate data management and data reporting at the Norwegian
-Veterinary Institute (NVI). The NVIverse consists of the following
-packages: NVIconfig, NVIdb, NVIpretty, NVIbatch, OKplan, OKcheck,
-NVIcheckmate, NVIpackager, NVIrpackages. See the vignette “Contribute to
-NVIpackager” for more information.
+Veterinary Institute (NVI). The `NVIverse` consists of the following
+packages: `NVIconfig`, `NVIdb`, `NVIspatial`, `NVIpretty`, `NVIbatch`,
+`OKplan`, `OKcheck`, `NVIcheckmate`, `NVIpackager`, `NVIrpackages`. See
+[Contribute to
+NVIpackager](https://github.com/NorwegianVeterinaryInstitute/NVIpackager/blob/main/CONTRIBUTING.md)
+for more information.
 
 ## Installation
 
@@ -34,7 +36,7 @@ NVIpackager” for more information.
 
 -   R version > 4.0.0
 -   R package `remotes`
--   Rtools 4.0
+-   Rtools 4.0 or Rtools 4.2 depending on R version
 
 First install and attach the `remotes` package.
 
@@ -47,7 +49,7 @@ code:
     remotes::install_github("NorwegianVeterinaryInstitute/NVIpackager",
         upgrade = FALSE,
         build = TRUE,
-        build_manual = TRUE)
+        build_vignettes = TRUE)
 
 ## Usage
 
@@ -61,7 +63,7 @@ skeleton in accord with NVIverse standards. For further development and
 maintainance there are tools for updating documentation and installing
 development versions. The NVIpackager functions are to a large extent
 wrappers for devtools and usethis functions. In addition, the templates
-folder keeps templates for standard files like sections OF README and
+folder keeps templates for standard files like sections of README and
 CONTRIBUTING.
 
 The full list of all available functions and datasets can be accessed by
@@ -84,7 +86,9 @@ for details.
 Contributions to develop `NVIpackager` is highly appreciated. There are
 several ways you can contribute to this project: ask a question, propose
 an idea, report a bug, improve the documentation, or contribute code.
-The vignette “Contribute to NVIpackager” gives more information.
+See [Contribute to
+NVIpackager](https://github.com/NorwegianVeterinaryInstitute/NVIpackager/blob/main/CONTRIBUTING.md)
+for more information.
 
 ## <!-- Code of conduct -->
 

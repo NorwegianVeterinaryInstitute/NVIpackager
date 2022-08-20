@@ -23,30 +23,31 @@ defaults to "BSD_3_clause".}
 }
 \value{
 None.
-Sets up the package directories and writes and modifies several files, see details.
+    Sets up the package directories and writes and modifies several files, see details.
 }
 \description{
 Creates the package skeleton in agreement with the conventions
-developed for NVIverse packages. \code{create_NVIpkg_skeleton} should be
-run once after a GitHub repository has been synchronized with the the
-package directory.
+    developed for NVIverse packages. \code{create_NVIpkg_skeleton} should be
+    run once after a GitHub repository has been synchronized with the the
+    package directory.
 }
 \details{
 \code{create_NVIpkg_skeleton} is a wrapper for several \code{usethis}
--functions. It sets up the package directory with standard files and
-standard sub-directories. Modifies the \code{DESCRIPTION}, \code{.gitignore},
-and \code{.Rbuildignore} in agreement with standard dependencies for
-NVIverse.\preformatted{Standard values are input to \code{DESCRIPTION}. For modifying these values,
-you need to modify \code{set_description_default}.
+    -functions. It sets up the package directory with standard files and
+    standard sub-directories. Modifies the \code{DESCRIPTION}, \code{.gitignore},
+    and \code{.Rbuildignore} in agreement with standard dependencies for
+    NVIverse.
 
-In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDUCT},
-and the vignette \code{Contribute_to_NVIpkg} are copied to the package
-directory and +code\{develop.R\} is copied to "./notes/".
+    Standard values are input to \code{DESCRIPTION}. For modifying these values,
+    you need to modify \code{set_description_default}.
 
-The function accepts a short list of the listed license keywords accepted
-at Cran in "./share/license/license.db" in R home. If you need any  other
-license than in the short list, submit an issue.
-}
+    In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDUCT},
+    and the vignette \code{Contribute_to_NVIpkg} are copied to the package
+    directory and \code{develop.R} is copied to "./notes/".
+
+    The function accepts a short list of the listed license keywords accepted
+    at Cran in "./share/license/license.db" in R home. If you need any  other
+    license than in the short list, submit an issue.
 }
 \examples{
 \dontrun{

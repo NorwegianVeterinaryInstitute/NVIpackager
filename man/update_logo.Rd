@@ -17,15 +17,15 @@ The package name, defaults to \code{stringi::stri_extract_last_words(usethis::pr
 The path to the package directory, defaults to \code{usethis::proj_path()}.}
 }
 \value{
-None. Copies the the logo file to the directory "./man/figures/.
+None. Copies the the logo file to the directory "./man/figures/".
 }
 \description{
 Update the logo to be used in the README file.
 }
 \details{
 If the package logo has been created, the logo is copied from
-\code{NVIrpackages} to the package directory "./man/figures/. If the logo
-already exists, the logo is overwritten.
+    \code{NVIrpackages} to the package directory "./man/figures/". If the logo
+    already exists, the logo is overwritten.
 }
 \examples{
 \dontrun{
