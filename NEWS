@@ -12,7 +12,11 @@ Other changes:
 
 - Removed build_manual = TRUE from README installation guide as caused problems for those without MiKTeX for generating PDF-files.
 
-- Minor other improvements in help documents, README and CONTRIBUTING.
+- corrected installation guide and improved style for README templates.
+
+- improved style in CONTRIBUTION template.
+
+- updated and styled help documents, README and CONTRIBUTING.
 
 
 NVIpackager 0.3.0 - (2022-06-08)
