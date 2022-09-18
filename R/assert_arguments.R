@@ -14,8 +14,8 @@
 #' @param pkg_path Argument to the add-function to be asserted.
 #' @param checks AssertCollection, defaults to checks.
 #'
-#' @return \code{TRUE } if none of the assertions failed. If any of the assertions
-#'     failed, one or more error messages are returned.
+#' @return An assertCollection that have been updated with the results
+#'     of assertions for \code{pkg} and \code{pkg_path}.
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @keywords internal
@@ -32,23 +32,26 @@
 #' # Object to store check-results
 #' checks <- checkmate::makeAssertCollection()
 #' # Perform checks
-#' assert_pkg_path(pkg = "NVItest",
-#'                 pkg_path = paste0(td, "/NVItest"))
+#' checks <- assert_pkg_path(pkg = "NVItest",
+#'                 pkg_path = paste0(td, "/NVItest"),
+#'                 add = checks)
 #' # Report check-results
 #' checkmate::reportAssertions(checks)
 #' @export
 
 assert_pkg_path <- function(pkg,
                             pkg_path,
-                            checks = checks) {
+                            add) {
 
   # # ARGUMENT CHECKING ----
   # Perform checks
   # pkg_path
   checkmate::assert_directory_exists(x = pkg_path,
-                                     add = checks)
+                                     add = add)
   # pkg
   checkmate::assert_choice(x = pkg,
                            choices = stringi::stri_extract_last_words(pkg_path),
-                           add = checks)
+                           add = add)
+
+  return(add)
 }

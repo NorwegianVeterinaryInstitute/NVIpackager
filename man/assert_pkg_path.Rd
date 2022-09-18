@@ -4,7 +4,7 @@
 \alias{assert_pkg_path}
 \title{Assertions for pkg and pkg_path in packager_functions}
 \usage{
-assert_pkg_path(pkg, pkg_path, checks = checks)
+assert_pkg_path(pkg, pkg_path, add)
 }
 \arguments{
 \item{pkg}{Argument to the add-function to be asserted.}
@@ -14,8 +14,8 @@ assert_pkg_path(pkg, pkg_path, checks = checks)
 \item{checks}{AssertCollection, defaults to checks.}
 }
 \value{
-\code{TRUE } if none of the assertions failed. If any of the assertions
-    failed, one or more error messages are returned.
+An assertCollection that have been updated with the results
+    of assertions for \code{pkg} and \code{pkg_path}.
 }
 \description{
 Assertions for pkg and pkg_path in packager_functions.
@@ -35,8 +35,9 @@ if (!dir.exists(file.path(td, "NVItest"))) {
 # Object to store check-results
 checks <- checkmate::makeAssertCollection()
 # Perform checks
-assert_pkg_path(pkg = "NVItest",
-                pkg_path = paste0(td, "/NVItest"))
+checks <- assert_pkg_path(pkg = "NVItest",
+                pkg_path = paste0(td, "/NVItest"),
+                add = checks)
 # Report check-results
 checkmate::reportAssertions(checks)
 }
