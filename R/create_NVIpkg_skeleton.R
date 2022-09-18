@@ -67,16 +67,24 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   # Create standard R-package skeleton
   set_description_default(pkg = pkg, license_keyword = license_keyword)
   usethis::create_package(path = pkg_path, rstudio = FALSE, open = FALSE)
+  desc::set_desc("Date" = paste0(format(Sys.Date(), format = "%Y"), "-##-##"))
+  update_news(pkg = pkg, pkg_path = pkg_path, template = "first")
 
   # Modify the description ----
-  # usethis::use_package(package = "devtools", type = "Suggests")
-  usethis::use_package(package = "checkmate", type = "Imports", min_version = "2.0.0")
+  usethis::use_package(package = "checkmate", type = "Imports", min_version = "2.1.0")
   usethis::use_package(package = "knitr", type = "Imports")
   usethis::use_package(package = "rmarkdown", type = "Imports")
   usethis::use_dev_package(package = "NVIcheckmate",
                            type = "Imports",
                            remote = "github::NorwegianVeterinaryInstitute/NVIcheckmate")
-
+  usethis::use_dev_package(package = "NVIrpackages",
+                           type = "Imports",
+                           remote = "github::NorwegianVeterinaryInstitute/NVIrpackages")
+  usethis::use_package(package = "devtools", type = "Suggests")
+  usethis::use_dev_package(package = "NVIpackager",
+                           type = "Suggests",
+                           remote = "github::NorwegianVeterinaryInstitute/NVIpackager")
+  
   # Add files to .gitignore
   usethis::use_git_ignore(ignores = "*.Rproj")
 
@@ -137,13 +145,5 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   update_contributing()
 
   update_develop(pkg = pkg, pkg_path = pkg_path)
-
-  # NEWS.md
-  # usethis::use_template("NEWS.md",
-  #   data = package_data(),
-  #   open = open
-  # )
-  # Seems like changes must be committed before use_news_md() is run
-  # usethis::use_news_md(open = FALSE)
 
 }
