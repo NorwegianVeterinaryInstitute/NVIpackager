@@ -67,7 +67,7 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   # Create standard R-package skeleton
   set_description_default(pkg = pkg, license_keyword = license_keyword)
   usethis::create_package(path = pkg_path, rstudio = FALSE, open = FALSE)
-  desc::set_desc("Date" = paste0(format(Sys.Date(), format = "%Y"), "-##-##"))
+  desc::desc_set("Date" = paste0(format(Sys.Date(), format = "%Y"), "-##-##"))
   update_news(pkg = pkg, pkg_path = pkg_path, template = "first")
 
   # Modify the description ----
@@ -80,7 +80,7 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   usethis::use_dev_package(package = "NVIrpackages",
                            type = "Imports",
                            remote = "github::NorwegianVeterinaryInstitute/NVIrpackages")
-  usethis::use_package(package = "devtools", type = "Suggests")
+  # usethis::use_package(package = "devtools", type = "Suggests")
   usethis::use_dev_package(package = "NVIpackager",
                            type = "Suggests",
                            remote = "github::NorwegianVeterinaryInstitute/NVIpackager")
