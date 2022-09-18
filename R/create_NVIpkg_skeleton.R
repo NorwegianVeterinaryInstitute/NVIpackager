@@ -84,7 +84,7 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   usethis::use_dev_package(package = "NVIpackager",
                            type = "Suggests",
                            remote = "github::NorwegianVeterinaryInstitute/NVIpackager")
-  
+
   # Add files to .gitignore
   usethis::use_git_ignore(ignores = "*.Rproj")
 
