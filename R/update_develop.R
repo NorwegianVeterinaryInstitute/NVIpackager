@@ -32,7 +32,7 @@ update_develop <- function(pkg = stringi::stri_extract_last_words(usethis::proj_
   # Object to store check-results
   checks <- checkmate::makeAssertCollection()
   # assertions
-  assert_pkg_path(pkg = pkg, pkg_path = pkg_path)
+  checks <- assert_pkg_path(pkg = pkg, pkg_path = pkg_path, add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
 

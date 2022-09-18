@@ -40,7 +40,7 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
   # Object to store check-results
   checks <- checkmate::makeAssertCollection()
   # assertions
-  assert_pkg_path(pkg = pkg, pkg_path = pkg_path, checks = checks)
+  checks <- assert_pkg_path(pkg = pkg, pkg_path = pkg_path, add = checks)
 
   checkmate::assert_choice(manual, choices = c("include", "update", "remove"), add = checks)
   # Report check-results
