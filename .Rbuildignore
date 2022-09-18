@@ -7,3 +7,4 @@
 ^CONTRIBUTING\.md$
 ^man-roxygen$
 ^README\.Rmd$
+^styler$
