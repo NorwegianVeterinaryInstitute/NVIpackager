@@ -50,7 +50,7 @@ update_news <- function(pkg = stringi::stri_extract_last_words(usethis::proj_pat
 
   # If template = "first", then make first template for NEWS in a package. This
   #    is only relevant when the file NEWS doesn't exist.
-  if (template == "first") {
+  if (!is.null(template) && template == "first") {
     if (!file.exists(file.path(pkg_path, "NEWS"))) {
       template_text <- c("----------------------------------------",
                          "",
@@ -64,7 +64,7 @@ update_news <- function(pkg = stringi::stri_extract_last_words(usethis::proj_pat
 
   # If template = "develop" update with development version number and include
   #     headlines for potential changes.
-  if (template == "develop") {
+  if (!is.null(template) && template == "develop") {
     template_text <- c("----------------------------------------",
                        "",
                        "New features:",
