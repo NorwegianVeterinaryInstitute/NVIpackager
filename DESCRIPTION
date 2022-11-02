@@ -1,6 +1,6 @@
 Package: NVIpackager
 Title: Tools to facilitate Development of NVIverse Packages
-Version: 0.3.1.9000
+Version: 0.3.1.9001
 Date: 2022-##-##
 Authors@R: 
     c(person(given = "Petter",
@@ -30,22 +30,23 @@ Depends: R (>= 4.0.0)
 Imports: 
     checkmate (>= 2.0.0),
     desc,
-    devtools, 
+    devtools,
     knitr,
-    remotes, 
+    remotes,
     rmarkdown,
     roxygen2,
     shiny,
     stringi,
     stringr,
-    styler (>= 1.3.2), 
+    styler (>= 1.3.2),
     usethis (>= 2.1.0),
     withr,
-    NVIrpackages
+    NVIrpackages,
+    R.rsp
 Suggests: 
     covr,
     testthat (>= 3.0.0)
 Remotes: 
     github::NorwegianVeterinaryInstitute/NVIrpackages
-VignetteBuilder: knitr
+VignetteBuilder: knitr, R.rsp
 Config/testthat/edition: 3

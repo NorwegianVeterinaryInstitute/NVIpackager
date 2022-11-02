@@ -1,9 +1,11 @@
-NVIpackager 0.3.1.9000 - (2022-##-##)
+NVIpackager 0.3.1.9001 - (2022-##-##)
 ----------------------------------------
 
 New features:
 
-- created `update_news`.
+- Created `update_news`.
+
+- Created `increase_NVIpkg_version` for increasing version number in "NEWS" and "DESCRIPTION". Calls `update_news`.
 
 
 Bug fixes:
@@ -13,7 +15,9 @@ Bug fixes:
 
 Other changes:
 
--
+- Created NVIpackager.pdf reference manual.
+
+- Included `increase_NVIpkg_version` in template for develop.R.
 
 
 BREAKING CHANGES:
