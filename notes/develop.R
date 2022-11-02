@@ -18,9 +18,10 @@ pkg <- stringi::stri_extract_last_words(pkg_path)
 # CREATE PACKAGE SKELETON ----
 # create_NVIpkg_skeleton(license_keyword = "CC BY 4.0")
 
-# UPDATE NEWS ----
-# To be run after version number and Date have been updated in DESCRIPTION
-# update_news(template = "develop")
+# INCREASE PACKAGE VERSION IN DESCRIPTION AND NEWS ----
+# NVIpackager::increase_NVIpkg_version(pkg = pkg,
+#                                   pkg_path = pkg_path,
+#                                   type = "develop")
 
 # DOCUMENTATION AND STYLING ----
 # update_logo should be run if a logo has been created (or updated). Thereafter run "document_NVIpkg" with "readme = TRUE".
