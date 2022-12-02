@@ -69,16 +69,16 @@ increase_NVIpkg_version <- function(pkg = stringi::stri_extract_last_words(useth
   version_split <- unlist(strsplit(version, ".", fixed = TRUE))
 
   template <- NULL
-  date <- Sys.Date()
+  date <- format(Sys.Date(), "%Y-%m-%d")
 
   if (type == "first") {
-    date <- paste0(format(date, "%Y"), "-##-##")
+    date <- paste0(substr(date, 1, 4), "-##-##")
     version <- "0.0.0.9000"
     template <- "first"
   }
 
   if (type == "develop") {
-    date <- paste0(format(date, "%Y"), "-##-##")
+    date <- paste0(substr(date, 1, 4), "-##-##")
     if (length(version_split) == 3) {
       version_split[4] <- "9000"
       template <- "develop"
