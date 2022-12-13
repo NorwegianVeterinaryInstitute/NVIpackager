@@ -19,6 +19,8 @@ Other changes:
 
 - Included `increase_NVIpkg_version` in template for develop.R.
 
+- Styled the template "Contribute_to_NVIpkg.Rmd".
+
 
 BREAKING CHANGES:
 
