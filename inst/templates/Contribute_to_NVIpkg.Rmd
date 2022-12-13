@@ -16,7 +16,6 @@ vignette: >
   
 ---
 
-
 ```{r, include = FALSE}
 NVIpkg <- params$NVIpkg
 NVIpkg_inline <- paste0("`", NVIpkg, "`")
