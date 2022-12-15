@@ -13,7 +13,6 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteIndexEntry{Contribute to _package_name_}
   %\VignetteEncoding
-  
 ---
 
 ```{r, include = FALSE}
@@ -24,7 +23,6 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-
 ```
 
 <!-- CONTRIBUTING.md and ./vignettes/Contribute_to_NVIpkg.Rmd. are generated 
