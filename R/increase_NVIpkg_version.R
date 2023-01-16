@@ -82,8 +82,7 @@ increase_NVIpkg_version <- function(pkg = stringi::stri_extract_last_words(useth
     if (length(version_split) == 3) {
       version_split[4] <- "9000"
       template <- "develop"
-    }
-    if (length(version_split) == 4) {
+    } else {
       version_split[4] <- as.character(as.numeric(version_split[4]) + 1)
     }
   }
