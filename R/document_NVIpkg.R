@@ -77,10 +77,10 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
   checkmate::reportAssertions(checks)
 
   if (isTRUE(style)) {
-    if (!dir.exists(file.path(pkg_path, "styler"))) {
-      dir.create(path = file.path(pkg_path, "styler"))
+    if (!dir.exists(file.path(pkg_path, "styler_perm"))) {
+      dir.create(path = file.path(pkg_path, "styler_perm"))
     }
-    options(styler.cache_root = "styler")
+    options(styler.cache_root = "styler_perm")
     if (!exists("scope")) {
       scope <- "spaces"
     }
