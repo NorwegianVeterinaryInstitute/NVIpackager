@@ -13,7 +13,7 @@
 `NVIpackager`provides tools to facilitate development of NVIverse
 packages. You should use ‘create\_NVIpkg\_skeleton’ to make a package
 skeleton in accord with NVIverse standards. For further development and
-maintainance there are tools for updating documentation and installing
+maintenance there are tools for updating documentation and installing
 development versions. The NVIpackager functions are to a large extent
 wrappers for devtools and usethis functions. In addition, the templates
 folder keeps templates for standard files like sections of README and
@@ -34,7 +34,7 @@ for more information.
 [GitHub](https://github.com/NorwegianVeterinaryInstitute). To install
 `NVIpackager` you will need:
 
--   R version > 4.0.0
+-   R version &gt; 4.0.0
 -   R package `remotes`
 -   Rtools 4.0 or Rtools 4.2 depending on R version
 
@@ -60,11 +60,68 @@ The `NVIpackager` package needs to be attached.
 `NVIpackager`provides tools to facilitate development of NVIverse
 packages. You should use ‘create\_NVIpkg\_skeleton’ to make a package
 skeleton in accord with NVIverse standards. For further development and
-maintainance there are tools for updating documentation and installing
+maintenance there are tools for updating documentation and installing
 development versions. The NVIpackager functions are to a large extent
 wrappers for devtools and usethis functions. In addition, the templates
 folder keeps templates for standard files like sections of README and
 CONTRIBUTING.
+
+#### Create a package skeleton
+
+To set up a package skeleton you can follow the following procedure:
+
+1.  Create a repository for the package at the
+    NorwegianVeterinaryInstitute’s GitHub account. Give the repository
+    the name of the package.
+
+    -   Make a short descriptive text. This can later be used as the
+        Title in the DESCRIPTION file.
+    -   Choose between Public or Private. If unsure, start with Private.
+        It is easy to change to Public later.
+    -   Mark for Add a README file.
+    -   Choose the .gitignore template for R.
+    -   Choose a licence, For example MIT, BSD 3-clause
+
+2.  Create the repository.
+
+3.  Fork the repository to your own GitHub account.
+
+4.  Create an R-studio project for the package. In R-studio
+
+    -   Choose New project -&gt; Version control
+    -   Copy the directory at GitHub and paste it where asked in
+        R-studio.
+    -   Select a directory in your PC for your package.
+
+5.  Create the package skeleton
+
+        NVIpackager::create_NVIpkg_skeleton(license_keyword = "BSD_3_clause")
+
+6.  Modify the DESCRIPTION file
+
+    -   Copy the descriptive text into the Title field in the
+        DESCRIPTION file.
+    -   Copy the descriptive text into the Description field in the
+        DESCRIPTION file and eventually extend it.
+
+7.  Update README and Mypackage-package help with the last changes in
+    the DESCRIPTION file.
+
+        document_NVIpkg(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
+            pkg_path = usethis::proj_path(),
+            style = FALSE,
+            manual = "update",
+            contributing = FALSE,
+            readme = TRUE)
+
+#### Maintenance of the package
+
+Functions for updating documentation, performing tests, build and
+install the package are collected in the file “./notes/develop.R”. You
+can run the different sections stepwise during package maintenance and
+updating.
+
+#### Help
 
 The full list of all available functions and datasets can be accessed by
 typing
@@ -76,7 +133,7 @@ other changes.
 
 ## Copyright and license
 
-Copyright (c) 2021 - 2022 Norwegian Veterinary Institute.  
+Copyright (c) 2021 - 2023 Norwegian Veterinary Institute.  
 Licensed under the BSD\_3\_clause License. See
 [License](https://github.com/NorwegianVeterinaryInstitute/NVIpackager/blob/main/LICENSE)
 for details.
