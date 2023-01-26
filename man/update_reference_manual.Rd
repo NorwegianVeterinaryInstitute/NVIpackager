@@ -33,7 +33,7 @@ Update the PDF reference manual and save it together with the vignettes.
 Standard is \code{manual = "update"} that will update the  reference
     manual if it exists, but will do nothing if it doesn't exist. Use
     \code{manual = "include"} to make the reference manual for the first time.
-    For both \code{manual = c("include", "update") }, the \code{DESCRIPTION} and
+    For both \code{manual = c("include", "update")}, the \code{DESCRIPTION} and
     \code{.gitignore} will be checked and modified if necessary and the "pkgname.pdf.asis"
     will be created in addition to the reference manual "pkgname.pdf".
 

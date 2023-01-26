@@ -17,7 +17,6 @@ NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "local")
 # remotes::install_github(paste0("NorwegianVeterinaryInstitute/", pkg),
 #                         upgrade = FALSE,
 #                         build = TRUE,
-#                         build_manual = TRUE,
 #                         build_vignettes = TRUE)
 #
 #
@@ -25,7 +24,6 @@ NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "local")
 # remotes::install_github(paste0("PetterHopp/", pkg),
 #                         upgrade = FALSE,
 #                         build = TRUE,
-#                         build_manual = TRUE,
 #                         build_vignettes = TRUE)
 #
 

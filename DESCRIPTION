@@ -1,7 +1,7 @@
 Package: NVIpackager
 Title: Tools to facilitate Development of NVIverse Packages
-Version: 0.3.1
-Date: 2022-08-20
+Version: 0.4.0
+Date: 2023-01-26
 Authors@R: 
     c(person(given = "Petter",
              family = "Hopp",
@@ -12,7 +12,7 @@ Authors@R:
              role = "cph"))
 Description: Provides tools to facilitate development of NVIverse packages. You 
     should use 'create_NVIpkg_skeleton' to make a package skeleton in accord with 
-    NVIverse standards. For further development and maintainance there are 
+    NVIverse standards. For further development and maintenance there are 
     tools for updating documentation and installing development versions. The 
     NVIpackager functions are to a large extent wrappers for devtools and usethis
     functions. In addition, the templates folder keeps templates for standard 
@@ -25,27 +25,26 @@ Encoding: UTF-8
 Language: en-GB
 LazyData: true
 Roxygen: list(markdown = FALSE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Depends: R (>= 4.0.0)
 Imports: 
     checkmate (>= 2.0.0),
     desc,
-    devtools, 
+    devtools,
     knitr,
-    remotes, 
+    remotes,
     rmarkdown,
-    roxygen2,
     shiny,
     stringi,
-    stringr,
-    styler (>= 1.3.2), 
+    styler (>= 1.3.2),
     usethis (>= 2.1.0),
     withr,
-    NVIrpackages
+    NVIrpackages,
+    R.rsp
 Suggests: 
     covr,
     testthat (>= 3.0.0)
 Remotes: 
     github::NorwegianVeterinaryInstitute/NVIrpackages
-VignetteBuilder: knitr
+VignetteBuilder: knitr, R.rsp
 Config/testthat/edition: 3

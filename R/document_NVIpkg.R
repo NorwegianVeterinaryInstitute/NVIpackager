@@ -63,7 +63,7 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
   # Object to store check-results
   checks <- checkmate::makeAssertCollection()
   # Perform checks
-  assert_pkg_path(pkg = pkg, pkg_path = pkg_path)
+  checks <- assert_pkg_path(pkg = pkg, pkg_path = pkg_path, add = checks)
   checkmate::assert_logical(x = style, add = checks)
   checkmate::assert_choice(x = manual, choices = c("include", "update", "remove"))
   checkmate::assert_logical(x = contributing, add = checks)
@@ -77,6 +77,10 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
   checkmate::reportAssertions(checks)
 
   if (isTRUE(style)) {
+    if (!dir.exists(file.path(pkg_path, "styler_perm"))) {
+      dir.create(path = file.path(pkg_path, "styler_perm"))
+    }
+    options(styler.cache_root = "styler_perm")
     if (!exists("scope")) {
       scope <- "spaces"
     }

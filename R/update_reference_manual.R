@@ -4,7 +4,7 @@
 #' @details Standard is \code{manual = "update"} that will update the  reference
 #'     manual if it exists, but will do nothing if it doesn't exist. Use
 #'     \code{manual = "include"} to make the reference manual for the first time.
-#'     For both \code{manual = c("include", "update") }, the \code{DESCRIPTION} and
+#'     For both \code{manual = c("include", "update")}, the \code{DESCRIPTION} and
 #'     \code{.gitignore} will be checked and modified if necessary and the "pkgname.pdf.asis"
 #'     will be created in addition to the reference manual "pkgname.pdf".
 #'
@@ -40,7 +40,7 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
   # Object to store check-results
   checks <- checkmate::makeAssertCollection()
   # assertions
-  assert_pkg_path(pkg = pkg, pkg_path = pkg_path, checks = checks)
+  checks <- assert_pkg_path(pkg = pkg, pkg_path = pkg_path, add = checks)
 
   checkmate::assert_choice(manual, choices = c("include", "update", "remove"), add = checks)
   # Report check-results

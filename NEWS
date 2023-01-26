@@ -1,3 +1,24 @@
+NVIpackager 0.4.0 - (2023-01-26)
+----------------------------------------
+
+New features:
+
+- Created `update_news`.
+
+- Created `increase_NVIpkg_version` for increasing version number in "NEWS" and "DESCRIPTION". Calls `update_news`.
+
+
+Other changes:
+
+- Created NVIpackager.pdf reference manual.
+
+- Updated with package specific usage in README.
+
+- Included `increase_NVIpkg_version` in template for develop.R.
+
+- Styled the template "Contribute_to_NVIpkg.Rmd".
+
+
 NVIpackager 0.3.1 - (2022-08-20)
 -------------------------------------
 
