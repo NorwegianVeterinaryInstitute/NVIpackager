@@ -12,7 +12,7 @@ Authors@R:
              role = "cph"))
 Description: Provides tools to facilitate development of NVIverse packages. You 
     should use 'create_NVIpkg_skeleton' to make a package skeleton in accord with 
-    NVIverse standards. For further development and maintainance there are 
+    NVIverse standards. For further development and maintenance there are 
     tools for updating documentation and installing development versions. The 
     NVIpackager functions are to a large extent wrappers for devtools and usethis
     functions. In addition, the templates folder keeps templates for standard 
@@ -25,7 +25,7 @@ Encoding: UTF-8
 Language: en-GB
 LazyData: true
 Roxygen: list(markdown = FALSE)
-RoxygenNote: 7.2.2
+RoxygenNote: 7.2.3
 Depends: R (>= 4.0.0)
 Imports: 
     checkmate (>= 2.0.0),
