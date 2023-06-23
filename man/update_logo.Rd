@@ -10,17 +10,17 @@ update_logo(
 )
 }
 \arguments{
-\item{pkg}{[\code{character}]\cr
-The package name, defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
+\item{pkg}{[\code{character(1)}]\cr
+The package name. Defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
 
-\item{pkg_path}{[\code{character}]\cr
-The path to the package directory, defaults to \code{usethis::proj_path()}.}
+\item{pkg_path}{[\code{character(1)}]\cr
+The path to the package directory. Defaults to \code{usethis::proj_path()}.}
 }
 \value{
 None. Copies the the logo file to the directory "./man/figures/".
 }
 \description{
-Update the logo to be used in the README file.
+Update the logo to be used in the \code{README} file.
 }
 \details{
 If the package logo has been created, the logo is copied from

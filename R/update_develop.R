@@ -3,12 +3,12 @@
 #'     If the file already exist, it is overwritten.
 #'
 #' @details "develop.R" is a script comprising code for creating, documenting,
-#'     testing and installing a package during development and maintainance. All
+#'     testing and installing a package during development and maintenance. All
 #'     code should be written without reference to a specific package, so that
-#'     the script can be used without modification in development and maintainance
-#'     of all NVIverse packages.
+#'     the script can be used without modification in development and maintenance
+#'     of all \code{NVIverse} packages.
 #'
-#'     The template is found in \code{NVIpackager}. Any change in the script
+#' The template is found in \code{NVIpackager}. Any change in the script
 #'     should be done in the template. Thereby, it is easier to keep the script
 #'     updated in all packages.
 #'

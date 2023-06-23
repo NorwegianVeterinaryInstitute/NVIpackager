@@ -7,21 +7,24 @@
 assert_pkg_path(pkg, pkg_path, add)
 }
 \arguments{
-\item{pkg}{Argument to the add-function to be asserted.}
+\item{pkg}{[\code{any}]\cr
+Argument to the add-function to be asserted.}
 
-\item{pkg_path}{Argument to the add-function to be asserted.}
+\item{pkg_path}{[\code{any}]\cr
+Argument to the add-function to be asserted.}
 
-\item{checks}{AssertCollection, defaults to checks.}
+\item{add}{[\code{AssertCollection}]\cr
+The AssertCollection for saving result of assertions.}
 }
 \value{
-An assertCollection that have been updated with the results
+An AssertCollection that have been updated with the results
     of assertions for \code{pkg} and \code{pkg_path}.
 }
 \description{
 Assertions for pkg and pkg_path in packager_functions.
 }
 \details{
-The function does not set up and report the assertCollection.
+The function does not set up and report the AssertCollection
   This need to be done separately, see example.
 }
 \examples{

@@ -11,15 +11,15 @@ create_NVIpkg_skeleton(
 )
 }
 \arguments{
-\item{pkg}{[\code{character}]\cr
-The package name, defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
+\item{pkg}{[\code{character(1)}]\cr
+The package name. Defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
 
-\item{pkg_path}{[\code{character}]\cr
-The path to the package directory, defaults to \code{usethis::proj_path()}.}
+\item{pkg_path}{[\code{character(1)}]\cr
+The path to the package directory. Defaults to \code{usethis::proj_path()}.}
 
-\item{license_keyword}{[\code{character}]\cr
-The keyword for the package's license in accord with list of license keywords,
-defaults to "BSD_3_clause".}
+\item{license_keyword}{[\code{character(1)}]\cr
+The keyword for the package's license in accord with list of license keywords.
+Defaults to "BSD_3_clause".}
 }
 \value{
 None.
@@ -36,10 +36,10 @@ Creates the package skeleton in agreement with the conventions
     -functions. It sets up the package directory with standard files and
     standard sub-directories. Modifies the \code{DESCRIPTION}, \code{.gitignore},
     and \code{.Rbuildignore} in agreement with standard dependencies for
-    NVIverse.
+    \code{NVIverse}.
 
     Standard values are input to \code{DESCRIPTION}. For modifying these values,
-    you need to modify \code{set_description_default}.
+    you need to modify \code{\link{set_description_default}}.
 
     In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDUCT},
     and the vignette \code{Contribute_to_NVIpkg} are copied to the package

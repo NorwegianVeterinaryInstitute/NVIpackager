@@ -13,18 +13,19 @@
 #'
 #' @template pkg
 #' @template pkg_path
-#' @param style [\code{logical}]\cr
+#' @param style [\code{logica(1)l}]\cr
 #'     Should the package be styled, defaults to \code{FALSE}.
-#' @param manual [\code{character}]\cr
+#' @param manual [\code{character(1)}]\cr
 #'     Should a reference manual be included, updated or removed. Defaults to
 #'     \code{manual = "update"} that will update the manual if exists and do
 #'     nothing if it doesn't exist.
-#' @param contributing [\code{logical}]\cr
+#' @param contributing [\code{logical(1)}]\cr
 #'     Should \code{CONTRIBUTING.md} and the vignette "Contribute to NVIpkg" be
 #'     updated, defaults to \code{FALSE}.
-#' @param readme [\code{logical}]\cr
+#' @param readme [\code{logical(1)}]\cr
 #'     Should \code{README} be updated, defaults to \code{FALSE}.
-#' @param \dots	Other arguments to be passed to \code{styler::style_pkg}.
+#' @param \dots	Other arguments to be passed to
+#'     \ifelse{html}{\code{\link[styler:style_pkg]{styler::style_pkg}}}{\code{styler::style_pkg}}.
 #'
 #' @return none. Updated help files for all functions and,
 #'     depending on argument input, can updated style,
@@ -59,15 +60,16 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
                             contributing = FALSE,
                             readme = FALSE,
                             ...) {
-  # Argument checking
+
+  # ARGUMENT CHECKING ----
   # Object to store check-results
   checks <- checkmate::makeAssertCollection()
   # Perform checks
   checks <- assert_pkg_path(pkg = pkg, pkg_path = pkg_path, add = checks)
-  checkmate::assert_logical(x = style, add = checks)
+  checkmate::assert_flag(x = style, add = checks)
   checkmate::assert_choice(x = manual, choices = c("include", "update", "remove"))
-  checkmate::assert_logical(x = contributing, add = checks)
-  checkmate::assert_logical(x = readme, add = checks)
+  checkmate::assert_flag(x = contributing, add = checks)
+  checkmate::assert_flag(x = readme, add = checks)
   if (exists("scope")) {
     checkmate::assert_subset(x = scope,
                              choices = c("spaces", "indention", "line_breaks", "tokens"),
@@ -76,6 +78,7 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
   # Report assertions
   checkmate::reportAssertions(checks)
 
+  # STYLE FUNCTIONS ----
   if (isTRUE(style)) {
     if (!dir.exists(file.path(pkg_path, "styler_perm"))) {
       dir.create(path = file.path(pkg_path, "styler_perm"))
@@ -89,14 +92,19 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
                       ...)
   }
 
+  # UPDATE DOCUMENTATION ----
+  # function help
   devtools::document(pkg = pkg_path)
 
+  # pdf reference manual
   update_reference_manual(pkg = pkg, pkg_path = pkg_path, manual = manual)
 
+  # contributing
   if (isTRUE(contributing)) {
     update_contributing(pkg = pkg, pkg_path = pkg_path)
   }
 
+  # README
   if (isTRUE(readme)) {
     update_readme(pkg = pkg, pkg_path = pkg_path)
   }

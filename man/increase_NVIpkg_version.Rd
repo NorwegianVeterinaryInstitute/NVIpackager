@@ -13,20 +13,21 @@ increase_NVIpkg_version(
 )
 }
 \arguments{
-\item{pkg}{[\code{character}]\cr
-The package name, defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
+\item{pkg}{[\code{character(1)}]\cr
+The package name. Defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
 
-\item{pkg_path}{[\code{character}]\cr
-The path to the package directory, defaults to \code{usethis::proj_path()}.}
+\item{pkg_path}{[\code{character(1)}]\cr
+The path to the package directory. Defaults to \code{usethis::proj_path()}.}
 
-\item{type}{[\code{character(1)}]. The type of update to perform,
-can be one of c("major", "minor" , "fix" , "develop" , "first").
-Defaults to "develop".}
+\item{type}{[\code{character(1)}]\cr
+The type of update to perform. Must be one of
+    c("major", "minor" , "fix" , "develop" , "first").
+    Defaults to "develop".}
 
-\item{document}{[\code{logical(1)}]. Should styling be performed
-and documentation be updated. Defaults to \code{FALSE}.}
+\item{document}{[\code{logical(1)}]\cr
+Should styling be performed and documentation be updated. Defaults to \code{FALSE}.}
 
-\item{\dots}{Other arguments to be passed to \code{document_NVIpkg}.}
+\item{\dots}{Other arguments to be passed to \code{\link{document_NVIpkg}}.}
 }
 \value{
 None. Modifies \code{NEWS} and \code{DESCRIPTION} and eventually
@@ -38,17 +39,18 @@ Increase the package version in the \code{DESCRIPTION}
     manual will be styled and updated.
 }
 \details{
-When publishing a new release, use \code{type =} one of
-    c("major", "minor" , "fix"), depending of which release type
+When publishing a new release, use \code{type} one of
+    c("major", "minor", "fix"), depending of which release type
     it is.
 
-    When \code{type =} "first", the \code{NEWS} will be created with
-    the template for the first release. If \code{create_NVIpkg_skeleton}
+    When \code{type = "first"}, the \code{NEWS} will be created with
+    the template for the first release. If
+    \code{\link{create_NVIpkg_skeleton}}
     has been used to create the package, the \code{DESCRIPTION}
     and \code{NEWS} files should already have been created with
     correct version number and \code{NEWS} template.
 
-    When \code{type =} "develop", the \code{NEWS} will be created
+    When \code{type = "develop"}, the \code{NEWS} will be created
     with the template for the next release if the previous version
     was a release. If not, it increased the development version.
 }

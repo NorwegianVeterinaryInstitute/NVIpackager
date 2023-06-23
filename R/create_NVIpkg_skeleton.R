@@ -8,10 +8,10 @@
 #'     -functions. It sets up the package directory with standard files and
 #'     standard sub-directories. Modifies the \code{DESCRIPTION}, \code{.gitignore},
 #'     and \code{.Rbuildignore} in agreement with standard dependencies for
-#'     NVIverse.
+#'     \code{NVIverse}.
 #'
 #'     Standard values are input to \code{DESCRIPTION}. For modifying these values,
-#'     you need to modify \code{set_description_default}.
+#'     you need to modify \code{\link{set_description_default}}.
 #'
 #'     In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDUCT},
 #'     and the vignette \code{Contribute_to_NVIpkg} are copied to the package
@@ -23,9 +23,9 @@
 #'
 #' @template pkg
 #' @template pkg_path
-#' @param license_keyword  [\code{character}]\cr
-#'     The keyword for the package's license in accord with list of license keywords,
-#'     defaults to "BSD_3_clause".
+#' @param license_keyword  [\code{character(1)}]\cr
+#'     The keyword for the package's license in accord with list of license keywords.
+#'     Defaults to "BSD_3_clause".
 #'
 #' @return None.
 #'     Sets up the package directories and writes and modifies several files, see details.

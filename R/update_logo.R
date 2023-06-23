@@ -1,5 +1,5 @@
 #' @title Update logo
-#' @description Update the logo to be used in the README file.
+#' @description Update the logo to be used in the \code{README} file.
 #'
 #' @details If the package logo has been created, the logo is copied from
 #'     \code{NVIrpackages} to the package directory "./man/figures/". If the logo

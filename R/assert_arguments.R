@@ -7,14 +7,17 @@
 #' @title Assertions for pkg and pkg_path in packager_functions
 #' @description Assertions for pkg and pkg_path in packager_functions.
 #'
-#' @details The function does not set up and report the assertCollection.
+#' @details The function does not set up and report the AssertCollection
 #'   This need to be done separately, see example.
 #'
-#' @param pkg Argument to the add-function to be asserted.
-#' @param pkg_path Argument to the add-function to be asserted.
-#' @param checks AssertCollection, defaults to checks.
+#' @param pkg [\code{any}]\cr
+#' Argument to the add-function to be asserted.
+#' @param pkg_path [\code{any}]\cr
+#' Argument to the add-function to be asserted.
+#' @param add [\code{AssertCollection}]\cr
+#' The AssertCollection for saving result of assertions.
 #'
-#' @return An assertCollection that have been updated with the results
+#' @return An AssertCollection that have been updated with the results
 #'     of assertions for \code{pkg} and \code{pkg_path}.
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
@@ -37,8 +40,6 @@
 #'                 add = checks)
 #' # Report check-results
 #' checkmate::reportAssertions(checks)
-#' @export
-
 assert_pkg_path <- function(pkg,
                             pkg_path,
                             add) {

@@ -1,2 +1,2 @@
-#' @param pkg [\code{character}]\cr
-#'   The package name, defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.
+#' @param pkg [\code{character(1)}]\cr
+#' The package name. Defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.
