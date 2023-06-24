@@ -1,4 +1,4 @@
-# NVIpackager: Tools to facilitate Development of NVIverse Packages
+# NVIpackager: Tools to facilitate Development of NVIverse Packages <img src="man/figures/NVIpackager_logo.png" align="right" height="138" />
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -34,7 +34,7 @@ for more information.
 [GitHub](https://github.com/NorwegianVeterinaryInstitute). To install
 `NVIpackager` you will need:
 
--   R version &gt; 4.0.0
+-   R version > 4.0.0
 -   R package `remotes`
 -   Rtools 4.0 or Rtools 4.2 depending on R version
 
@@ -88,7 +88,7 @@ To set up a package skeleton you can follow the following procedure:
 
 4.  Create an R-studio project for the package. In R-studio
 
-    -   Choose New project -&gt; Version control
+    -   Choose New project -> Version control
     -   Copy the directory at GitHub and paste it where asked in
         R-studio.
     -   Select a directory in your PC for your package.
@@ -127,6 +127,35 @@ The full list of all available functions and datasets can be accessed by
 typing
 
     help(package = "NVIpackager")
+
+Consult the vignettes for task-oriented help.
+
+    vignette(package = "NVIpackager")
+
+Vignettes in package `NVIpackager`:
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Title</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Contribute_to_NVIpackager</td>
+<td style="text-align: left;">Contribute to NVIpackager (source, html)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NVIpackager</td>
+<td style="text-align: left;">NVIpackager reference manual (source, pdf)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NVIverse_coding_conventions</td>
+<td style="text-align: left;">NVIverse coding conventions (source, html)</td>
+</tr>
+</tbody>
+</table>
 
 Please check the NEWS for information on new features, bug fixes and
 other changes.
