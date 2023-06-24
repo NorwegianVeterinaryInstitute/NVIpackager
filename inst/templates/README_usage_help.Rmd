@@ -4,5 +4,20 @@ The full list of all available functions and datasets can be accessed by typing
 helptext <- paste0('help(package = "', NVIpkg, '")')
 cat(helptext, sep="", fill = TRUE)
 ```
+
+Consult the vignettes for task-oriented help.
+``` {r vignettetext, message=FALSE, warnings=FALSE, echo = FALSE, prompt = FALSE, comment = ""} 
+vignettetext <- paste0('vignette(package = "', NVIpkg, '")')
+cat(vignettetext, sep="", fill = TRUE)
+```
+
+Vignettes in package `r NVIpkg_inline`:
+```{r vignettes, echo = FALSE}
+pkg_vignettes <- vignette(package = NVIpkg)
+pkg_vignettes <- as.data.frame(pkg_vignettes$results[, c("Item", "Title")])
+
+knitr::kable(x = pkg_vignettes)
+```
+
 Please check the NEWS for information on new features, bug fixes and other changes.
 
