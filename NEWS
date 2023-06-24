@@ -3,7 +3,7 @@ NVIpackager 0.4.0.9001 - (2023-##-##)
 
 New features:
 
--
+- Section on vignettes is now included in README template.
 
 
 Bug fixes:
@@ -16,6 +16,8 @@ Other changes:
 - Created the vignette: NVIverse coding conventions.
 
 - Standardised function help.
+
+- Created logo.
 
 
 BREAKING CHANGES:
