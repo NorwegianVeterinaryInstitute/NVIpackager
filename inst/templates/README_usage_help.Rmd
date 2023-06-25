@@ -1,9 +1,12 @@
-#### Help
+#### Documentation
+##### Help
 The full list of all available functions and datasets can be accessed by typing
 ``` {r helptext, message=FALSE, warnings=FALSE, echo=FALSE, prompt = FALSE, comment = ""} 
 helptext <- paste0('help(package = "', NVIpkg, '")')
 cat(helptext, sep="", fill = TRUE)
 ```
+
+##### Vignettes
 
 Consult the vignettes for task-oriented help.
 ``` {r vignettetext, message=FALSE, warnings=FALSE, echo = FALSE, prompt = FALSE, comment = ""} 
@@ -11,13 +14,21 @@ vignettetext <- paste0('vignette(package = "', NVIpkg, '")')
 cat(vignettetext, sep="", fill = TRUE)
 ```
 
-Vignettes in package `r NVIpkg_inline`:
+`r if (length(vignette(package = NVIpkg)$result) > 0) {paste0("Vignettes in package ", NVIpkg_inline, ":")}`
 ```{r vignettes, echo = FALSE}
 pkg_vignettes <- vignette(package = NVIpkg)
-pkg_vignettes <- as.data.frame(pkg_vignettes$results[, c("Item", "Title")])
-
-knitr::kable(x = pkg_vignettes)
+if (length(pkg_vignettes$result[,"Item"]) > 0) {
+  if (length(pkg_vignettes$result[,"Item"]) == 1) {
+    pkg_vignettes <- t(as.data.frame(pkg_vignettes$results[, c("Item", "Title")]))
+  } else {
+    pkg_vignettes <- as.data.frame(pkg_vignettes$results[, c("Item", "Title")])
+  }
+  rownames(pkg_vignettes) <- NULL
+  knitr::kable(x = pkg_vignettes)
+}
 ```
+
+##### NEWS
 
 Please check the NEWS for information on new features, bug fixes and other changes.
 
