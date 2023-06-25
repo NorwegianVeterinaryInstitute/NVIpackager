@@ -121,12 +121,16 @@ install the package are collected in the file “./notes/develop.R”. You
 can run the different sections stepwise during package maintenance and
 updating.
 
-#### Help
+#### Documentation
+
+##### Help
 
 The full list of all available functions and datasets can be accessed by
 typing
 
     help(package = "NVIpackager")
+
+##### Vignettes
 
 Consult the vignettes for task-oriented help.
 
@@ -156,6 +160,8 @@ Vignettes in package `NVIpackager`:
 </tr>
 </tbody>
 </table>
+
+##### NEWS
 
 Please check the NEWS for information on new features, bug fixes and
 other changes.
