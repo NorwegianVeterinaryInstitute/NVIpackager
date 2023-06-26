@@ -136,30 +136,10 @@ Consult the vignettes for task-oriented help.
 
     vignette(package = "NVIpackager")
 
-Vignettes in package `NVIpackager`:
-
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Item</th>
-<th style="text-align: left;">Title</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Contribute_to_NVIpackager</td>
-<td style="text-align: left;">Contribute to NVIpackager (source, html)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">NVIpackager</td>
-<td style="text-align: left;">NVIpackager reference manual (source, pdf)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">NVIverse_coding_conventions</td>
-<td style="text-align: left;">NVIverse coding conventions (source, html)</td>
-</tr>
-</tbody>
-</table>
+Vignettes in package `NVIpackager`:  
+- Contribute to NVIpackager (html)  
+- NVIpackager reference manual (pdf)  
+- NVIverse coding conventions (html)
 
 ##### NEWS
 
