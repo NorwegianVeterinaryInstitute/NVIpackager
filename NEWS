@@ -3,7 +3,7 @@ NVIpackager 0.4.0.9001 - (2023-##-##)
 
 New features:
 
-- Section on vignettes is now included in README template.
+- Updated the section for help in the README template with a paragraph on Vignettes.
 
 
 Bug fixes:
