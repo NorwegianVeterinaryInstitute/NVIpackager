@@ -66,7 +66,7 @@ wrappers for devtools and usethis functions. In addition, the templates
 folder keeps templates for standard files like sections of README and
 CONTRIBUTING.
 
-#### Create a package skeleton
+#### Create a NVIverse package skeleton
 
 To set up a package skeleton you can follow the following procedure:
 
@@ -114,14 +114,14 @@ To set up a package skeleton you can follow the following procedure:
             contributing = FALSE,
             readme = TRUE)
 
-#### Maintenance of the package
+#### Maintenance of a NVIverse package
 
 Functions for updating documentation, performing tests, build and
 install the package are collected in the file “./notes/develop.R”. You
 can run the different sections stepwise during package maintenance and
 updating.
 
-#### Documentation
+#### Documentation of `NVIpackager`
 
 ##### Help
 
@@ -136,10 +136,11 @@ Consult the vignettes for task-oriented help.
 
     vignette(package = "NVIpackager")
 
-Vignettes in package `NVIpackager`:  
-- Contribute to NVIpackager (html)  
-- NVIpackager reference manual (pdf)  
-- NVIverse coding conventions (html)
+Vignettes in package `NVIpackager`:
+
+-   Contribute to NVIpackager (html)  
+-   NVIpackager reference manual (pdf)  
+-   NVIverse coding conventions (html)
 
 ##### NEWS
 
