@@ -1,4 +1,4 @@
-#### Documentation
+#### Documentation of `r NVIpkg_inline`
 ##### Help
 The full list of all available functions and datasets can be accessed by typing
 ``` {r helptext, message=FALSE, warnings=FALSE, echo=FALSE, prompt = FALSE, comment = ""} 
@@ -15,26 +15,11 @@ cat(vignettetext, sep="", fill = TRUE)
 ```
 
 ```{r vignettes, echo = FALSE, prompt = FALSE, comment = ""}
-# pkg_vignettes <- vignette(package = NVIpkg)
-# if (length(pkg_vignettes$result[,"Title"]) > 0) {
-  # if (length(pkg_vignettes$result[,"Item"]) == 1) {
-  #   pkg_vignettes <- t(as.data.frame(pkg_vignettes$results[, c("Item", "Title")]))
-  # } else {
-  #   pkg_vignettes <- as.data.frame(pkg_vignettes$results[, c("Item", "Title")])
-  # }
-  # rownames(pkg_vignettes) <- NULL
-  # knitr::kable(x = pkg_vignettes)
 pkg_vignettes <- vignette(package = NVIpkg)
 pkg_vignettes <- pkg_vignettes$results[, "Title"]
 pkg_vignettes <- gsub(pattern = "source, ", "", x = pkg_vignettes)
 pkg_vignettes <- paste0("-  ", pkg_vignettes, "  \n")
-pkg_vignettes <- paste0("  \n", paste(pkg_vignettes, collapse = ""), "  \n")
-# # cat(pkg_vignettes)
-# pkg_vignettes <- gsub("\n", "<br>", pkg_vignettes, fixed = TRUE)
-# pkg_vignettes <- paste0("-  ", pkg_vignettes, "<br>")
-# pkg_vignettes <- paste0("<br><br>", paste(pkg_vignettes, collapse = ""), "<br>")
-# cat(pkg_vignettes)
-# }
+pkg_vignettes <- paste0("  \n  \n", paste(pkg_vignettes, collapse = ""), "  \n")
 ```
 
 `r if (length(pkg_vignettes > 0)) {paste0("Vignettes in package ", NVIpkg_inline, ":", pkg_vignettes)}`
