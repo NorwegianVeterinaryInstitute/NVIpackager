@@ -1,6 +1,7 @@
 ---
 output:
-  rmarkdown::html_vignette
+  rmarkdown::html_vignette:
+    css: "NVI_vignette_style.css"
 title: "NVIverse coding conventions"
 
 vignette: >
@@ -8,6 +9,7 @@ vignette: >
   %\VignetteIndexEntry{NVIverse coding conventions}
   %\VignetteEncoding
 ---
+
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -47,10 +49,10 @@ Guidelines and help for creating R functions are out of the scope for this vigne
 Exported functions are functions that are made available for the package users. An R package is usually a collection of R functions and is a method for efficient distribution of these functions to R users.
 
 ### Naming
-##### Function names
+#### Function names
 The function names should start with a verb and be meaningful, see [tidyverse styleguide](https://style.tidyverse.org/functions.html). `NVIverse` uses descriptive and therefore often long names for functions. The intention is to make the scripts using these functions, easier to read and interpret. Strange abbreviations should be avoided. Function names are written in snake_case, but a few abbreviations that are written using capital letter, are in capital letters also when included in function names.
 
-##### File names
+#### File names
 The file name is the function name + ".R". In addition there are a few dedicated file names used for groups of functions or data descriptions. 
 
 **data.R:** Collects descriptions of data files that are included in the package.
@@ -60,38 +62,27 @@ The file name is the function name + ".R". In addition there are a few dedicated
 ### Coding and commenting
 One should try to make the code readable and understandable. One should comment the code. In this guidelinethere will be no guiding on how to write efficient code, you are instead referred to [Stack overflow](https://stackoverflow.com/questions) and other resources.
 
-##### Structure
+#### Structure
 There has over time developed a "structure" for the script within a function and this is used for new functions. The script is divided into main sections. Each of these starts with a headline explaining the content of the following code. The headline is written as "## HEADLINE ----". By starting the headline with two hashtags and ending with 4 hyphens, one can take use of R studios automatic features for generating an outline of the code and hide code within a section. Within each section one should try to give necessary comments so others (and the future you) can interpret the code. The following sections have been found useful:
 
-
-\## PREPARE ARGUMENTS BEFORE CHECKING ----
-
+<p style="color:#4C886B";>## PREPARE ARGUMENTS BEFORE CHECKING ---- </p>
 This sections is not always needed. Here the arguments are modified before argument checking. In principle, argument checking should be the first tassk performed in the function. However, there are some preparations that have been found useful to perform before argument checking.
 
 - remove ending slash(es) from paths before checking the validity of the path
 - ensure that all elements in a vector is named (in add-functions)
 - read arguments from external file or data base when relevant
 
-
-\## ARGUMENT CHECKING ----
-
+<p style="color:#4C886B";>## ARGUMENT CHECKING ---- </p>
 All arguments should be checked and some times there are needed more than one check for an arument, see [Argument checking](#argument-checking) below. 
 
-
-\## PREPARE ARGUMENTS BEFORE RUNNING SCRIPT ----
-
+<p style="color:#4C886B";>## PREPARE ARGUMENTS BEFORE RUNNING SCRIPT ---- </p>
 Needed some times.
 
-
-\## RUN THE FUNCTION ----
-
+<p style="color:#4C886B";>## RUN THE FUNCTION ---- </p>
 This is the main part of the function. Try to use descriptive headlines for what the script does. Make one section for each main task in the function code.
 
-
-\## RETURN ----
-
+<p style="color:#4C886B";>## RETURN ---- </p>
 The last step returning the result.
-
 
 #### Package dependencies
 There is a need to define the packages that should have priority for use in `NVIverse.` Thereby, the number of package dependencies can be reduced. However, if loading all `NVIverse` packages, there are a huge number of package dependencies. There is a long term goal of reducing the number of dependencies.
@@ -148,10 +139,10 @@ Internal functions, hjelper or non-exported functions are functions not exported
 Internal and exported functions follow in principle the same conventions. There are a few additional points for naming and help. 
 
 ### Naming internal functions
-##### Fuction names
+#### Fuction names
 The same naming conventions should be followed for internal functions as for exported functions. 
 
-##### File names
+#### File names
 Internal functions used in one specific exported function are included in the R file for the specific function. The remaining internal functions are collected in files dedicated for internal functions. There are some standard names for such files.
 
 **utils.R:**
