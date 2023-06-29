@@ -1,6 +1,7 @@
 ---
 output: 
   rmarkdown::html_vignette:
+    css: "NVI_vignette_style.css"
     keep_md: true
 md_document:
   variant: markdown_github
