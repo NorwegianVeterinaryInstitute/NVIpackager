@@ -78,12 +78,19 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
   # Report assertions
   checkmate::reportAssertions(checks)
 
+  # Copy vignette styles
+  if (dir.exists(paste0(pkg_path, "/vignettes"))) {
+    file.copy(from = system.file('templates', "NVI_vignette_style.css", package = "NVIpackager"),
+              to = file.path(pkg_path, "vignettes"),
+              overwrite = TRUE)
+  }
+
   # STYLE FUNCTIONS ----
   if (isTRUE(style)) {
-    if (!dir.exists(file.path(pkg_path, "styler_perm"))) {
-      dir.create(path = file.path(pkg_path, "styler_perm"))
-    }
-    options(styler.cache_root = "styler_perm")
+    # if (!dir.exists(file.path(pkg_path, "styler_perm"))) {
+    #   dir.create(path = file.path(pkg_path, "styler_perm"))
+    # }
+    # options(styler.cache_root = "styler_perm")
     if (!exists("scope")) {
       scope <- "spaces"
     }
@@ -95,13 +102,6 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
   # UPDATE DOCUMENTATION ----
   # function help
   devtools::document(pkg = pkg_path)
-
-  # vignettes
-  if (dir.exists(paste0(pkg_path, "/vignettes"))) {
-    file.copy(from = system.file('templates', "NVI_vignette_style.css", package = "NVIpackager"),
-              to = file.path(pkg_path, "vignettes"),
-              overwrite = TRUE)
-  }
 
   # pdf reference manual
   update_reference_manual(pkg = pkg, pkg_path = pkg_path, manual = manual)
