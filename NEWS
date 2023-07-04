@@ -5,6 +5,8 @@ New features:
 
 - Updated the section for help in the README template with a paragraph on Vignettes.
 
+- Improved create_NVIpkg_skeleton.
+
 
 Bug fixes:
 
