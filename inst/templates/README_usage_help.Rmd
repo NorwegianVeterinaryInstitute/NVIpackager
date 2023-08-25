@@ -1,4 +1,4 @@
-#### Documentation of `r NVIpkg_inline`
+#### Further documentation
 ##### Help
 The full list of all available functions and datasets can be accessed by typing
 ``` {r helptext, message=FALSE, warnings=FALSE, echo=FALSE, prompt = FALSE, comment = ""} 
@@ -26,5 +26,5 @@ pkg_vignettes <- paste0("  \n  \n", paste(pkg_vignettes, collapse = ""), "  \n")
 
 ##### NEWS
 
-Please check the NEWS for information on new features, bug fixes and other changes.
+Please check the [NEWS](`r  paste0("https://github.com/NorwegianVeterinaryInstitute/", NVIpkg, "/blob/main/NEWS")`) for information on new features, bug fixes and other changes.
 
