@@ -1,6 +1,6 @@
 # Remove NOTE when running CMD check and checking dependencies
 # Namespaces in Imports field not imported from:
-#   'package' 
+#   'package'
 # All declared Imports should be used.
 
 
