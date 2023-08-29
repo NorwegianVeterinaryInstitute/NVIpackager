@@ -24,6 +24,12 @@ pkg <- stringi::stri_extract_last_words(pkg_path)
 #                                   type = "develop",
 #                                   document = FALSE)
 
+# UPDATE LICENSE
+# NVIpackager::update_license(pkg = pkg,
+#                             pkg_path = pkg_path,
+#                             copyright_owner = "Norwegian Veterinary Institute")
+
+
 # DOCUMENTATION AND STYLING ----
 # update_logo should be run if a logo has been created (or updated). Thereafter run "document_NVIpkg" with "readme = TRUE".
 # update_logo(pkg = pkg, pkg_path = pkg_path)
