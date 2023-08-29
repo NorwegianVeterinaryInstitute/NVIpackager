@@ -3,6 +3,8 @@ NVIpackager 0.4.0.9001 - (2023-##-##)
 
 New features:
 
+- Created update_license for updating copyright year in the LICENSE file.
+
 - Updated the section for help in the README template with a paragraph on vignettes.
 
 - Improved create_NVIpkg_skeleton.
