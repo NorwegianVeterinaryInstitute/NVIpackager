@@ -80,7 +80,11 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   usethis::use_dev_package(package = "NVIrpackages",
                            type = "Imports",
                            remote = "github::NorwegianVeterinaryInstitute/NVIrpackages")
-  # usethis::use_package(package = "devtools", type = "Suggests")
+  usethis::use_package(package = "covr", type = "Suggests")
+  usethis::use_package(package = "desc", type = "Suggests")
+  usethis::use_package(package = "devtools", type = "Suggests")
+  usethis::use_package(package = "testthat", type = "Suggests")
+  usethis::use_package(package = "usethis", type = "Suggests")
   usethis::use_dev_package(package = "NVIpackager",
                            type = "Suggests",
                            remote = "github::NorwegianVeterinaryInstitute/NVIpackager")
