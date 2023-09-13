@@ -90,7 +90,7 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
                            remote = "github::NorwegianVeterinaryInstitute/NVIpackager")
 
   # Add files to .gitignore
-  usethis::use_git_ignore(ignores = "*.Rproj")
+  # usethis::use_git_ignore(ignores = "*.Rproj")
 
   # Make extra directories
   usethis::use_directory(path = "notes", ignore = FALSE)
