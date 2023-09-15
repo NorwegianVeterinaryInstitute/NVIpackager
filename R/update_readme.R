@@ -42,5 +42,6 @@ update_readme <- function(pkg = stringi::stri_extract_last_words(usethis::proj_p
   rmarkdown::render(input = paste0(pkg_path, "/README.Rmd"),
                     # output_format = "md_document",
                     output_file = "README.md",
-                    output_dir = pkg_path)
+                    output_dir = pkg_path,
+                    params = list("pkg_path" = pkg_path))
 }
