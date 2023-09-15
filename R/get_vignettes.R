@@ -34,6 +34,11 @@ get_vignettes <- function(path = file.path(usethis::proj_path(), "vignettes")) {
     vignette <- grep("VignetteIndexEntry", vignette, value = TRUE, fixed = TRUE)
     # vignette <- sub(pattern = "(?<=\\{).+?(?=\\})", "", vignette)
     vignette <- stringr::str_extract_all(vignette, "(?<=\\{).+?(?=\\})")[[1]]
+
+    # Include file format based on file ending (Rmd -> html, asis -> pdf)
+    if (grepl("\\.Rmd$", i)) {vignette <- paste(vignette, "(html)")}
+    if (grepl("\\.asis$", i)) {vignette <- paste(vignette, "(pdf)")}
+
     # Create vector with all vignette titles
     if (!exists("vignettes")) {
       vignettes <- vignette
