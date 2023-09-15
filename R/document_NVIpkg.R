@@ -100,6 +100,11 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
   }
 
   # UPDATE DOCUMENTATION ----
+  # README
+  if (isTRUE(readme)) {
+    update_readme(pkg = pkg, pkg_path = pkg_path)
+  }
+
   # function help
   devtools::document(pkg = pkg_path)
 
@@ -109,10 +114,5 @@ document_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj
   # contributing
   if (isTRUE(contributing)) {
     update_contributing(pkg = pkg, pkg_path = pkg_path)
-  }
-
-  # README
-  if (isTRUE(readme)) {
-    update_readme(pkg = pkg, pkg_path = pkg_path)
   }
 }
