@@ -6,11 +6,13 @@ output:
   
 params:
   NVIpkg: "NVIpackager"
+  pkg_path: !r  usethis::proj_path()
   first_copyright_year: "2021"
 ---
 
 ```{r, include = FALSE}
 NVIpkg <- params$NVIpkg
+pkg_path <- params$pkg_path
 # NVIpkg <- stringi::stri_extract_last_words(usethis::proj_path())
 NVIpkg_inline <- paste0("`", NVIpkg, "`")
 logo_path <- ""
