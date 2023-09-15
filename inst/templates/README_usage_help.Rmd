@@ -15,9 +15,10 @@ cat(vignettetext, sep="", fill = TRUE)
 ```
 
 ```{r vignettes, echo = FALSE, prompt = FALSE, comment = ""}
-pkg_vignettes <- vignette(package = NVIpkg)
-pkg_vignettes <- pkg_vignettes$results[, "Title"]
-pkg_vignettes <- gsub(pattern = "source, ", "", x = pkg_vignettes)
+# pkg_vignettes <- vignette(package = NVIpkg)
+# pkg_vignettes <- pkg_vignettes$results[, "Title"]
+# pkg_vignettes <- gsub(pattern = "source, ", "", x = pkg_vignettes)
+pkg_vignettes <- NVIpackager::get_vignettes(path = file.path(pkg_path, "vignettes"))
 pkg_vignettes <- paste0("-  ", pkg_vignettes, "  \n")
 pkg_vignettes <- paste0("  \n  \n", paste(pkg_vignettes, collapse = ""), "  \n")
 ```
