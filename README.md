@@ -34,7 +34,7 @@ for more information.
 [GitHub](https://github.com/NorwegianVeterinaryInstitute). To install
 `NVIpackager` you will need:
 
--   R version &gt; 4.0.0
+-   R version > 4.0.0
 -   R package `remotes`
 -   Rtools 4.0 or Rtools 4.2 depending on R version
 
@@ -88,7 +88,7 @@ To set up a package skeleton you can follow the following procedure:
 
 4.  Create an R-studio project for the package. In R-studio
 
-    -   Choose New project -&gt; Version control
+    -   Choose New project -> Version control
     -   Copy the directory at GitHub and paste it where asked in
         R-studio.
     -   Select a directory in your PC for your package.
