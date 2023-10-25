@@ -36,12 +36,20 @@ update_license <- function(pkg = stringi::stri_extract_last_words(usethis::proj_
   # read LICENSE
   license <- readLines(file.path(pkg_path, "LICENSE"))
   # updates copyright statement
-  copyright <- license[grep(pattern = paste0("^Copyright[[:print:]]*", copyright_owner, "$"), license)]
+  copyright <- license[grep(pattern = paste0("^Copyright[[:print:]]*",
+                                             copyright_owner,
+                                             "[[:space:]]*$"),
+                            license)]
   first_copyright_year <- substr(gsub(".*?([0-9]+).*", "\\1", copyright), 1, 4)
   copyright_year <- format(Sys.Date(), "%Y")
-  if (first_copyright_year < copyright_year) {copyright_year <- paste(first_copyright_year, "-", copyright_year)}
+  if (first_copyright_year < copyright_year) {
+    copyright_year <- paste(first_copyright_year, "-", copyright_year)
+    }
   copyright <- paste("Copyright (c)", copyright_year, copyright_owner)
-  license[grep(pattern = paste0("^Copyright[[:print:]]*", copyright_owner, "$"), license)] <- copyright
+  license[grep(pattern = paste0("^Copyright[[:print:]]*",
+                                copyright_owner,
+                                "[[:space:]]*$"),
+               license)] <- copyright
 
   # writes LICENSE
   writeLines(license, file.path(pkg_path, "LICENSE"))
