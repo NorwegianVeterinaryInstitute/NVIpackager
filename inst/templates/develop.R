@@ -95,3 +95,22 @@ utils::help(package = (pkg))
 library(package = pkg, character.only = TRUE)
 
 
+# MANUAL CHECK OF SCRIPTS ----
+# Search for string
+txt <- "\\.data\\$"
+files_with_pattern <- findInFiles::findInFiles(ext = "R", pattern = txt, output = "tibble")
+files_with_pattern <- findInFiles::FIF2dataframe(files_with_pattern)
+package <- rep(pkg, dim(files_with_pattern)[1])
+files_with_pattern <- cbind(package, files_with_pattern)
+
+wb <- openxlsx::createWorkbook()
+# Replace with openxlsx::addWorksheet()
+NVIpretty::add_formatted_worksheet(data = files_with_pattern,
+                                   workbook = wb,
+                                   sheet = make.names(paste0(pkg, txt)))
+openxlsx::saveWorkbook(wb,
+                       file = file.path("../", paste0(pkg, "_", "files_with_pattern.xlsx")),
+                       overwrite = TRUE)
+
+# Replace all occurrences of string in scripts
+
