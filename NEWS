@@ -3,13 +3,13 @@ NVIpackager 0.4.0.9001 - (2023-##-##)
 
 New features:
 
-- Created update_license for updating copyright year in the LICENSE file.
+- Created `update_license` for updating copyright year in the LICENSE file.
 
-- created get_vignettes for making a list of vignettes in the package before installing the package.
+- created `get_vignettes` for making a list of vignettes in the package before installing the package.
 
 - Updated the section for help in the README template with a paragraph on vignettes.
 
-- Improved create_NVIpkg_skeleton.
+- Improved `create_NVIpkg_skeleton`.
 
 
 Bug fixes:
@@ -19,11 +19,13 @@ Bug fixes:
 
 Other changes:
 
-- Created the vignette: NVIverse coding conventions.
+- Created the vignette: "NVIverse coding conventions".
 
 - Standardised function help.
 
 - Created logo.
+
+- "develop.R" includes code to find string in R-scripts. Can be used to check scripts.
 
 
 BREAKING CHANGES:
@@ -57,14 +59,14 @@ NVIpackager 0.3.1 - (2022-08-20)
 
 Bug fixes:
 
-- Removed build_manual = TRUE from install_NVIpkg as could cause problems for those without MiKTeX for generating PDF-files.
+- Removed `build_manual` = `TRUE` from `install_NVIpkg` as could cause problems for those without "MiKTeX" for generating PDF-files.
 
-- Included build_vignettes = TRUE in README installation guide as vignettes will not be installed without.
+- Included `build_vignettes` = `TRUE` in README installation guide as vignettes will not be installed without.
 
 
 Other changes:
 
-- Removed build_manual = TRUE from README installation guide as caused problems for those without MiKTeX for generating PDF-files.
+- Removed `build_manual` = `TRUE` from README installation guide as caused problems for those without "MiKTeX" for generating PDF-files.
 
 - corrected installation guide and improved style for README templates.
 
@@ -78,22 +80,22 @@ NVIpackager 0.3.0 - (2022-06-08)
 
 New features:
 
-- update_logo created for updating a package logo from 'NVIrpackages'.
+- `update_logo` created for updating a package logo from 'NVIrpackages'.
 
-- update_reference_manual created for including, updating or removing the PDF reference maual from the vignettes.
+- `update_reference_manual` created for including, updating or removing the PDF reference maual from the vignettes.
 
-- document_NVIpkg updated so it includes a call to update_reference_manual.
+- `document_NVIpkg` updated so it includes a call to `update_reference_manual`.
 
-- created update_develop that copies a template for develop.R to notes.
+- created `update_develop` that copies a template for "develop.R" to notes.
 
-_ included a call to update_develop in create_NVIpkg_skeleton.
+_ included a call to `update_develop` in `create_NVIpkg_skeleton`.
 
 
 Other changes:
 
   - template "Contribute_to_NVIpkg.Rmd" was modified with more precise guidelines for styling code.
 
-  - template README.Rmd was prepared for hexagon sticker logo.
+  - template "README.Rmd" was prepared for hexagon sticker logo.
 
   - README and CONTRIBUTING were updated.
 
@@ -119,7 +121,7 @@ Bug fixes:
 
 BREAKING CHANGES
 
-  - NVIpackages was moved to the separate package NVIrpackages
+  - `NVIpackages` was moved to the separate package `NVIrpackages`
 
 
 NVIpackager 0.1.0 - (2021-11-21)
