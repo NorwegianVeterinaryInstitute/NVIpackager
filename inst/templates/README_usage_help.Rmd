@@ -23,10 +23,10 @@ pkg_vignette_titles <- rep(NA, length(pkg_vignettes$docs))
 
 for (i in 1:length(pkg_vignettes$docs)) {
   pkg_vignette_titles[i] <- tools::vignetteInfo(pkg_vignettes$docs[i])$title
-  if (grepl("\\.Rmd", pkg_vignettes$docs[i], ignore.case = TRUE)) {
+  if (grepl("\\.Rmd$", pkg_vignettes$docs[i], ignore.case = TRUE)) {
     pkg_vignette_titles[i] <- paste(pkg_vignette_titles[i], "(html)")
     }
-  if (grepl("\\.pdf\\.asis", pkg_vignettes$docs[i], ignore.case = TRUE)) {
+  if (grepl("\\.pdf\\.asis$", pkg_vignettes$docs[i], ignore.case = TRUE)) {
     pkg_vignette_titles[i] <- paste(pkg_vignette_titles[i], "(pdf)")
   }
 }
