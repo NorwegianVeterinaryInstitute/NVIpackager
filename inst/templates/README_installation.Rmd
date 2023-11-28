@@ -3,7 +3,7 @@ To install `r NVIpkg_inline` you will need:
 
 - R version > 4.0.0
 - R package `remotes`
-- Rtools 4.0 or Rtools 4.2 depending on R version
+- Rtools version 4.0, 4.2 or 4.3 depending on R version
 
 First install and attach the `remotes` package.  
 
@@ -12,13 +12,24 @@ install.packages("remotes")
 library(remotes)
 ```
 
-To install (or update) the `r NVIpkg_inline` package, run the following code:
+To install (or update) the `r NVIpkg_inline` package without vignettes, run the following code:
 
-``` {r text, message=FALSE, warnings=FALSE, echo=FALSE, prompt = FALSE, comment = ""} 
-text <- paste(paste0('remotes::install_github("NorwegianVeterinaryInstitute/', NVIpkg, '",'), 
+``` {r install_without, message=FALSE, warnings=FALSE, echo=FALSE, prompt = FALSE, comment = ""} 
+install_without <- paste(paste0('remotes::install_github("NorwegianVeterinaryInstitute/', NVIpkg, '",'), 
+              '    upgrade = FALSE,', 
+              '    build = TRUE,', 
+              '    build_vignettes = FALSE)', 
+              sep = '\n')
+cat(install_without, sep="", fill = TRUE)
+```
+
+To install (or update) the `r NVIpkg_inline` package with vignettes, you will need to first install some additional R-packages needed for creating the vignettes. Check README to see which vignettes are available and eventually install the packages: `rmarkdown`, `knitr`, `R.rsp`, and `NVIrpackages` (from GitHub) if they are missing. To install the package with the vignettes, run the following code:
+
+``` {r install_with, message=FALSE, warnings=FALSE, echo=FALSE, prompt = FALSE, comment = ""} 
+install_with <- paste(paste0('remotes::install_github("NorwegianVeterinaryInstitute/', NVIpkg, '",'), 
               '    upgrade = FALSE,', 
               '    build = TRUE,', 
               '    build_vignettes = TRUE)', 
               sep = '\n')
-cat(text, sep="", fill = TRUE)
+cat(install_with, sep="", fill = TRUE)
 ```
