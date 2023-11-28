@@ -31,20 +31,20 @@ Imports:
     checkmate (>= 2.0.0),
     desc,
     devtools,
-    knitr,
     remotes,
     rmarkdown,
-    shiny,
     stringi,
     stringr,
     styler (>= 1.3.2),
     usethis (>= 2.1.0),
-    withr,
-    NVIrpackages,
-    R.rsp
+    withr
 Suggests: 
     covr,
     findInFiles,
+    knitr,
+    NVIrpackages,
+    R.rsp,
+    shiny,
     testthat (>= 3.0.0),
     tools
 Remotes: 
