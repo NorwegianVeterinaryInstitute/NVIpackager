@@ -19,9 +19,10 @@ cat(vignettetext, sep="", fill = TRUE)
 # pkg_vignettes <- paste0("-  ", pkg_vignettes, "  \n")
 # pkg_vignettes <- paste0("  \n  \n", paste(pkg_vignettes, collapse = ""), "  \n")
 pkg_vignettes <- tools::pkgVignettes(dir = pkg_path)
-pkg_vignette_titles <- rep(NA, length(pkg_vignettes$docs)) 
+pkg_vignette_titles <- rep(NA, length(pkg_vignettes$docs))
 
-for (i in 1:length(pkg_vignettes$docs)) {
+for (i in c(1:length(pkg_vignettes$docs))) {
+# for (i in c(1:3)) {
   pkg_vignette_titles[i] <- tools::vignetteInfo(pkg_vignettes$docs[i])$title
   if (grepl("\\.Rmd$", pkg_vignettes$docs[i], ignore.case = TRUE)) {
     pkg_vignette_titles[i] <- paste(pkg_vignette_titles[i], "(html)")
@@ -30,9 +31,13 @@ for (i in 1:length(pkg_vignettes$docs)) {
     pkg_vignette_titles[i] <- paste(pkg_vignette_titles[i], "(pdf)")
   }
 }
+pkg_vignette_titles <- pkg_vignette_titles[order(pkg_vignette_titles)]
+pkg_vignette_titles <- paste0("-  ", pkg_vignette_titles, "  \n")
+pkg_vignette_titles <- paste0("  \n  \n", paste(pkg_vignette_titles, collapse = ""), "  \n")
+
 ```
 
-`r if (length(pkg_vignettes > 0)) {paste0("Vignettes in package ", NVIpkg_inline, ":", pkg_vignette_titles)}`
+`r if (length(pkg_vignettes$docs) > 0) {paste0("Vignettes in package ", NVIpkg_inline, ":", pkg_vignette_titles)}` 
 
 ##### NEWS
 
