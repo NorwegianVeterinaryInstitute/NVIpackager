@@ -72,22 +72,22 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
 
   # Modify the description ----
   usethis::use_package(package = "checkmate", type = "Imports", min_version = "2.1.0")
-  usethis::use_package(package = "knitr", type = "Imports")
-  usethis::use_package(package = "rmarkdown", type = "Imports")
   usethis::use_dev_package(package = "NVIcheckmate",
                            type = "Imports",
                            remote = "github::NorwegianVeterinaryInstitute/NVIcheckmate")
-  usethis::use_dev_package(package = "NVIrpackages",
-                           type = "Imports",
-                           remote = "github::NorwegianVeterinaryInstitute/NVIrpackages")
   usethis::use_package(package = "covr", type = "Suggests")
   usethis::use_package(package = "desc", type = "Suggests")
   usethis::use_package(package = "devtools", type = "Suggests")
+  usethis::use_package(package = "knitr", type = "Suggests")
+  usethis::use_package(package = "rmarkdown", type = "Suggests")
   usethis::use_package(package = "testthat", type = "Suggests")
   usethis::use_package(package = "usethis", type = "Suggests")
   usethis::use_dev_package(package = "NVIpackager",
                            type = "Suggests",
                            remote = "github::NorwegianVeterinaryInstitute/NVIpackager")
+  usethis::use_dev_package(package = "NVIrpackages",
+                           type = "Suggests",
+                           remote = "github::NorwegianVeterinaryInstitute/NVIrpackages")
 
   # Add files to .gitignore
   # usethis::use_git_ignore(ignores = "*.Rproj")
