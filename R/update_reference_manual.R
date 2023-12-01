@@ -70,7 +70,7 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
 
     # Update DESCRIPTION
     # Include R.rsp in import
-    usethis::use_package(package = "R.rsp", type = "Imports")
+    usethis::use_package(package = "R.rsp", type = "Suggests")
 
     # Include R.rsp in vignettebuilder if not already included
     VignetteBuilder <- desc::desc_get_field(key = "VignetteBuilder", default = NULL)
