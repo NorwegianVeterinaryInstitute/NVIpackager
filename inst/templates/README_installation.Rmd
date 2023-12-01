@@ -23,7 +23,7 @@ install_without <- paste(paste0('remotes::install_github("NorwegianVeterinaryIns
 cat(install_without, sep="", fill = TRUE)
 ```
 
-To install (or update) the `r NVIpkg_inline` package with vignettes, you will need to first install some additional R-packages needed for creating the vignettes. Check README to see which vignettes are available and eventually install the packages: `rmarkdown`, `knitr`, `R.rsp`, and `NVIrpackages` (from GitHub) if they are missing. To install the package with the vignettes, run the following code:
+To install (or update) the `r NVIpkg_inline` package with vignettes, you will need to first install some additional R-packages needed for creating the vignettes. Check README below in the section [Vignettes](#vignettes) to see which vignettes are available and eventually install the packages: `knitr`, `rmarkdown`, `R.rsp`, and `NVIrpackages` (from GitHub) if they are missing. To install the package with the vignettes, run the following code:
 
 ``` {r install_with, message=FALSE, warnings=FALSE, echo=FALSE, prompt = FALSE, comment = ""} 
 install_with <- paste(paste0('remotes::install_github("NorwegianVeterinaryInstitute/', NVIpkg, '",'), 
