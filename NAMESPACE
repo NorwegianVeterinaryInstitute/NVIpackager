@@ -3,7 +3,6 @@
 export(assert_pkg_path)
 export(create_NVIpkg_skeleton)
 export(document_NVIpkg)
-export(get_vignettes)
 export(increase_NVIpkg_version)
 export(install_NVIpkg)
 export(set_description_default)
