@@ -15,28 +15,29 @@ document_NVIpkg(
 )
 }
 \arguments{
-\item{pkg}{[\code{character}]\cr
-The package name, defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
+\item{pkg}{[\code{character(1)}]\cr
+The package name. Defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
 
-\item{pkg_path}{[\code{character}]\cr
-The path to the package directory, defaults to \code{usethis::proj_path()}.}
+\item{pkg_path}{[\code{character(1)}]\cr
+The path to the package directory. Defaults to \code{usethis::proj_path()}.}
 
-\item{style}{[\code{logical}]\cr
+\item{style}{[\code{logica(1)l}]\cr
 Should the package be styled, defaults to \code{FALSE}.}
 
-\item{manual}{[\code{character}]\cr
+\item{manual}{[\code{character(1)}]\cr
 Should a reference manual be included, updated or removed. Defaults to
 \code{manual = "update"} that will update the manual if exists and do
 nothing if it doesn't exist.}
 
-\item{contributing}{[\code{logical}]\cr
+\item{contributing}{[\code{logical(1)}]\cr
 Should \code{CONTRIBUTING.md} and the vignette "Contribute to NVIpkg" be
 updated, defaults to \code{FALSE}.}
 
-\item{readme}{[\code{logical}]\cr
+\item{readme}{[\code{logical(1)}]\cr
 Should \code{README} be updated, defaults to \code{FALSE}.}
 
-\item{\dots}{Other arguments to be passed to \code{styler::style_pkg}.}
+\item{\dots}{Other arguments to be passed to
+\ifelse{html}{\code{\link[styler:style_pkg]{styler::style_pkg}}}{\code{styler::style_pkg}}.}
 }
 \value{
 none. Updated help files for all functions and,

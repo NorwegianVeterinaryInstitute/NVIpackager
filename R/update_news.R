@@ -1,17 +1,19 @@
-#' @title Update NEWS
-#' @description Create or update the NEWS file. It will include a template for New section if relevant and update the version number.
+#' @title Update \code{NEWS}
+#' @description Create or update the \code{NEWS} file. It will include a template
+#'    for new sections if relevant, and update the version number.
 #'
-#' @details Default is  is \code{template = NULL} that will only update the version number.
-#'     Use \code{template = "first"} to make the NEWS template for the first
-#'     release of the package. Use \code{template = "develop"} to make the NEWS
+#' @details Default is \code{template = NULL} that will only update the version number.
+#'     Use \code{template = "first"} to make the \code{NEWS} template for the first
+#'     release of the package. Use \code{template = "develop"} to make the \code{NEWS}
 #'     template for the successive releases of the package.
 #'
 #' @template pkg
 #' @template pkg_path
-#' @param template The template to add to the NEWS file Can be c("first", "develop").
-#'     Defaults to NULL.
+#' @param template [\code{character(1)}]\cr
+#' The template to add to the \code{NEWS} file. Must be one of
+#'     c("first", "develop"). Defaults to \code{NULL}.
 #'
-#' @return None. Creates or updates the NEWS file in the package directory.
+#' @return None. Creates or updates the \code{NEWS} file in the package directory.
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export

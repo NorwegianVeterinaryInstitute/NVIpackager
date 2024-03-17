@@ -1,6 +1,7 @@
 ---
 output: 
   rmarkdown::html_vignette:
+    css: "NVI_vignette_style.css"
     keep_md: true
 md_document:
   variant: markdown_github
@@ -79,8 +80,7 @@ Care to fix bugs or implement new functionality for our_package? Great! Have a l
 
 ## Development guidelines
 
-If you want to contribute code, you are welcome to do so. Please try to adhere 
-to some principles and style convention used for `NVIverse`-packages. 
+If you want to contribute code, you are welcome to do so. You will find a description of the code conventions, which have been used, in the vignette "NVIverse code conventions" in the package `NVIpackager`. A summary of the principles and style convention used for `NVIverse`-packages is given below. 
 
 *   Please limit the number of package dependencies for `r NVIpkg_inline`. The use of base 
 functions is much appreciated. 

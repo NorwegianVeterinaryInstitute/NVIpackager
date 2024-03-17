@@ -10,31 +10,36 @@
 #'     change the username to your own.
 #'
 #' The repository can be changed by giving more arguments that
-#'     will be passed to \code{install_github}, see
-#'     \link[remotes]{install_github} for full description
-#'     of the arguments \code{repo = }, \code{username = }, and
-#'     \code{ref = }.
+#'     will be passed to
+#'     \ifelse{html}{\code{\link[remotes:install_github]{install_github}}}{\code{remotes::install_github}},
+#'     see
+#'     \ifelse{html}{\code{\link[remotes:install_github]{install_github}}}{\code{remotes::install_github}},
+#'     for full description of the arguments \code{repo}, \code{username},
+#'     and \code{ref}.
 #'
 #' When \code{rsource = "local"}, it installs the package from a
 #'     local copy of the package repository. It defaults to install
 #'     the active branch. Use \code{rsource = "local"} to test new
 #'     code during development.
 #'
-#' For installing the latest released versions of NVIverse
-#'     packages, use \link[remotes]{install_github} or
-#'     \link[NVIbatch]{use_NVIverse}.
+#' For installing the latest released versions of \code{NVIverse} packages, use
+#'     \ifelse{html}{\code{\link[remotes:install_github]{install_github}}}{\code{remotes::install_github}},
+#'     or
+#'     \ifelse{html}{\code{\link[NVIbatch:use_NVIverse]{NVIbatch::use_NVIverse}}}{\code{NVIbatch::use_NVIverse}}.
 #'
 #' @template pkg
 #' @template pkg_path
-#' @param lib [\code{character}]\cr
-#'   The library directory where to install, defaults to \code{R.home()}.
-#' @param rsource [\code{character}]\cr
-#'    One of c("github", "local").
-#' @param username [\code{character}]\cr
-#'    The github username where the repository is found, defaults to
+#' @param lib [\code{character(1)}]\cr
+#' The library directory where to install. Defaults to \code{R.home()}.
+#' @param rsource [\code{character(1)}]\cr
+#' Source of package. Must be one of c("github", "local").
+#' @param username [\code{character(1)}]\cr
+#' The github username where the repository is found. Defaults to
 #'     "NorwegianVeterinaryInstitute".
-#' @param \dots Other arguments to be passed to \code{remotes::install_github}
-#'     or \code{devtools::install}.
+#' @param \dots Other arguments to be passed to
+#'     \ifelse{html}{\code{\link[remotes:install_github]{remotes::install_github}}}{\code{remotes::install_github}},
+#'     or
+#'     \ifelse{html}{\code{\link[devtools:install]{devtools::install}}}{\code{devtools::install}}.
 #'
 #' @return None. Installs a package.
 #'

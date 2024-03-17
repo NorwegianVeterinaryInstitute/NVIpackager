@@ -1,4 +1,4 @@
-# NVIpackager: Tools to facilitate Development of NVIverse Packages
+# NVIpackager: Tools to facilitate Development of NVIverse Packages <img src="man/figures/NVIpackager_logo.png" align="right" height="138" />
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -36,15 +36,28 @@ for more information.
 
 -   R version &gt; 4.0.0
 -   R package `remotes`
--   Rtools 4.0 or Rtools 4.2 depending on R version
+-   Rtools version 4.0, 4.2 or 4.3 depending on R version
 
 First install and attach the `remotes` package.
 
     install.packages("remotes")
     library(remotes)
 
-To install (or update) the `NVIpackager` package, run the following
-code:
+To install (or update) the `NVIpackager` package without vignettes, run
+the following code:
+
+    remotes::install_github("NorwegianVeterinaryInstitute/NVIpackager",
+        upgrade = FALSE,
+        build = TRUE,
+        build_vignettes = FALSE)
+
+To install (or update) the `NVIpackager` package with vignettes, you
+will need to first install some additional R-packages needed for
+creating the vignettes. Check README below in the section
+[Vignettes](#vignettes) to see which vignettes are available. To install
+the package with the vignettes, first install the packages: `knitr`,
+`rmarkdown`, `R.rsp`, and `NVIrpackages` (from GitHub) if they are
+missing. Then run the following code:
 
     remotes::install_github("NorwegianVeterinaryInstitute/NVIpackager",
         upgrade = FALSE,
@@ -66,7 +79,7 @@ wrappers for devtools and usethis functions. In addition, the templates
 folder keeps templates for standard files like sections of README and
 CONTRIBUTING.
 
-#### Create a package skeleton
+#### Create a NVIverse package skeleton
 
 To set up a package skeleton you can follow the following procedure:
 
@@ -114,26 +127,43 @@ To set up a package skeleton you can follow the following procedure:
             contributing = FALSE,
             readme = TRUE)
 
-#### Maintenance of the package
+#### Maintenance of a NVIverse package
 
 Functions for updating documentation, performing tests, build and
 install the package are collected in the file “./notes/develop.R”. You
 can run the different sections stepwise during package maintenance and
 updating.
 
-#### Help
+#### Further documentation
+
+##### Help
 
 The full list of all available functions and datasets can be accessed by
 typing
 
     help(package = "NVIpackager")
 
-Please check the NEWS for information on new features, bug fixes and
-other changes.
+##### Vignettes
+
+Consult the vignettes for task-oriented help.
+
+    vignette(package = "NVIpackager")
+
+Vignettes in package `NVIpackager`:
+
+-   Contribute to NVIpackager (html)  
+-   NVIpackager reference manual (pdf)  
+-   NVIverse coding conventions (html)
+
+##### NEWS
+
+Please check the
+[NEWS](https://github.com/NorwegianVeterinaryInstitute/NVIpackager/blob/main/NEWS)
+for information on new features, bug fixes and other changes.
 
 ## Copyright and license
 
-Copyright (c) 2021 - 2023 Norwegian Veterinary Institute.  
+Copyright (c) 2021 - 2024 Norwegian Veterinary Institute.  
 Licensed under the BSD\_3\_clause License. See
 [License](https://github.com/NorwegianVeterinaryInstitute/NVIpackager/blob/main/LICENSE)
 for details.

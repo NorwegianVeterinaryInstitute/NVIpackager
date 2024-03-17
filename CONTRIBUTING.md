@@ -30,52 +30,62 @@ management and data reporting at the Norwegian Veterinary Institute
 <tr class="odd">
 <td style="text-align: left;">NVIconfig</td>
 <td style="text-align: left;">Private</td>
-<td style="text-align: left;">Configuration information necessary for some NVIverse functions</td>
+<td style="text-align: left;">Configuration information necessary for
+some NVIverse functions</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NVIdb</td>
 <td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to facilitate the use of NVI’s databases</td>
+<td style="text-align: left;">Tools to facilitate the use of NVI’s
+databases</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NVIspatial</td>
 <td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to facilitate working with spatial data at NVI</td>
+<td style="text-align: left;">Tools to facilitate working with spatial
+data at NVI</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NVIpretty</td>
 <td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to make R-output pretty in accord with NVI’s graphical profile</td>
+<td style="text-align: left;">Tools to make R-output pretty in accord
+with NVI’s graphical profile</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NVIbatch</td>
 <td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to facilitate the running of R-scripts in batch mode at NVI</td>
+<td style="text-align: left;">Tools to facilitate the running of
+R-scripts in batch mode at NVI</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">OKplan</td>
 <td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to facilitate the planning of surveillance programmes for the NFSA</td>
+<td style="text-align: left;">Tools to facilitate the planning of
+surveillance programmes for the NFSA</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">OKcheck</td>
 <td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to facilitate checking of data from national surveillance programmes</td>
+<td style="text-align: left;">Tools to facilitate checking of data from
+national surveillance programmes</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NVIcheckmate</td>
 <td style="text-align: left;">Public</td>
-<td style="text-align: left;">Extension of checkmate with argument checking adapted for NVIverse</td>
+<td style="text-align: left;">Extension of checkmate with argument
+checking adapted for NVIverse</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NVIpackager</td>
 <td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to facilitate the development of NVIverse packages</td>
+<td style="text-align: left;">Tools to facilitate the development of
+NVIverse packages</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NVIrpackages</td>
 <td style="text-align: left;">Public</td>
-<td style="text-align: left;">Keeps a table of the R-Packages in NVIverse</td>
+<td style="text-align: left;">Keeps a table of the R packages in
+NVIverse</td>
 </tr>
 </tbody>
 </table>
@@ -148,9 +158,11 @@ development guidelines below.
 
 ## Development guidelines
 
-If you want to contribute code, you are welcome to do so. Please try to
-adhere to some principles and style convention used for
-`NVIverse`-packages.
+If you want to contribute code, you are welcome to do so. You will find
+a description of the code conventions, which have been used, in the
+vignette “NVIverse code conventions” in the package `NVIpackager`. A
+summary of the principles and style convention used for
+`NVIverse`-packages is given below.
 
 -   Please limit the number of package dependencies for `NVIpackager`.
     The use of base functions is much appreciated.

@@ -6,13 +6,15 @@ output:
   
 params:
   NVIpkg: "_package_name_"
+  pkg_path: !r  usethis::proj_path()
   first_copyright_year: "20##"
 ---
 
 ```{r, include = FALSE}
 NVIpkg <- params$NVIpkg
-# NVIpkg <- stringi::stri_extract_last_words(usethis::proj_path())
 NVIpkg_inline <- paste0("`", NVIpkg, "`")
+pkg_path <- params$pkg_path
+
 logo_path <- ""
 if (file.exists(paste0("./man/figures/", NVIpkg, "_logo.png"))) {
   logo_path <- paste0(' <img src="man/figures/', NVIpkg, '_logo.png" align="right" height="138" />')

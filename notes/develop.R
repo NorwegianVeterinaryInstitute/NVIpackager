@@ -1,10 +1,10 @@
 # CREATE, DOCUMENT, TEST AND INSTALL THE PACKAGE
+# develop.r v2024-03-17
 
-# Update this file with the template in NVIpackager
-# NVIpackager::update_develop()
+# NVIpackager::update_develop() # Update this file from template in NVIpackager
 
-# SET UP ENVIRONMENT ----
-# rm(list = ls())    # Use this to empty the environment
+# SET UP R ENVIRONMENT ----
+# rm(list = ls())    # Used to empty the environment
 
 # Attach packages
 library(NVIpackager)
@@ -16,15 +16,23 @@ pkg <- stringi::stri_extract_last_words(pkg_path)
 
 
 # CREATE PACKAGE SKELETON ----
-# create_NVIpkg_skeleton(license_keyword = "CC BY 4.0")
+# create_NVIpkg_skeleton(license_keyword = "BSD_3_clause") # BSD_3_clause # CC BY 4.0
 
 # INCREASE PACKAGE VERSION IN DESCRIPTION AND NEWS ----
 # NVIpackager::increase_NVIpkg_version(pkg = pkg,
 #                                   pkg_path = pkg_path,
-#                                   type = "develop")
+#                                   type = "develop",
+#                                   document = FALSE)
+
+# UPDATE LICENSE
+# NVIpackager::update_license(pkg = pkg,
+#                             pkg_path = pkg_path,
+#                             copyright_owner = "Norwegian Veterinary Institute")
+
 
 # DOCUMENTATION AND STYLING ----
-# update_logo should be run if a logo has been created (or updated). Thereafter run "document_NVIpkg" with "readme = TRUE".
+# update_logo should be run if a logo has been created (or updated). Thereafter
+#   run "document_NVIpkg" with "readme = TRUE".
 # update_logo(pkg = pkg, pkg_path = pkg_path)
 
 # Creates new help files
@@ -36,13 +44,14 @@ NVIpackager::document_NVIpkg(pkg = pkg,
                              readme = FALSE,
                              manual = "update",
                              scope = c("spaces", "line_breaks"))
+# filename <- "xxxx.R"
+# styler::style_file(path = file.path(pkg_path, "R", filename), scope = I(c("spaces")))
 
 # spelling::spell_check_package(vignettes = TRUE, use_wordlist = TRUE)
 
 
 # TEST PACKAGE ----
-# Run tests included in ./tests.
-devtools::test()
+devtools::test()  # Run tests included in ./tests.
 
 # Test package coverage
 # The package must be detached to install it.
@@ -58,7 +67,7 @@ print(x = code_coverage, group = "functions")
 # Thereby, no problems with files in .Rbuildignore.
 devtools::build(binary = FALSE, manual = TRUE, vignettes = TRUE)
 version <- utils::packageVersion(pkg, lib.loc = paste0(pkg_path,"/.."))
-# Test built package
+# Check built package
 devtools::check_built(path = paste0("../", pkg, "_", version, ".tar.gz"), args = c("--no-tests"), manual = TRUE)
 
 
@@ -85,4 +94,16 @@ utils::help(package = (pkg))
 
 library(package = pkg, character.only = TRUE)
 
+
+# MANUAL CHECK OF SCRIPTS ----
+# Search for string
+txt <- "\\.data\\$"   # \\.data\\$, dplyr,
+files_with_pattern <- findInFiles::findInFiles(ext = "R", pattern = txt, output = "tibble")
+files_with_pattern <- findInFiles::FIF2dataframe(files_with_pattern)
+package <- rep(pkg, dim(files_with_pattern)[1])
+files_with_pattern <- cbind(package, files_with_pattern)
+
+write.csv2(x = files_with_pattern,
+           file = file.path("../", paste0(pkg, "_", "files_with_pattern.xlsx")),
+           row.names = FALSE)
 

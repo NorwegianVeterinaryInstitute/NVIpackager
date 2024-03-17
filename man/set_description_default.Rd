@@ -10,23 +10,24 @@ set_description_default(
 )
 }
 \arguments{
-\item{pkg}{[\code{character}]\cr
-The package name, defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
+\item{pkg}{[\code{character(1)}]\cr
+The package name. Defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
 
-\item{license_keyword}{[\code{character}]\cr
-The keyword for the package's license in accord with list of license keywords,
-defaults to "BSD_3_clause".}
+\item{license_keyword}{[\code{character(1)}]\cr
+The keyword for the package's license in accord with list of license keywords.
+    Defaults to "BSD_3_clause".}
 }
 \value{
 None. Writes the options to the option \code{usethis.description}.
 }
 \description{
-Set default Values for the \code{DESCRIPTION} file. The values are saved
-    as the option \code{usethis.description}.
+Set default Values for the \code{DESCRIPTION} file. The values
+    are saved as the option \code{usethis.description}.
 }
 \details{
-These options are used when creating the package skeleton in the script
-    \code{create_NVIpackage_skeleton.R}. The following standard values are given:
+These options are used when creating the package skeleton using
+    \code{\link{create_NVIpkg_skeleton}}.
+    The following standard values are given:
 
 \itemize{
   \item "Petter Hopp" with role c("aut", "cre")

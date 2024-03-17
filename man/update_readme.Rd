@@ -10,18 +10,19 @@ update_readme(
 )
 }
 \arguments{
-\item{pkg}{[\code{character}]\cr
-The package name, defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
+\item{pkg}{[\code{character(1)}]\cr
+The package name. Defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
 
-\item{pkg_path}{[\code{character}]\cr
-The path to the package directory, defaults to \code{usethis::proj_path()}.}
+\item{pkg_path}{[\code{character(1)}]\cr
+The path to the package directory. Defaults to \code{usethis::proj_path()}.}
 }
 \value{
 None. Writes the file \code{README.md}.
 }
 \description{
 Update \code{README.md}
-    from \code{README.Rmd} and child templates in \code{NVIpackager}. If the file don't exist, it is created.
+    from \code{README.Rmd} and child templates in \code{NVIpackager}. If the
+    file don't exist, it is created.
 }
 \details{
 The child templates are found in \code{NVIpackager}. Any change in this

@@ -6,13 +6,19 @@ output:
   
 params:
   NVIpkg: "NVIpackager"
+  pkg_path: !r  usethis::proj_path()
   first_copyright_year: "2021"
 ---
 
 ```{r, include = FALSE}
 NVIpkg <- params$NVIpkg
+pkg_path <- params$pkg_path
 # NVIpkg <- stringi::stri_extract_last_words(usethis::proj_path())
 NVIpkg_inline <- paste0("`", NVIpkg, "`")
+logo_path <- ""
+if (file.exists(paste0("./man/figures/", NVIpkg, "_logo.png"))) {
+  logo_path <- paste0(' <img src="man/figures/', NVIpkg, '_logo.png" align="right" height="138" />')
+}
 
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -20,7 +26,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-`r paste0(NVIpkg, ": ", desc::desc_get_field(key = "Title"))`
+`r paste0(NVIpkg, ": ", desc::desc_get_field(key = "Title"), logo_path)`  
 ================
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -54,7 +60,7 @@ description <- desc::desc_get_field(key = "Description")
    "", 
    sub(substr(description,1,1), tolower(substr(description,1,1)), description))`
    
-#### Create a package skeleton
+#### Create a NVIverse package skeleton
 To set up a package skeleton you can follow the following procedure:
 
 1. Create a repository for the package at the NorwegianVeterinaryInstitute's GitHub account. Give the repository the name of the package.
@@ -88,9 +94,9 @@ update_readme_text <- paste('document_NVIpkg(pkg = stringi::stri_extract_last_wo
 cat(update_readme_text, sep = "", fill = TRUE)
     ```
 
-#### Maintenance of the package
+#### Maintenance of a NVIverse package
 Functions for updating documentation, performing tests, build and install the package are collected in the file "./notes/develop.R". You can run the different sections stepwise during package maintenance and updating.
-
+  
 
 ```{r child=system.file('templates', "README_usage_help.Rmd", package = "NVIpackager")}
 ```

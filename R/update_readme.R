@@ -1,6 +1,7 @@
 #' @title Update \code{README.md}
 #' @description Update \code{README.md}
-#'     from \code{README.Rmd} and child templates in \code{NVIpackager}. If the file don't exist, it is created.
+#'     from \code{README.Rmd} and child templates in \code{NVIpackager}. If the
+#'     file don't exist, it is created.
 #'
 #' @details The child templates are found in \code{NVIpackager}. Any change in this
 #'     text must be done in the templates.
@@ -41,5 +42,6 @@ update_readme <- function(pkg = stringi::stri_extract_last_words(usethis::proj_p
   rmarkdown::render(input = paste0(pkg_path, "/README.Rmd"),
                     # output_format = "md_document",
                     output_file = "README.md",
-                    output_dir = pkg_path)
+                    output_dir = pkg_path,
+                    params = list("pkg_path" = pkg_path))
 }

@@ -10,11 +10,11 @@ update_develop(
 )
 }
 \arguments{
-\item{pkg}{[\code{character}]\cr
-The package name, defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
+\item{pkg}{[\code{character(1)}]\cr
+The package name. Defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
 
-\item{pkg_path}{[\code{character}]\cr
-The path to the package directory, defaults to \code{usethis::proj_path()}.}
+\item{pkg_path}{[\code{character(1)}]\cr
+The path to the package directory. Defaults to \code{usethis::proj_path()}.}
 }
 \value{
 None. Writes the R script "develop.R" to "./notes/".
@@ -25,12 +25,12 @@ Update \code{develop.R} from the template in \code{NVIpackager}.
 }
 \details{
 "develop.R" is a script comprising code for creating, documenting,
-    testing and installing a package during development and maintainance. All
+    testing and installing a package during development and maintenance. All
     code should be written without reference to a specific package, so that
-    the script can be used without modification in development and maintainance
-    of all NVIverse packages.
+    the script can be used without modification in development and maintenance
+    of all \code{NVIverse} packages.
 
-    The template is found in \code{NVIpackager}. Any change in the script
+The template is found in \code{NVIpackager}. Any change in the script
     should be done in the template. Thereby, it is easier to keep the script
     updated in all packages.
 }

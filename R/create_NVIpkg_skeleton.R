@@ -8,10 +8,10 @@
 #'     -functions. It sets up the package directory with standard files and
 #'     standard sub-directories. Modifies the \code{DESCRIPTION}, \code{.gitignore},
 #'     and \code{.Rbuildignore} in agreement with standard dependencies for
-#'     NVIverse.
+#'     \code{NVIverse}.
 #'
 #'     Standard values are input to \code{DESCRIPTION}. For modifying these values,
-#'     you need to modify \code{set_description_default}.
+#'     you need to modify \code{\link{set_description_default}}.
 #'
 #'     In addition \code{README.Rmd}-template, \code{CONTRIBUTING}, \code{CODE_OF_CONDUCT},
 #'     and the vignette \code{Contribute_to_NVIpkg} are copied to the package
@@ -23,9 +23,9 @@
 #'
 #' @template pkg
 #' @template pkg_path
-#' @param license_keyword  [\code{character}]\cr
-#'     The keyword for the package's license in accord with list of license keywords,
-#'     defaults to "BSD_3_clause".
+#' @param license_keyword  [\code{character(1)}]\cr
+#'     The keyword for the package's license in accord with list of license keywords.
+#'     Defaults to "BSD_3_clause".
 #'
 #' @return None.
 #'     Sets up the package directories and writes and modifies several files, see details.
@@ -72,21 +72,25 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
 
   # Modify the description ----
   usethis::use_package(package = "checkmate", type = "Imports", min_version = "2.1.0")
-  usethis::use_package(package = "knitr", type = "Imports")
-  usethis::use_package(package = "rmarkdown", type = "Imports")
   usethis::use_dev_package(package = "NVIcheckmate",
                            type = "Imports",
                            remote = "github::NorwegianVeterinaryInstitute/NVIcheckmate")
-  usethis::use_dev_package(package = "NVIrpackages",
-                           type = "Imports",
-                           remote = "github::NorwegianVeterinaryInstitute/NVIrpackages")
-  # usethis::use_package(package = "devtools", type = "Suggests")
+  usethis::use_package(package = "covr", type = "Suggests")
+  usethis::use_package(package = "desc", type = "Suggests")
+  usethis::use_package(package = "devtools", type = "Suggests")
+  usethis::use_package(package = "knitr", type = "Suggests")
+  usethis::use_package(package = "rmarkdown", type = "Suggests")
+  usethis::use_package(package = "testthat", type = "Suggests")
+  usethis::use_package(package = "usethis", type = "Suggests")
   usethis::use_dev_package(package = "NVIpackager",
                            type = "Suggests",
                            remote = "github::NorwegianVeterinaryInstitute/NVIpackager")
+  usethis::use_dev_package(package = "NVIrpackages",
+                           type = "Suggests",
+                           remote = "github::NorwegianVeterinaryInstitute/NVIrpackages")
 
   # Add files to .gitignore
-  usethis::use_git_ignore(ignores = "*.Rproj")
+  # usethis::use_git_ignore(ignores = "*.Rproj")
 
   # Make extra directories
   usethis::use_directory(path = "notes", ignore = FALSE)
@@ -102,6 +106,11 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   # Use Contribute_to_mypkg as the name for an example vignette. This vigntte is created later based on a template
   usethis::use_vignette(name = paste0("Contribute_to_", pkg), title = paste("Contribute to", pkg))
   usethis::use_build_ignore(files = "CONTRIBUTING.md", escape = TRUE)
+  if (dir.exists(paste0(pkg_path, "/vignettes"))) {
+    file.copy(from = system.file('templates', "NVI_vignette_style.css", package = "NVIpackager"),
+              to = file.path(pkg_path, "vignettes"),
+              overwrite = TRUE)
+  }
 
   # set up test structure ----
   usethis::use_testthat()

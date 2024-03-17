@@ -3,28 +3,30 @@
 #'     and \code{NEWS} files. As a default, the help and the reference
 #'     manual will be styled and updated.
 #'
-#' @details When publishing a new release, use \code{type =} one of
-#'     c("major", "minor" , "fix"), depending of which release type
+#' @details When publishing a new release, use \code{type} one of
+#'     c("major", "minor", "fix"), depending of which release type
 #'     it is.
 #'
-#'     When \code{type =} "first", the \code{NEWS} will be created with
-#'     the template for the first release. If \code{create_NVIpkg_skeleton}
+#'     When \code{type = "first"}, the \code{NEWS} will be created with
+#'     the template for the first release. If
+#'     \code{\link{create_NVIpkg_skeleton}}
 #'     has been used to create the package, the \code{DESCRIPTION}
 #'     and \code{NEWS} files should already have been created with
 #'     correct version number and \code{NEWS} template.
 #'
-#'     When \code{type =} "develop", the \code{NEWS} will be created
+#'     When \code{type = "develop"}, the \code{NEWS} will be created
 #'     with the template for the next release if the previous version
 #'     was a release. If not, it increased the development version.
 #'
 #' @template pkg
 #' @template pkg_path
-#' @param type [\code{character(1)}]. The type of update to perform,
-#'     can be one of c("major", "minor" , "fix" , "develop" , "first").
+#' @param type [\code{character(1)}]\cr
+#' The type of update to perform. Must be one of
+#'     c("major", "minor" , "fix" , "develop" , "first").
 #'     Defaults to "develop".
-#' @param document [\code{logical(1)}]. Should styling be performed
-#'     and documentation be updated. Defaults to \code{FALSE}.
-#' @param \dots Other arguments to be passed to \code{document_NVIpkg}.
+#' @param document [\code{logical(1)}]\cr
+#' Should styling be performed and documentation be updated. Defaults to \code{FALSE}.
+#' @param \dots Other arguments to be passed to \code{\link{document_NVIpkg}}.
 #'
 #' @return None. Modifies \code{NEWS} and \code{DESCRIPTION} and eventually
 #'     updates help.

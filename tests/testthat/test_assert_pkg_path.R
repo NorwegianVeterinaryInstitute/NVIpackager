@@ -1,4 +1,3 @@
-
 # Attach packages and set up with temporary directory
 library(testthat)
 library(NVIpackager)

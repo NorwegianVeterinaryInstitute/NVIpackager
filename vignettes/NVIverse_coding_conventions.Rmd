@@ -1,0 +1,162 @@
+---
+output:
+  rmarkdown::html_vignette:
+    css: "NVI_vignette_style.css"
+title: "NVIverse coding conventions"
+
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{NVIverse coding conventions}
+  %\VignetteEncoding
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+<!-- NVIverse_coding_conventions.html is generated from NVIverse_coding_conventions.Rmd.
+     Please edit that file -->
+
+The aim of this vignette is to present the  conventions that has been used for creating R functions within NVIverse. By adhering to these conventions, an uniform appearance of `NVIverse` packages can be achieved and thereby make it easier to use the `NVIverse` functions and contribute to the development of the `NVIverse` packages. 
+
+`NVIverse` is a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI). Each package is a collection of functions within a specific task or topic. The `NVIverse` consists of the following packages: `r paste0('\x60', paste(NVIrpackages::NVIpackages$Package, collapse = "\x60, \x60"), '\x60')`.
+
+## Overview
+
+  - [Development resources](#development-resources)
+  - [Exported functions](#exported-functions)
+      - [Naming](#naming)
+      - [Coding](#coding)
+      - [Styling](#styling)
+      - [Argument checking](#argument-checking)
+      - [Writing help](#writing-help)
+  - [Internal functions](#internal-functions)
+      - [Naming](#naming-internal-functions)
+      - [Writing help](#writing-help-internal-functions)
+
+## Development resources
+Guidelines and help for creating R functions are out of the scope for this vignette. Please consult the general guidelines and other resources available. Some recommended resources are:
+
+- [Writing R extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)
+- [R packages by H. Wickham and J. Bryan](https://r-pkgs.org/)
+- [Stack overflow](https://stackoverflow.com/questions)
+
+## Exported functions
+Exported functions are functions that are made available for the package users. An R package is usually a collection of R functions and is a method for efficient distribution of these functions to R users.
+
+### Naming
+#### Function names
+The function names should start with a verb and be meaningful, see [tidyverse styleguide](https://style.tidyverse.org/functions.html). `NVIverse` uses descriptive and therefore often long names for functions. The intention is to make the scripts using these functions, easier to read and interpret. Strange abbreviations should be avoided. Function names are written in snake_case, but a few abbreviations that are written using capital letter, are in capital letters also when included in function names.
+
+#### File names
+The file name is the function name + ".R". In addition there are a few dedicated file names used for groups of functions or data descriptions. 
+
+**data.R:** Collects descriptions of data files that are included in the package.
+
+**NVIpkg-deprecated:** Collects deprecated functions. 
+
+### Coding and commenting
+One should try to make the code readable and understandable. One should comment the code. In this guidelinethere will be no guiding on how to write efficient code, you are instead referred to [Stack overflow](https://stackoverflow.com/questions) and other resources.
+
+#### Structure
+There has over time developed a "structure" for the script within a function and this is used for new functions. The script is divided into main sections. Each of these starts with a headline explaining the content of the following code. The headline is written as "## HEADLINE ----". By starting the headline with two hashtags and ending with 4 hyphens, one can take use of R studios automatic features for generating an outline of the code and hide code within a section. Within each section one should try to give necessary comments so others (and the future you) can interpret the code. The following sections have been found useful:
+
+<p style="color:#4C886B";>## PREPARE ARGUMENTS BEFORE CHECKING ---- </p>
+This sections is not always needed. Here the arguments are modified before argument checking. In principle, argument checking should be the first tassk performed in the function. However, there are some preparations that have been found useful to perform before argument checking.
+
+- remove ending slash(es) from paths before checking the validity of the path
+- ensure that all elements in a vector is named (in add-functions)
+- read arguments from external file or data base when relevant
+
+<p style="color:#4C886B";>## ARGUMENT CHECKING ---- </p>
+All arguments should be checked and some times there are needed more than one check for an arument, see [Argument checking](#argument-checking) below. 
+
+<p style="color:#4C886B";>## PREPARE ARGUMENTS BEFORE RUNNING SCRIPT ---- </p>
+Needed some times.
+
+<p style="color:#4C886B";>## RUN THE FUNCTION ---- </p>
+This is the main part of the function. Try to use descriptive headlines for what the script does. Make one section for each main task in the function code.
+
+<p style="color:#4C886B";>## RETURN ---- </p>
+The last step returning the result.
+
+#### Package dependencies
+There is a need to define the packages that should have priority for use in `NVIverse.` Thereby, the number of package dependencies can be reduced. However, if loading all `NVIverse` packages, there are a huge number of package dependencies. There is a long term goal of reducing the number of dependencies.
+
+#### tidyverse versus base
+`tidyverse` coding is often easier to interpret than base. `tidyverse` code is used in many NVIverse packages, but the code is slowly removed from the package code. This is due to 
+
+- The fast development of `tidyverse` with deprecated functions and arguments and it takes (too much) time to update the packages to the latest code.
+- `tidyverse` coding is not very well developed for programming were input to `tidyverse` functions is not easily written.
+
+#### Packages for data handling
+Regrettably are there other packages than base that are more efficient or have better API than base for data handling. 
+
+- `data.table` is very fast but has a very different way of writing code compared to base and `tidyverse`. Therefore , it has been chosen to not use `data.table` except `data.table::fread` that is extremely fast for reading csv-files compared to `read.csv`.
+- `tidyverse` has some very convenient functions that is more easy to use than base, for example `tidyr::pivot_wider`, `tidyr::pivot_longer`, `dplyr::add_count`. It has therefore been difficult to  remove these from package code.
+
+#### Piping
+Currently the pipe `%>%` from magrittr is used. When one can assume that most users at NVI are using R >= 4.0.5, the pipe will slowly be changed to R's in-built pipe `|>`.
+
+### Styling
+New code should generally follow the tidyverse [style guide](http://style.tidyverse.org) with some modifications.
+    
+- to indent the code you may use the short cut keys Ctrl+a (select all) and
+    Ctrl+i (indent) when you are in R-studio.
+- It is recommended to use the [`styler`](https://CRAN.R-project.org/package=styler)
+    package to apply spaces and line breaks: `styler::style_file(filename, scope = c("spaces", "line_breaks"))`.
+
+### Argument checking 
+The `NVIverse`-packages use the assert-functions from the [`checkmate`](https://CRAN.R-project.org/package=checkmate). This package comprises a comprehensive list of assert and check functions with logical naming conventions. It also allows for checking all arguments before reporting errors. There are some additional assert-functions in [`NVIcheckmate`](https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate).
+
+The assertion is set up so that errors for all arguments are accumulated before any errors are reported. Showing all the failing conditions can help diagnose what the problem is and if there are several errors in the input, they may all be fixed at once.
+
+The error messages provided by checkmate is usually self explanatory, but sometimes more precise error messages are needed for specific functions. `NVIcheckmate` is partly created for being able to report specific error messages for a function in addition to the general message provided by `checkmate.` `NVIcheckmate` does not cover all assert functions in `checkmate`, but if a specific error message is needed for a function not covered, `NVIcheckmate` is easily extended to cover the need. 
+
+`NVIcheckmate` also includes a few specific assertions that is not covered by `checkmate` and probably will not be covered as it is out of the scope of `checkmate`.
+
+### Writing help
+The `NVIverse`-packages use [`roxygen2`](https://cran.r-project.org/package=roxygen2) for creating the help text based on a specially formatted text in the head of the function. Se the vignette [Documenting functions](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html).
+
+Although not necessary, it has been chosen to write out @title, @description and @details to make the help text in `NVIverse` functions easier to read and interpret. 
+
+@params is set up in a standard format:
+
+argument_name [\code{argument_class}] \cr
+Text. 
+
+When the function argument has a default value, information on this is included by ending the text with: Defaults to "value". See `NVIdb::standardize_columns` for examples.
+
+`roxygen2` allows for using `markdown` when writing the help text. The `NVIverse` package help usually do not use `markdown` for help, i.e. the "DESCRIPTION"-file includes "Roxygen: list(markdown = FALSE)" or (no listing of Roxygen) or if "Roxygen: list(markdown = TRUE)" the function help is set to @noMd when `markdown` should be avoided. The reason for not using `markdown` is that it has no equivalent of `\ifelse{}`. This command is useful in the situation where you include a link to a function in another package. Such links works fine in html, but when creating the pdf-reference manual, these links only points to the top of the reference manual. `\ifelse{}` can be used to remove or modify the link for pdf-documents, see the code for `NVIdb::standardize_columns` for examples.
+
+## Internal functions
+Internal functions, hjelper or non-exported functions are functions not exported to the package user. These functions are available for the other functions in the package. The usually reasons to not export them are that you would be able to change them without having to think about backward compatibility and you don't want the functions to fill up the list of available functions. See [Maëlle Salmon's blog on Internal functions](https://ddec1-0-en-ctp.trendmicro.com:443/wis/clicktime/v1/query?url=https%3a%2f%2fblog.r%2dhub.io%2f2019%2f12%2f12%2finternal%2dfunctions%2f&umid=4b50778c-8e39-450d-b6fe-9f97264f9bcb&auth=004f5606958fa2bf5d6199a524a3177448fdaa2d-fb74d02decb88e4236d972fdc0c5ceeefc1d5191). 
+
+Internal and exported functions follow in principle the same conventions. There are a few additional points for naming and help. 
+
+### Naming internal functions
+#### Fuction names
+The same naming conventions should be followed for internal functions as for exported functions. 
+
+#### File names
+Internal functions used in one specific exported function are included in the R file for the specific function. The remaining internal functions are collected in files dedicated for internal functions. There are some standard names for such files.
+
+**utils.R:**
+Utility functions used in several functions are included in this file. The file name is chosen as studies have shown this to be the most common name for comprising utility functions in R packages, see [Bob Rudis blog on utility files in R](https://ddec1-0-en-ctp.trendmicro.com:443/wis/clicktime/v1/query?url=https%3a%2f%2frud.is%2fb%2f2018%2f04%2f08%2fdissecting%2dr%2dpackage%2dutility%2dbelts%2f&umid=4b50778c-8e39-450d-b6fe-9f97264f9bcb&auth=004f5606958fa2bf5d6199a524a3177448fdaa2d-b7cbc7a3d55bc592d06e375956c7ddf87e99527c).
+
+**assert_arguments.R:** 
+Assert functions called from several exported functions. Such functions are useful when a family of functions partly have the same arguments and therefore need the same argument checks.
+
+**zzz.R:**
+Calls to `.onLoad` and `.onAttach` is collected in this file in accord with old conventions. The name was probably chosen as R concatenated (and may be still does) all .R files in alphabetical order before loading, so code in zzz.R was evaluated last. See [R packages by H. Wickham and J. Bryan](https://r-pkgs.org/Code.html#sec-code-onLoad-onAttach) for more information on use on `.onLoad` and `.onAttach`.
+
+**ignore_unused_imports.R:**
+Includes one function named `ignore_unused_imports`. This function includes fictitious calls to functions in packages that is imported but not used in R functions. These packages are imported because they are needed in the package for other purposes, i.e. they can be needed for Rmarkdown templates or similar. The use of these functions within the package, is not detected by CMD check of the package. By including fictitious calls to one function for each such imported function within `ignore_unused_imports`, warnings of the package being imported but not used when running CMD check, are avoided.
+
+### Writing help internal functions
+Internal functions should be documented likewise to exported functions. The inclusion of `@keyword internal` ensures that the help page is created but it will not be included in the help index. However, the help can be accessed by `help(foo)`.
+

@@ -1,5 +1,3 @@
-
-
 # Attach packages and set up with temporary directory
 library(NVIpackager)
 td <- tempdir()

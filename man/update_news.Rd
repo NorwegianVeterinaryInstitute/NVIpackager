@@ -2,7 +2,7 @@
 % Please edit documentation in R/update_news.R
 \name{update_news}
 \alias{update_news}
-\title{Update NEWS}
+\title{Update \code{NEWS}}
 \usage{
 update_news(
   pkg = stringi::stri_extract_last_words(usethis::proj_path()),
@@ -11,25 +11,27 @@ update_news(
 )
 }
 \arguments{
-\item{pkg}{[\code{character}]\cr
-The package name, defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
+\item{pkg}{[\code{character(1)}]\cr
+The package name. Defaults to \code{stringi::stri_extract_last_words(usethis::proj_path())}.}
 
-\item{pkg_path}{[\code{character}]\cr
-The path to the package directory, defaults to \code{usethis::proj_path()}.}
+\item{pkg_path}{[\code{character(1)}]\cr
+The path to the package directory. Defaults to \code{usethis::proj_path()}.}
 
-\item{template}{The template to add to the NEWS file Can be c("first", "develop").
-Defaults to NULL.}
+\item{template}{[\code{character(1)}]\cr
+The template to add to the \code{NEWS} file. Must be one of
+    c("first", "develop"). Defaults to \code{NULL}.}
 }
 \value{
-None. Creates or updates the NEWS file in the package directory.
+None. Creates or updates the \code{NEWS} file in the package directory.
 }
 \description{
-Create or update the NEWS file. It will include a template for New section if relevant and update the version number.
+Create or update the \code{NEWS} file. It will include a template
+   for new sections if relevant, and update the version number.
 }
 \details{
-Default is  is \code{template = NULL} that will only update the version number.
-    Use \code{template = "first"} to make the NEWS template for the first
-    release of the package. Use \code{template = "develop"} to make the NEWS
+Default is \code{template = NULL} that will only update the version number.
+    Use \code{template = "first"} to make the \code{NEWS} template for the first
+    release of the package. Use \code{template = "develop"} to make the \code{NEWS}
     template for the successive releases of the package.
 }
 \examples{
