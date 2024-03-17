@@ -1,4 +1,4 @@
-NVIpackager 0.4.0.9001 - (2023-##-##)
+NVIpackager 0.5.0 - (2024-03-17)
 ----------------------------------------
 
 New features:
@@ -10,11 +10,6 @@ New features:
 - Improved `create_NVIpkg_skeleton`.
 
 
-Bug fixes:
-
--
-
-
 Other changes:
 
 - Created the vignette: "NVIverse coding conventions".
@@ -24,11 +19,6 @@ Other changes:
 - Created logo.
 
 - "develop.R" includes code to find string in R-scripts. Can be used to check scripts.
-
-
-BREAKING CHANGES:
-
--
 
 
 NVIpackager 0.4.0 - (2023-01-26)
