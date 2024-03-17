@@ -5,8 +5,6 @@ New features:
 
 - Created `update_license` for updating copyright year in the LICENSE file.
 
-- created `get_vignettes` for making a list of vignettes in the package before installing the package.
-
 - Updated the section for help in the README template with a paragraph on vignettes.
 
 - Improved `create_NVIpkg_skeleton`.
