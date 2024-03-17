@@ -34,7 +34,6 @@ Imports:
     remotes,
     rmarkdown,
     stringi,
-    stringr,
     styler (>= 1.3.2),
     usethis (>= 2.1.0),
     withr
