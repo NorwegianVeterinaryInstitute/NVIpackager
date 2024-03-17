@@ -117,7 +117,7 @@ Bug fixes:
   - template "README_installation.Rmd" was corrected.
 
 
-BREAKING CHANGES
+BREAKING CHANGES:
 
   - `NVIpackages` was moved to the separate package `NVIrpackages`
 
@@ -125,20 +125,18 @@ BREAKING CHANGES
 NVIpackager 0.1.0 - (2021-11-21)
 -------------------------------------
 
-First release:
+First release: Tools to facilitate development of NVIverse packages.
 
-Tools to facilitate development of NVIverse packages.
+  - `create_NVIpkg_skeleton` creates the package skeleton for NVIverse packages.
 
-  - 'create_NVIpkg_skeleton' creates the package skeleton for NVIverse packages.
+  - `set_description_default` sets default Values for the "DESCRIPTION" file. It is called by 'create_NVIpkg_skeleton'.
 
-  - 'set_description_default' sets default Values for the "DESCRIPTION" file. It is called by 'create_NVIpkg_skeleton'.
+  - `document_NVIpkg` updates styling and documentation of a package.
 
-  - 'document_NVIpkg' updates styling and documentation of a package.
+  - `update_readme` updates "README.md".
 
-  - 'update_readme' updates "README.md".
+  - `update_contributing` updates "CONTRIBUTING.md" and the vignette "Contribute_to_NVIpkg.Rmd"
 
-  - 'update_contributing' updates "CONTRIBUTING.md" and the vignette "Contribute_to_NVIpkg.Rmd"
-
-  - 'install_NVIpkg' installs an NVIverse package during the development phase.
+  - `install_NVIpkg` installs an NVIverse package during the development phase.
 
   - Includes templates for "CONTRIBUTING.md" and "README.Rmd".
