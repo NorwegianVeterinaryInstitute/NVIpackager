@@ -131,7 +131,9 @@ _ included a call to `update_develop` in `create_NVIpkg_skeleton`.
 
 # NVIpackager 0.1.0 - (2021-11-21)
 
-## First release: Tools to facilitate development of NVIverse packages.
+## First release:
+
+Tools to facilitate development of NVIverse packages.
 
   - `create_NVIpkg_skeleton` creates the package skeleton for NVIverse packages.
 
