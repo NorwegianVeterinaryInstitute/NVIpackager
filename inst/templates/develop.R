@@ -1,5 +1,5 @@
 # CREATE, DOCUMENT, TEST AND INSTALL THE PACKAGE
-# develop.r v2024-03-17
+# develop.r v2024-04-12
 
 # NVIpackager::update_develop() # Update this file from template in NVIpackager
 
@@ -12,7 +12,8 @@ library(NVIpackager)
 
 # Global variables
 pkg_path = usethis::proj_path()
-pkg <- stringi::stri_extract_last_words(pkg_path)
+pkg <- tail(strsplit(normalizePath(pkg_path, winslash = "/"), split = "/")[[1]], 1)
+# pkg <- stringi::stri_extract_last_words(pkg_path)
 
 
 # CREATE PACKAGE SKELETON ----
@@ -97,13 +98,13 @@ library(package = pkg, character.only = TRUE)
 
 # MANUAL CHECK OF SCRIPTS ----
 # Search for string
-txt <- "\\.data\\$"   # \\.data\\$, dplyr,
+txt <- "\\.data\\$"   # \\.data\\$, dplyr, stringi
 files_with_pattern <- findInFiles::findInFiles(ext = "R", pattern = txt, output = "tibble")
 files_with_pattern <- findInFiles::FIF2dataframe(files_with_pattern)
 package <- rep(pkg, dim(files_with_pattern)[1])
 files_with_pattern <- cbind(package, files_with_pattern)
 
 write.csv2(x = files_with_pattern,
-           file = file.path("../", paste0(pkg, "_", "files_with_pattern.xlsx")),
+           file = file.path("../", paste0(pkg, "_", "files_with_pattern.csv")),
            row.names = FALSE)
 
