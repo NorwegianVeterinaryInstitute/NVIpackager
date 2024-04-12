@@ -1,30 +1,28 @@
-NVIpackager 0.5.0.9000 - (2024-##-##)
-----------------------------------------
+# NVIpackager 0.5.0.9000 - (2024-##-##)
 
-New features:
-
--
-
-
-Bug fixes:
+## New features:
 
 -
 
 
-Other changes:
+## Bug fixes:
 
 -
 
 
-BREAKING CHANGES:
+## Other changes:
 
 -
 
 
-NVIpackager 0.5.0 - (2024-03-17)
-----------------------------------------
+## BREAKING CHANGES:
 
-New features:
+-
+
+
+# NVIpackager 0.5.0 - (2024-03-17)
+
+## New features:
 
 - Created `update_license` for updating copyright year in the LICENSE file.
 
@@ -33,7 +31,7 @@ New features:
 - Improved `create_NVIpkg_skeleton`.
 
 
-Other changes:
+## Other changes:
 
 - Created the vignette: "NVIverse coding conventions".
 
@@ -44,17 +42,16 @@ Other changes:
 - "develop.R" includes code to find string in R-scripts. Can be used to check scripts.
 
 
-NVIpackager 0.4.0 - (2023-01-26)
-----------------------------------------
+# NVIpackager 0.4.0 - (2023-01-26)
 
-New features:
+## New features:
 
 - Created `update_news`.
 
 - Created `increase_NVIpkg_version` for increasing version number in "NEWS" and "DESCRIPTION". Calls `update_news`.
 
 
-Other changes:
+## Other changes:
 
 - Created NVIpackager.pdf reference manual.
 
@@ -65,17 +62,16 @@ Other changes:
 - Styled the template "Contribute_to_NVIpkg.Rmd".
 
 
-NVIpackager 0.3.1 - (2022-08-20)
--------------------------------------
+# NVIpackager 0.3.1 - (2022-08-20)
 
-Bug fixes:
+## Bug fixes:
 
 - Removed `build_manual` = `TRUE` from `install_NVIpkg` as could cause problems for those without "MiKTeX" for generating PDF-files.
 
 - Included `build_vignettes` = `TRUE` in README installation guide as vignettes will not be installed without.
 
 
-Other changes:
+## Other changes:
 
 - Removed `build_manual` = `TRUE` from README installation guide as caused problems for those without "MiKTeX" for generating PDF-files.
 
@@ -86,10 +82,9 @@ Other changes:
 - updated and styled help documents, README and CONTRIBUTING.
 
 
-NVIpackager 0.3.0 - (2022-06-08)
--------------------------------------
+# NVIpackager 0.3.0 - (2022-06-08)
 
-New features:
+## New features:
 
 - `update_logo` created for updating a package logo from 'NVIrpackages'.
 
@@ -102,7 +97,7 @@ New features:
 _ included a call to `update_develop` in `create_NVIpkg_skeleton`.
 
 
-Other changes:
+## Other changes:
 
   - template "Contribute_to_NVIpkg.Rmd" was modified with more precise guidelines for styling code.
 
@@ -111,15 +106,14 @@ Other changes:
   - README and CONTRIBUTING were updated.
 
 
-NVIpackager 0.2.0 - (2022-01-20)
--------------------------------------
+# NVIpackager 0.2.0 - (2022-01-20)
 
-New features:
+## New features:
 
   - parameterized copyright year and set first_copyright_year to sysdata when creating package skeleton.
 
 
-Bug fixes:
+## Bug fixes:
 
   - template "Contribute_to_NVIpkg.Rmd" was modified.
 
@@ -130,15 +124,14 @@ Bug fixes:
   - template "README_installation.Rmd" was corrected.
 
 
-BREAKING CHANGES:
+## BREAKING CHANGES:
 
   - `NVIpackages` was moved to the separate package `NVIrpackages`
 
 
-NVIpackager 0.1.0 - (2021-11-21)
--------------------------------------
+# NVIpackager 0.1.0 - (2021-11-21)
 
-First release: Tools to facilitate development of NVIverse packages.
+## First release: Tools to facilitate development of NVIverse packages.
 
   - `create_NVIpkg_skeleton` creates the package skeleton for NVIverse packages.
 
