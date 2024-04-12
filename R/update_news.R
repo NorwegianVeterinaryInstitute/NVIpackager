@@ -39,10 +39,10 @@ update_news <- function(pkg = stringi::stri_extract_last_words(usethis::proj_pat
   # RUN SCRIPT ----
 
   # Fetch version and date from DESCRIPTION and generate header
-  header <- paste(paste("#",
-                        desc::desc_get_field(key = "Package"),
-                        desc::desc_get_field(key = "Version"),
-                        paste0("- (", desc::desc_get_field(key = "Date"), ")")))
+  header <- paste("#",
+                  desc::desc_get_field(key = "Package"),
+                  desc::desc_get_field(key = "Version"),
+                  paste0("- (", desc::desc_get_field(key = "Date"), ")"))
 
   # If NEWS exist read in file
   NEWS_file <- NULL
