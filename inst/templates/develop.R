@@ -1,5 +1,5 @@
 # CREATE, DOCUMENT, TEST AND INSTALL THE PACKAGE
-# develop.r v2024-05-14
+# develop.r v2024-05-24
 # NVIpackager::update_develop() # Update this file from template in NVIpackager
 
 # SET UP R ENVIRONMENT ----
@@ -40,7 +40,8 @@ NVIpackager::document_NVIpkg(pkg = pkg,
                              contributing = FALSE,
                              readme = FALSE,
                              manual = "update",
-                             scope = c("spaces", "line_breaks"))
+                             # scope = c("spaces", "line_breaks"))
+                             scope = c("spaces"))
 # filename <- "xxxx.R"
 # styler::style_file(path = file.path(pkg_path, "R", filename), scope = I(c("spaces")))
 
@@ -88,7 +89,7 @@ library(package = pkg, character.only = TRUE)
 
 # MANUAL CHECK OF SCRIPTS ----
 # Search for string
-txt <- "\\.data\\$"   # \\.data\\$, dplyr, stringi, %>%
+txt <- "\\.data\\$"   # \\.data\\$, dplyr, stringi, %>%, [æøåÆØÅ]
 files_with_pattern <- findInFiles::findInFiles(ext = "R", pattern = txt, output = "tibble")
 files_with_pattern <- findInFiles::FIF2dataframe(files_with_pattern)
 package <- rep(pkg, dim(files_with_pattern)[1])
