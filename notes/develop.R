@@ -1,6 +1,5 @@
 # CREATE, DOCUMENT, TEST AND INSTALL THE PACKAGE
-# develop.r v2024-04-12
-
+# develop.r v2024-05-24
 # NVIpackager::update_develop() # Update this file from template in NVIpackager
 
 # SET UP R ENVIRONMENT ----
@@ -13,8 +12,6 @@ library(NVIpackager)
 # Global variables
 pkg_path = usethis::proj_path()
 pkg <- tail(strsplit(normalizePath(pkg_path, winslash = "/"), split = "/")[[1]], 1)
-# pkg <- stringi::stri_extract_last_words(pkg_path)
-
 
 # CREATE PACKAGE SKELETON ----
 # create_NVIpkg_skeleton(license_keyword = "BSD_3_clause") # BSD_3_clause # CC BY 4.0
@@ -25,11 +22,10 @@ pkg <- tail(strsplit(normalizePath(pkg_path, winslash = "/"), split = "/")[[1]],
 #                                   type = "develop",
 #                                   document = FALSE)
 
-# UPDATE LICENSE
+# UPDATE LICENSE WITH COPYRIGHT YEAR ----
 # NVIpackager::update_license(pkg = pkg,
 #                             pkg_path = pkg_path,
 #                             copyright_owner = "Norwegian Veterinary Institute")
-
 
 # DOCUMENTATION AND STYLING ----
 # update_logo should be run if a logo has been created (or updated). Thereafter
@@ -44,12 +40,12 @@ NVIpackager::document_NVIpkg(pkg = pkg,
                              contributing = FALSE,
                              readme = FALSE,
                              manual = "update",
-                             scope = c("spaces", "line_breaks"))
+                             # scope = c("spaces", "line_breaks"))
+                             scope = c("spaces"))
 # filename <- "xxxx.R"
 # styler::style_file(path = file.path(pkg_path, "R", filename), scope = I(c("spaces")))
 
 # spelling::spell_check_package(vignettes = TRUE, use_wordlist = TRUE)
-
 
 # TEST PACKAGE ----
 devtools::test()  # Run tests included in ./tests.
@@ -64,13 +60,10 @@ if(pkg %in% (.packages())){
 code_coverage <- covr::package_coverage(path = ".", group = "functions")
 print(x = code_coverage, group = "functions")
 
-# Build the package and thereafter check
-# Thereby, no problems with files in .Rbuildignore.
+# Build the package and thereafter check (Avoids problems as files in .Rbuildignore are removed.)
 devtools::build(binary = FALSE, manual = TRUE, vignettes = TRUE)
 version <- utils::packageVersion(pkg, lib.loc = paste0(pkg_path,"/.."))
-# Check built package
 devtools::check_built(path = paste0("../", pkg, "_", version, ".tar.gz"), args = c("--no-tests"), manual = TRUE)
-
 
 # INSTALL PACKAGE ----
 # From local version
@@ -92,13 +85,11 @@ NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "local")
 
 # ATTACH PACKAGE ----
 utils::help(package = (pkg))
-
 library(package = pkg, character.only = TRUE)
-
 
 # MANUAL CHECK OF SCRIPTS ----
 # Search for string
-txt <- "\\.data\\$"   # \\.data\\$, dplyr, stringi
+txt <- "\\.data\\$"   # \\.data\\$, dplyr, stringi, %>%, [æøåÆØÅ]
 files_with_pattern <- findInFiles::findInFiles(ext = "R", pattern = txt, output = "tibble")
 files_with_pattern <- findInFiles::FIF2dataframe(files_with_pattern)
 package <- rep(pkg, dim(files_with_pattern)[1])
