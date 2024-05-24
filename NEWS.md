@@ -1,13 +1,13 @@
-# NVIpackager 0.5.0.9000 - (2024-##-##)
+# NVIpackager 0.5.0.9001 - (2024-##-##)
 
 ## New features:
 
--
+- `update_news` now works with the file "NEWS.md".
 
 
 ## Bug fixes:
 
--
+- In `update_reference_manual` the ".gitignore" file is now updated when `manual = "remove"`.
 
 
 ## Other changes:
