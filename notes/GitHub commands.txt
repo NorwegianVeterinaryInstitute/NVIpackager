@@ -1,0 +1,95 @@
+Procedure after making a new version
+Delete dev branch and all other branches that has been included in the published version.
+
+Give tag to the version.
+
+Publish release.
+
+Ensure that dev branch and all other branches that has been included in the published version have been deleted.
+git branch -D dev
+
+Create new dev branch from main in the repository at NorwegianVeterinaryInstitute
+
+Create new dev branch from main in your working copy at your PC
+git checkout -b dev
+Switched to a new branch 'dev'
+
+Next may be necessary if others have made the dev branch and modified it
+Fetch dev branch to R studio
+git pull upstream dev dev
+
+Push new dev branch to your personal repo
+git push origin dev
+
+Compare branch at personal repo and NVI repo
+Clear up all inconsistencies?
+
+Change to development version in computer. 
+git branch --set-upstream-to=origin/dev dev
+
+Create development version in localrepo
+Push to personal repo
+Merge with dev version in NVI repo
+Pull from upstream to local repo
+Push to personal repo
+
+Merge with dev at NVI repo
+
+$ git pull upstream dev
+
+Push to origin (personal repo)
+
+
+
+
+
+
+13hopp@VIO-D-8DKGG52 MINGW64 ~/Documents/GitHub/NVIcheckmate (main)
+$ git pull upstream main
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), done.
+From https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate
+
+* branch            main       -> FETCH_HEAD
+e67ccf9..d5be999  main       -> upstream/main
+Updating 0b4b62b..d5be999
+Fast-forward
+
+13hopp@VIO-D-8DKGG52 MINGW64 ~/Documents/GitHub/NVIcheckmate (main)
+$ git tag v0.7.2
+
+13hopp@VIO-D-8DKGG52 MINGW64 ~/Documents/GitHub/NVIcheckmate (main)
+$ git push upstream v0.7.2
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate.git
+* [new tag]         v0.7.2 -> v0.7.2
+
+13hopp@VIO-D-8DKGG52 MINGW64 ~/Documents/GitHub/NVIcheckmate (main)
+$ git pull upstream main
+From https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate
+* branch            main       -> FETCH_HEAD
+Already up to date.
+
+13hopp@VIO-D-8DKGG52 MINGW64 ~/Documents/GitHub/NVIcheckmate (main)
+$ git remote -v
+origin  https://github.com/PetterHopp/NVIcheckmate.git (fetch)
+origin  https://github.com/PetterHopp/NVIcheckmate.git (push)
+upstream        https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate.git (fetch)
+upstream        https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate.git (push)
+
+13hopp@VIO-D-8DKGG52 MINGW64 ~/Documents/GitHub/NVIcheckmate (main)
+$ git checkout dev
+Switched to a new branch 'dev'
+Branch 'dev' set up to track remote branch 'dev' from 'upstream'.
+
+13hopp@VIO-D-8DKGG52 MINGW64 ~/Documents/GitHub/NVIcheckmate (dev)
+$ git push origin dev
+Total 0 (delta 0), reused 0 (delta 0)
+remote:
+  remote: Create a pull request for 'dev' on GitHub by visiting:
+  remote:      https://github.com/PetterHopp/NVIcheckmate/pull/new/dev
+remote:
+  To https://github.com/PetterHopp/NVIcheckmate.git
+* [new branch]      dev -> dev
