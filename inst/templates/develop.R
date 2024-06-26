@@ -1,5 +1,5 @@
 # CREATE, DOCUMENT, TEST AND INSTALL THE PACKAGE
-# develop.r v2024-06-04
+# develop.r v2024-06-19
 # NVIpackager::update_develop() # Update this file from template in NVIpackager
 
 # SET UP R ENVIRONMENT ----
@@ -90,8 +90,9 @@ library(package = pkg, character.only = TRUE)
 
 # MANUAL CHECK OF SCRIPTS ----
 # Search for string
+library(findInFiles)
 txt <- "\\.data\\$"   # \\.data\\$, dplyr, stringi, %>%, [æøåÆØÅ]
-files_with_pattern <- findInFiles::findInFiles(ext = "R", pattern = txt, output = "tibble")
+files_with_pattern <- findInFiles::findInFiles(extensions = "R", pattern = txt, output = "tibble")
 files_with_pattern <- findInFiles::FIF2dataframe(files_with_pattern)
 package <- rep(pkg, dim(files_with_pattern)[1])
 files_with_pattern <- cbind(package, files_with_pattern)
