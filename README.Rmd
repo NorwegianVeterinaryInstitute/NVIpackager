@@ -61,14 +61,14 @@ description <- desc::desc_get_field(key = "Description")
    sub(substr(description,1,1), tolower(substr(description,1,1)), description))`
    
 #### Create a NVIverse package skeleton
-To set up a package skeleton you can follow the following procedure:
+To set up a package skeleton you can use the following procedure:
 
 1. Create a repository for the package at the NorwegianVeterinaryInstitute's GitHub account. Give the repository the name of the package.
     - Make a short descriptive text. This can later be used as the Title in the DESCRIPTION file. 
     - Choose between Public or Private. If unsure, start with Private. It is easy to change to Public later.
     - Mark for Add a README file.
     - Choose the .gitignore template for R.
-    - Choose a licence, For example MIT, BSD 3-clause
+    - Choose a licence, For example MIT or BSD 3-clause
 2. Create the repository.
 3. Fork the repository to your own GitHub account.
 4. Create an R-studio project for the package. In R-studio

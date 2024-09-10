@@ -110,7 +110,7 @@ update_reference_manual <- function(pkg = stringi::stri_extract_last_words(useth
     # read .gitignore
     gitignore <- readLines(file.path(pkg_path, ".gitignore"))
     # save with name of package in filename
-    gitignore[!grepl(paste0("!vignettes/", pkg, ".pdf"), gitignore, fixed = TRUE)]
+    gitignore <- gitignore[!grepl(paste0("!vignettes/", pkg, ".pdf"), gitignore, fixed = TRUE)]
       writeLines(gitignore, file.path(pkg_path, ".gitignore"))
     }
 

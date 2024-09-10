@@ -103,7 +103,7 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   usethis::use_package_doc(open = FALSE)
 
   # Prepare for vignettes ----
-  # Use Contribute_to_mypkg as the name for an example vignette. This vigntte is created later based on a template
+  # Use Contribute_to_mypkg as the name for an example vignette. This vignette is created later based on a template
   usethis::use_vignette(name = paste0("Contribute_to_", pkg), title = paste("Contribute to", pkg))
   usethis::use_build_ignore(files = "CONTRIBUTING.md", escape = TRUE)
   if (dir.exists(paste0(pkg_path, "/vignettes"))) {
