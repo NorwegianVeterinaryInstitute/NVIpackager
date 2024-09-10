@@ -124,12 +124,11 @@ The `NVIverse`-packages use [`roxygen2`](https://cran.r-project.org/package=roxy
 
 Although not necessary, it has been chosen to write out @title, @description and @details to make the help text in `NVIverse` functions easier to read and interpret. 
 
-@params is set up in a standard format:
-
-argument_name [\code{argument_class}] \cr
-Text. 
-
-When the function argument has a default value, information on this is included by ending the text with: Defaults to "value". See `NVIdb::standardize_columns` for examples.
+@params is set up in a standard format:  
+`@params argument_name [\code{argument_class}] \cr`   
+`Argument description.`
+    
+When the function argument has a default value, information on this is included by ending the argument description with: Defaults to "value". See `NVIdb::standardize_columns` for examples.
 
 `roxygen2` allows for using `markdown` when writing the help text. The `NVIverse` package help usually do not use `markdown` for help, i.e. the "DESCRIPTION"-file includes "Roxygen: list(markdown = FALSE)" or (no listing of Roxygen) or if "Roxygen: list(markdown = TRUE)" the function help is set to @noMd when `markdown` should be avoided. The reason for not using `markdown` is that it has no equivalent of `\ifelse{}`. This command is useful in the situation where you include a link to a function in another package. Such links works fine in html, but when creating the pdf-reference manual, these links only points to the top of the reference manual. `\ifelse{}` can be used to remove or modify the link for pdf-documents, see the code for `NVIdb::standardize_columns` for examples.
 
