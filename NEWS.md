@@ -12,7 +12,7 @@
 
 ## Other changes:
 
--
+- Minor updates of develop.R
 
 
 ## BREAKING CHANGES:
