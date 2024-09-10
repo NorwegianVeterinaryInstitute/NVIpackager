@@ -15,11 +15,6 @@
 - Minor updates of develop.R
 
 
-## BREAKING CHANGES:
-
--
-
-
 # NVIpackager 0.5.0 - (2024-03-17)
 
 ## New features:
