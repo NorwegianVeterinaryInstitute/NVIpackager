@@ -1,5 +1,5 @@
 # CREATE, DOCUMENT, TEST AND INSTALL THE PACKAGE
-# develop.r v2024-05-24
+# develop.r v2024-06-19
 # NVIpackager::update_develop() # Update this file from template in NVIpackager
 
 # SET UP R ENVIRONMENT ----
@@ -74,7 +74,8 @@ NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "local")
 # NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "github", username = "NorwegianVeterinaryInstitute")
 #
 # # # Install from source file in catalog "NVIverse"
-# utils::install.packages(pkgs = paste0(NVIconfig:::path_NVI["NVIverse"], "/", pkg, "/Arkiv/", pkg, "_", version, ".tar.gz"),
+# utils::install.packages(pkgs = file.path(NVIconfig:::path_NVI["NVIverse"], pkg, "Releases",
+#                                          paste0(pkg, "_", version, ".tar.gz")),
 #                         repos = NULL,
 #                         type = "source")
 #
@@ -89,8 +90,9 @@ library(package = pkg, character.only = TRUE)
 
 # MANUAL CHECK OF SCRIPTS ----
 # Search for string
+library(findInFiles)
 txt <- "\\.data\\$"   # \\.data\\$, dplyr, stringi, %>%, [æøåÆØÅ]
-files_with_pattern <- findInFiles::findInFiles(ext = "R", pattern = txt, output = "tibble")
+files_with_pattern <- findInFiles::findInFiles(extensions = "R", pattern = txt, output = "tibble")
 files_with_pattern <- findInFiles::FIF2dataframe(files_with_pattern)
 package <- rep(pkg, dim(files_with_pattern)[1])
 files_with_pattern <- cbind(package, files_with_pattern)
