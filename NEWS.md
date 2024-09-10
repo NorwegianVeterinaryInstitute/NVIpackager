@@ -1,4 +1,4 @@
-# NVIpackager 0.5.0.9001 - (2024-##-##)
+# NVIpackager 0.5.1 - (2024-09-10)
 
 ## New features:
 
@@ -12,12 +12,7 @@
 
 ## Other changes:
 
--
-
-
-## BREAKING CHANGES:
-
--
+- Minor updates of develop.R
 
 
 # NVIpackager 0.5.0 - (2024-03-17)
