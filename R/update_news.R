@@ -95,6 +95,7 @@ update_news <- function(pkg = stringi::stri_extract_last_words(usethis::proj_pat
   }
 
   # WRITE THE NEWS FILE ----
+  if (is.null(NEWS_file)) {NEWS_file <- "NEWS.md"}
   if (is.null(template)) {
     history <- history[2:length(history)]
     writeLines(text = c(header, history),

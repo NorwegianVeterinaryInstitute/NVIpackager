@@ -1,3 +1,12 @@
+# NVIpackager 0.5.2 - (2024-09-11)
+
+## Bug fixes:
+
+- `update_NEWS` now generates the NEWS.md if no NEWS-file exists.
+
+- `create_NVIpkg_skeleton` don't break when there is no NEWS-file.
+
+
 # NVIpackager 0.5.1 - (2024-09-10)
 
 ## New features:
