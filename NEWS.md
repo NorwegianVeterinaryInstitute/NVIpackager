@@ -1,3 +1,25 @@
+# NVIpackager 0.5.2.9000 - (2024-##-##)
+
+## New features:
+
+-
+
+
+## Bug fixes:
+
+-
+
+
+## Other changes:
+
+-
+
+
+## BREAKING CHANGES:
+
+-
+
+
 # NVIpackager 0.5.2 - (2024-09-11)
 
 ## Bug fixes:
