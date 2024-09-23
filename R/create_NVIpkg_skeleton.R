@@ -96,6 +96,8 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   usethis::use_directory(path = "notes", ignore = FALSE)
   # Add files to .Rbuildignore
   usethis::use_build_ignore(files = "notes", escape = TRUE)
+  usethis::use_build_ignore(files = "man-roxygen", escape = TRUE)
+  usethis::use_build_ignore(files = paste0(pkg, ".Rproj"), escape = TRUE)
 
 
   # Add dummy for package level documentation.

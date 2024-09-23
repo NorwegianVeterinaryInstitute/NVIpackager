@@ -2,7 +2,7 @@
 
 ## New features:
 
--
+- `create_NVIpkg_skeleton` now adds "^pkg-name\.Rproj$" and "^man-roxygen$" to ".Rbuildignore".
 
 
 ## Bug fixes:
