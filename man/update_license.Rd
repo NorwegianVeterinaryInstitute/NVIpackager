@@ -22,17 +22,17 @@ The copyright owner in the copyright statement. Defaults
     to "Norwegian Veterinary Institute".}
 }
 \value{
-None. Writes the LICENSE file.
+None. Writes the LICENSE and LICENSE.md files.
 }
 \description{
-Update copyright year in the LICENSE file. The
+Update copyright year in the LICENSE and LICENSE.md files. The
     copyright years are given as a range from the first year
     to the current year.
 }
 \details{
 The copyright years will only be updated for the
-    given copyright owner This to avoid that copyright for
-    other copyright owners are updated if more than one.
+    given copyright owner This to avoid updating the copyright year for
+    other copyright owners than the copyright owner.
 }
 \examples{
 \dontrun{

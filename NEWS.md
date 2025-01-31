@@ -1,8 +1,10 @@
-# NVIpackager 0.5.2.9000 - (2024-##-##)
+# NVIpackager 0.5.2.9001 - (2025-##-##)
 
 ## New features:
 
 - `create_NVIpkg_skeleton` now adds "^pkg-name\.Rproj$" and "^man-roxygen$" to ".Rbuildignore".
+
+- `update_license` now updates copyright year in both LICENSE.md and LICENSE.
 
 
 ## Bug fixes:
