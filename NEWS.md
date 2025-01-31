@@ -4,6 +4,8 @@
 
 - `create_NVIpkg_skeleton` now adds "^pkg-name\.Rproj$" and "^man-roxygen$" to ".Rbuildignore".
 
+- `update_license` now updates copyright year in both LICENSE.md and LICENSE.
+
 
 ## Bug fixes:
 
