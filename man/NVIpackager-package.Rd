@@ -11,8 +11,8 @@ Provides tools to facilitate development of NVIverse packages. You should use 'c
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/NorwegianVeterinaryInstitute/NVIdevpkg}
-  \item Report bugs at \url{https://github.com/NorwegianVeterinaryInstitute/NVIdevpkg/issues}
+  \item \url{https://github.com/NorwegianVeterinaryInstitute/NVIpackager}
+  \item Report bugs at \url{https://github.com/NorwegianVeterinaryInstitute/NVIpackager/issues}
 }
 
 }
