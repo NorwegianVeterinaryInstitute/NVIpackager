@@ -19,7 +19,7 @@ The path to the package directory. Defaults to \code{usethis::proj_path()}.}
 
 \item{license_keyword}{[\code{character(1)}]\cr
 The keyword for the package's license in accord with list of license keywords.
-Defaults to "BSD_3_clause".}
+Defaults to "Apache-2.0".}
 }
 \value{
 None.

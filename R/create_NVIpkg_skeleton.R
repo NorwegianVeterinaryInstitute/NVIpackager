@@ -25,7 +25,7 @@
 #' @template pkg_path
 #' @param license_keyword  [\code{character(1)}]\cr
 #'     The keyword for the package's license in accord with list of license keywords.
-#'     Defaults to "BSD_3_clause".
+#'     Defaults to "Apache-2.0".
 #'
 #' @return None.
 #'     Sets up the package directories and writes and modifies several files, see details.
