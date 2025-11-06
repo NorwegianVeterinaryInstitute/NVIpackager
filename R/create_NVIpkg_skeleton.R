@@ -25,7 +25,7 @@
 #' @template pkg_path
 #' @param license_keyword  [\code{character(1)}]\cr
 #'     The keyword for the package's license in accord with list of license keywords.
-#'     Defaults to "BSD_3_clause".
+#'     Defaults to "Apache-2.0".
 #'
 #' @return None.
 #'     Sets up the package directories and writes and modifies several files, see details.
@@ -46,7 +46,7 @@
 #'
 create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethis::proj_path()),
                                    pkg_path = usethis::proj_path(),
-                                   license_keyword = "BSD_3_clause") {
+                                   license_keyword = "Apache-2.0") {
 
   # ARGUMENT CHECKING ----
   # Object to store check-results
@@ -55,7 +55,7 @@ create_NVIpkg_skeleton <- function(pkg = stringi::stri_extract_last_words(usethi
   checks <- assert_pkg_path(pkg = pkg, pkg_path = pkg_path, add = checks)
   # license_keyword
   checkmate::assert_choice(x = license_keyword,
-                           choices = c("BSD_2_clause", "BSD_3_clause",
+                           choices = c("Apache-2.0", "BSD_2_clause", "BSD_3_clause",
                                        "CC BY 4.0", "CC BY-SA 4.0",
                                        "GPL-2", "GPL-3", "LGPL-2.1", "LGPL-3",
                                        "MIT"),

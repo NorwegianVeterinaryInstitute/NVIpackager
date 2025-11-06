@@ -18,14 +18,14 @@ Description: Provides tools to facilitate development of NVIverse packages. You
     functions. In addition, the templates folder keeps templates for standard 
     files like sections of README and CONTRIBUTING.
 License: BSD_3_clause + file LICENSE
-URL: https://github.com/NorwegianVeterinaryInstitute/NVIdevpkg
+URL: https://github.com/NorwegianVeterinaryInstitute/NVIpackager
 BugReports: 
-    https://github.com/NorwegianVeterinaryInstitute/NVIdevpkg/issues
+    https://github.com/NorwegianVeterinaryInstitute/NVIpackager/issues
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
 Roxygen: list(markdown = FALSE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.3
 Depends: R (>= 4.0.0)
 Imports: 
     checkmate (>= 2.0.0),

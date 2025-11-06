@@ -14,12 +14,12 @@
 
 ## Other changes:
 
--
+- Included information on how to install NVIverse-packages in the README_installation template.
 
 
 ## BREAKING CHANGES:
 
--
+- `create_NVIpkg_skeleton` now has `license_keyword = "Apache-2.0"` as default.
 
 
 # NVIpackager 0.5.2 - (2024-09-11)
