@@ -7,7 +7,7 @@
 create_NVIpkg_skeleton(
   pkg = stringi::stri_extract_last_words(usethis::proj_path()),
   pkg_path = usethis::proj_path(),
-  license_keyword = "BSD_3_clause"
+  license_keyword = "Apache-2.0"
 )
 }
 \arguments{
