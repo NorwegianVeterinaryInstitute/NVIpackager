@@ -19,7 +19,7 @@
 
 ## BREAKING CHANGES:
 
--
+- `create_NVIpkg_skeleton` now has `license_keyword = "Apache-2.0"` as default.
 
 
 # NVIpackager 0.5.2 - (2024-09-11)
