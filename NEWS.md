@@ -14,7 +14,7 @@
 
 ## Other changes:
 
--
+- Included information on how to install NVIverse-packages in the README_installation template.
 
 
 ## BREAKING CHANGES:
