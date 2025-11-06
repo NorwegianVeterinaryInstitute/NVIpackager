@@ -30,13 +30,26 @@ for more information.
 
 ## Installation
 
-`NVIpackager` is available at
-[GitHub](https://github.com/NorwegianVeterinaryInstitute). To install
-`NVIpackager` you will need:
+`NVIpackager` is available in package manager for workbench and at
+[GitHub](https://github.com/NorwegianVeterinaryInstitute).
 
--   R version &gt; 4.0.0
+#### Workbench
+
+To install `NVIpackager` on workbench, run the following code:
+
+    install.packages("NVIpackager")
+
+#### At personal computer
+
+You may install the package with or without vignettes. Although it will
+be easier to install without vignettes, it is recommended to install
+with vignettes for all packages except `c("NVIrpackages", "NVIconfig")`.
+
+To install `NVIpackager` you will need:
+
+-   R version &gt; 4.1.0
 -   R package `remotes`
--   Rtools version 4.0, 4.2 or 4.3 depending on R version
+-   Rtools version 4.0, 4.2, 4.3, 4.4 or 4.5 depending on R version
 
 First install and attach the `remotes` package.
 
@@ -52,12 +65,13 @@ the following code:
         build_vignettes = FALSE)
 
 To install (or update) the `NVIpackager` package with vignettes, you
-will need to first install some additional R-packages needed for
-creating the vignettes. Check README below in the section
-[Vignettes](#vignettes) to see which vignettes are available. To install
-the package with the vignettes, first install the packages: `knitr`,
-`rmarkdown`, `R.rsp`, and `NVIrpackages` (from GitHub) if they are
-missing. Then run the following code:
+will need to first install some additional R-packages needed to build
+the vignettes. Check README below in the section [Vignettes](#vignettes)
+to see which vignettes are available. To install the package with the
+vignettes, first install the packages: `knitr`, `rmarkdown`, `R.rsp`,
+and `NVIrpackages` (from GitHub) if they are missing. If you don’t use
+R-studio, you will also need to install Pandoc. Then run the following
+code:
 
     remotes::install_github("NorwegianVeterinaryInstitute/NVIpackager",
         upgrade = FALSE,
@@ -81,7 +95,7 @@ CONTRIBUTING.
 
 #### Create a NVIverse package skeleton
 
-To set up a package skeleton you can follow the following procedure:
+To set up a package skeleton you can use the following procedure:
 
 1.  Create a repository for the package at the
     NorwegianVeterinaryInstitute’s GitHub account. Give the repository
@@ -93,7 +107,8 @@ To set up a package skeleton you can follow the following procedure:
         It is easy to change to Public later.
     -   Mark for Add a README file.
     -   Choose the .gitignore template for R.
-    -   Choose a licence, For example MIT, BSD 3-clause
+    -   Choose a licence, For example “Apache 2.0”, “MIT” or “BSD
+        3-clause”. “Apache 2.0” is recommended.
 
 2.  Create the repository.
 
@@ -108,7 +123,7 @@ To set up a package skeleton you can follow the following procedure:
 
 5.  Create the package skeleton
 
-        NVIpackager::create_NVIpkg_skeleton(license_keyword = "BSD_3_clause")
+        NVIpackager::create_NVIpkg_skeleton(license_keyword = "Apache-2.0")
 
 6.  Modify the DESCRIPTION file
 
@@ -163,7 +178,7 @@ for information on new features, bug fixes and other changes.
 
 ## Copyright and license
 
-Copyright (c) 2021 - 2024 Norwegian Veterinary Institute.  
+Copyright (c) 2021 - 2025 Norwegian Veterinary Institute.  
 Licensed under the BSD\_3\_clause License. See
 [License](https://github.com/NorwegianVeterinaryInstitute/NVIpackager/blob/main/LICENSE)
 for details.

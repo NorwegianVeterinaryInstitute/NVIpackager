@@ -68,7 +68,7 @@ To set up a package skeleton you can use the following procedure:
     - Choose between Public or Private. If unsure, start with Private. It is easy to change to Public later.
     - Mark for Add a README file.
     - Choose the .gitignore template for R.
-    - Choose a licence, For example MIT or BSD 3-clause
+    - Choose a licence, For example "Apache 2.0", "MIT" or "BSD 3-clause". "Apache 2.0" is recommended.
 2. Create the repository.
 3. Fork the repository to your own GitHub account.
 4. Create an R-studio project for the package. In R-studio
@@ -77,7 +77,7 @@ To set up a package skeleton you can use the following procedure:
     - Select a directory in your PC for your package.
 5. Create the package skeleton
     ``` {r, eval = FALSE} 
-NVIpackager::create_NVIpkg_skeleton(license_keyword = "BSD_3_clause")
+NVIpackager::create_NVIpkg_skeleton(license_keyword = "Apache-2.0")
     ```
 6. Modify the DESCRIPTION file
     - Copy the descriptive text into the Title field in the DESCRIPTION file.
