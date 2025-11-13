@@ -1,4 +1,4 @@
-# NVIpackager 0.5.2.9001 - (2025-##-##)
+# NVIpackager 0.5.2.9002 - (2025-##-##)
 
 ## New features:
 
