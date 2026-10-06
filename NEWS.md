@@ -11,7 +11,7 @@
 
 ## Bug fixes:
 
--
+- `install_NVIpkg` is corrected after changes in `devtools::install`.
 
 
 ## Other changes:
