@@ -86,7 +86,7 @@ install_NVIpkg <- function(pkg = stringi::stri_extract_last_words(usethis::proj_
   if (rsource == "local") {
     withr::with_libpaths(paste0(lib, "/library"),
                          devtools::install(pkg_path,
-                                           dependencies = c("Depends", "Imports", "LinkingTo"),
+                                           dependencies = NA,
                                            upgrade = FALSE,
                                            build_vignettes = TRUE,
                                            ...)
