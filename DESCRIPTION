@@ -1,7 +1,7 @@
 Package: NVIpackager
 Title: Tools to facilitate Development of NVIverse Packages
-Version: 0.5.2.9002
-Date: 2025-##-##
+Version: 0.5.3
+Date: 2026-10-09
 Authors@R: 
     c(person(given = "Petter",
              family = "Hopp",
@@ -25,7 +25,6 @@ Encoding: UTF-8
 Language: en-GB
 LazyData: true
 Roxygen: list(markdown = FALSE)
-RoxygenNote: 7.3.3
 Depends: R (>= 4.0.0)
 Imports: 
     checkmate (>= 2.0.0),
@@ -50,3 +49,4 @@ Remotes:
     github::NorwegianVeterinaryInstitute/NVIrpackages
 VignetteBuilder: knitr, R.rsp
 Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0
