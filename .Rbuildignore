@@ -3,6 +3,7 @@
 ^codecov\.yml$
 ^notes$
 ^CODE_OF_CONDUCT\.md$
+^LICENSE\.md$
 ^data_raw$
 ^CONTRIBUTING\.md$
 ^man-roxygen$

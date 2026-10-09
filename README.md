@@ -2,11 +2,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
--   [Overview](#overview)
--   [Installation](#installation)
--   [Usage](#usage)
--   [Copyright and license](#copyright-and-license)
--   [Contributing](#contributing)
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Copyright and license](#copyright-and-license)
+- [Contributing](#contributing)
 
 ## Overview
 
@@ -30,36 +30,66 @@ for more information.
 
 ## Installation
 
-`NVIpackager` is available at
-[GitHub](https://github.com/NorwegianVeterinaryInstitute). To install
-`NVIpackager` you will need:
+`NVIpackager` is available in package manager for workbench and at
+[GitHub](https://github.com/NorwegianVeterinaryInstitute). If needed,
+you can install the development version from the dev-branch at the
+GitHub repo, see below.
 
--   R version &gt; 4.0.0
--   R package `remotes`
--   Rtools version 4.0, 4.2 or 4.3 depending on R version
+#### Workbench
+
+To install `NVIpackager` on workbench, run the following code:
+
+    install.packages("NVIpackager")
+
+If you need changes that only are available in the development version,
+please make contact to the developers so that a new release can be
+published on Workbench.
+
+#### At personal computer
+
+You may install the package with or without vignettes. Although it will
+be easier to install without vignettes, it is recommended to install
+with vignettes for all `NVIverse` packages except
+`c("NVIrpackages", "NVIconfig")`.
+
+To install `NVIpackager` you will need:
+
+- R version &gt; 4.1.0
+- R package `remotes`
+- Rtools version 4.0, 4.2, 4.3, 4.4 or 4.5 depending on R version
 
 First install and attach the `remotes` package.
 
     install.packages("remotes")
     library(remotes)
 
-To install (or update) the `NVIpackager` package without vignettes, run
-the following code:
+To install (or update) `NVIpackager` without vignettes, run the
+following code:
 
     remotes::install_github("NorwegianVeterinaryInstitute/NVIpackager",
         upgrade = FALSE,
         build = TRUE,
         build_vignettes = FALSE)
 
-To install (or update) the `NVIpackager` package with vignettes, you
-will need to first install some additional R-packages needed for
-creating the vignettes. Check README below in the section
-[Vignettes](#vignettes) to see which vignettes are available. To install
-the package with the vignettes, first install the packages: `knitr`,
-`rmarkdown`, `R.rsp`, and `NVIrpackages` (from GitHub) if they are
-missing. Then run the following code:
+To install (or update) `NVIpackager` with vignettes, you will need to
+first install some additional R-packages needed to build the vignettes.
+Check README below in the section [Vignettes](#vignettes) to see the
+vignettes that are available. To install the package with the vignettes,
+first install the packages: `knitr`, `rmarkdown`, `R.rsp`, and
+`NVIrpackages` (from GitHub) if they are missing. If you don’t use
+R-studio, you will also need to install Pandoc. Then run the following
+code:
 
     remotes::install_github("NorwegianVeterinaryInstitute/NVIpackager",
+        upgrade = FALSE,
+        build = TRUE,
+        build_vignettes = TRUE)
+
+To install (or update) the development version (dev-branch) of
+`NVIpackager` (with vignettes), run the following code:
+
+    remotes::install_github("NorwegianVeterinaryInstitute/NVIpackager",
+        ref = "dev",
         upgrade = FALSE,
         build = TRUE,
         build_vignettes = TRUE)
@@ -81,19 +111,20 @@ CONTRIBUTING.
 
 #### Create a NVIverse package skeleton
 
-To set up a package skeleton you can follow the following procedure:
+To set up a package skeleton you can use the following procedure:
 
 1.  Create a repository for the package at the
     NorwegianVeterinaryInstitute’s GitHub account. Give the repository
     the name of the package.
 
-    -   Make a short descriptive text. This can later be used as the
-        Title in the DESCRIPTION file.
-    -   Choose between Public or Private. If unsure, start with Private.
-        It is easy to change to Public later.
-    -   Mark for Add a README file.
-    -   Choose the .gitignore template for R.
-    -   Choose a licence, For example MIT, BSD 3-clause
+    - Make a short descriptive text. This can later be used as the Title
+      in the DESCRIPTION file.
+    - Choose between Public or Private. If unsure, start with Private.
+      It is easy to change to Public later.
+    - Mark for Add a README file.
+    - Choose the .gitignore template for R.
+    - Choose a licence, For example “Apache 2.0”, “MIT” or “BSD
+      3-clause”. “Apache 2.0” is recommended.
 
 2.  Create the repository.
 
@@ -101,21 +132,20 @@ To set up a package skeleton you can follow the following procedure:
 
 4.  Create an R-studio project for the package. In R-studio
 
-    -   Choose New project -&gt; Version control
-    -   Copy the directory at GitHub and paste it where asked in
-        R-studio.
-    -   Select a directory in your PC for your package.
+    - Choose New project -&gt; Version control
+    - Copy the directory at GitHub and paste it where asked in R-studio.
+    - Select a directory in your PC for your package.
 
 5.  Create the package skeleton
 
-        NVIpackager::create_NVIpkg_skeleton(license_keyword = "BSD_3_clause")
+        NVIpackager::create_NVIpkg_skeleton(license_keyword = "Apache-2.0")
 
 6.  Modify the DESCRIPTION file
 
-    -   Copy the descriptive text into the Title field in the
-        DESCRIPTION file.
-    -   Copy the descriptive text into the Description field in the
-        DESCRIPTION file and eventually extend it.
+    - Copy the descriptive text into the Title field in the DESCRIPTION
+      file.
+    - Copy the descriptive text into the Description field in the
+      DESCRIPTION file and eventually extend it.
 
 7.  Update README and Mypackage-package help with the last changes in
     the DESCRIPTION file.
@@ -151,9 +181,9 @@ Consult the vignettes for task-oriented help.
 
 Vignettes in package `NVIpackager`:
 
--   Contribute to NVIpackager (html)  
--   NVIpackager reference manual (pdf)  
--   NVIverse coding conventions (html)
+- Contribute to NVIpackager (html)  
+- NVIpackager reference manual (pdf)  
+- NVIverse coding conventions (html)
 
 ##### NEWS
 
@@ -163,7 +193,7 @@ for information on new features, bug fixes and other changes.
 
 ## Copyright and license
 
-Copyright (c) 2021 - 2024 Norwegian Veterinary Institute.  
+Copyright (c) 2021 - 2026 Norwegian Veterinary Institute.  
 Licensed under the BSD\_3\_clause License. See
 [License](https://github.com/NorwegianVeterinaryInstitute/NVIpackager/blob/main/LICENSE)
 for details.

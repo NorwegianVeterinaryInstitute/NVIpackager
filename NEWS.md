@@ -1,3 +1,28 @@
+# NVIpackager 0.5.3 - (2026-10-09)
+
+## New features:
+
+- `create_NVIpkg_skeleton` now adds "^pkg-name\.Rproj$" and "^man-roxygen$" to ".Rbuildignore".
+
+- `update_license` now updates copyright year in both LICENSE.md and LICENSE.
+
+- `create_NVIpkg_skeleton` now has `license_keyword = "Apache-2.0"` as default.
+
+
+## Bug fixes:
+
+- `install_NVIpkg` is corrected after changes in `devtools::install`.
+
+
+## Other changes:
+
+- Updated the README_installation template with information on how to install 
+NVIverse-packages at workbench and how to install dev-branch from GitHub.
+
+- Updated develop.R with predefined command to install dev branch og pkg from 
+personal GitHub account.
+
+
 # NVIpackager 0.5.2 - (2024-09-11)
 
 ## Bug fixes:

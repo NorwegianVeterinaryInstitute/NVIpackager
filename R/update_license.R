@@ -1,16 +1,16 @@
 #' @title Update copyright year in the license
-#' @description Update copyright year in the LICENSE file. The
+#' @description Update copyright year in the LICENSE and LICENSE.md files. The
 #'     copyright years are given as a range from the first year
 #'     to the current year.
 #' @details The copyright years will only be updated for the
-#'     given copyright owner This to avoid that copyright for
-#'     other copyright owners are updated if more than one.
+#'     given copyright owner This to avoid updating the copyright year for
+#'     other copyright owners than the copyright owner.
 #' @template pkg
 #' @template pkg_path
 #' @param copyright_owner [\code{character(1)}]\cr
 #' The copyright owner in the copyright statement. Defaults
 #'     to "Norwegian Veterinary Institute".
-#' @return None. Writes the LICENSE file.
+#' @return None. Writes the LICENSE and LICENSE.md files.
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
@@ -33,8 +33,8 @@ update_license <- function(pkg = stringi::stri_extract_last_words(usethis::proj_
   checkmate::reportAssertions(checks)
 
   # RUN SCRIPT ----
-  # read LICENSE
-  license <- readLines(file.path(pkg_path, "LICENSE"))
+  # read LICENSE.md
+  license <- readLines(file.path(pkg_path, "LICENSE.md"))
   # updates copyright statement
   copyright <- license[grep(pattern = paste0("^Copyright[[:print:]]*",
                                              copyright_owner,
@@ -44,11 +44,29 @@ update_license <- function(pkg = stringi::stri_extract_last_words(usethis::proj_
   copyright_year <- format(Sys.Date(), "%Y")
   if (first_copyright_year < copyright_year) {
     copyright_year <- paste(first_copyright_year, "-", copyright_year)
-    }
+  }
   copyright <- paste("Copyright (c)", copyright_year, copyright_owner)
   license[grep(pattern = paste0("^Copyright[[:print:]]*",
                                 copyright_owner,
                                 "[[:space:]]*$"),
+               license)] <- copyright
+
+  # writes LICENSE
+  writeLines(license, file.path(pkg_path, "LICENSE.md"))
+
+
+  # read LICENSE
+  license <- readLines(file.path(pkg_path, "LICENSE"))
+  # updates copyright statement
+  copyright <- license[grep(pattern = paste0("^YEAR[[:print:]]*"),
+                            license)]
+  first_copyright_year <- substr(gsub(".*?([0-9]+).*", "\\1", copyright), 1, 4)
+  copyright_year <- format(Sys.Date(), "%Y")
+  if (first_copyright_year < copyright_year) {
+    copyright_year <- paste(first_copyright_year, "-", copyright_year)
+  }
+  copyright <- paste("YEAR:", copyright_year)
+  license[grep(pattern = paste0("^YEAR[[:print:]]*"),
                license)] <- copyright
 
   # writes LICENSE

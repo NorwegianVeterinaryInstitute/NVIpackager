@@ -10,11 +10,15 @@ test_that("Update license year", {
   license <- paste("Copyright (c)",
                    "2021",
                    "Norwegian Veterinary Institute")
+  writeLines(license, file.path(td, "NVItest", "LICENSE.md"))
+  license <- paste("YEAR:",
+                   "2021",
+                   "Norwegian Veterinary Institute")
   writeLines(license, file.path(td, "NVItest", "LICENSE"))
 
   update_license(pkg = "NVItest", pkg_path = file.path(td, "NVItest"))
 
-  license <- readLines(file.path(td, "NVItest", "LICENSE"))
+  license <- readLines(file.path(td, "NVItest", "LICENSE.md"))
   expect_equal(license[1],
                paste("Copyright (c)",
                      "2021", "-", format(Sys.Date(), "%Y"),
@@ -24,11 +28,11 @@ test_that("Update license year", {
   license <- paste("Copyright (c)",
                    "2021", "-", format(Sys.Date(), "%Y"),
                    "Norwegian Veterinary Institute")
-  writeLines(license, file.path(td, "NVItest", "LICENSE"))
+  writeLines(license, file.path(td, "NVItest", "LICENSE.md"))
 
   update_license(pkg = "NVItest", pkg_path = file.path(td, "NVItest"))
 
-  license <- readLines(file.path(td, "NVItest", "LICENSE"))
+  license <- readLines(file.path(td, "NVItest", "LICENSE.md"))
   expect_equal(license[1],
                paste("Copyright (c)",
                      "2021", "-", format(Sys.Date(), "%Y"),
@@ -38,11 +42,11 @@ test_that("Update license year", {
   license <- paste("Copyright (c)",
                    "2021", "-", as.character(as.numeric(format(Sys.Date(), "%Y")) - 1),
                    "Norwegian Veterinary Institute")
-  writeLines(license, file.path(td, "NVItest", "LICENSE"))
+  writeLines(license, file.path(td, "NVItest", "LICENSE.md"))
 
   update_license(pkg = "NVItest", pkg_path = file.path(td, "NVItest"))
 
-  license <- readLines(file.path(td, "NVItest", "LICENSE"))
+  license <- readLines(file.path(td, "NVItest", "LICENSE.md"))
   expect_equal(license[1],
                paste("Copyright (c)",
                      "2021", "-", format(Sys.Date(), "%Y"),
@@ -52,11 +56,11 @@ test_that("Update license year", {
   license <- paste("Copyright (c)",
                    format(Sys.Date(), "%Y"),
                    "Norwegian Veterinary Institute")
-  writeLines(license, file.path(td, "NVItest", "LICENSE"))
+  writeLines(license, file.path(td, "NVItest", "LICENSE.md"))
 
   update_license(pkg = "NVItest", pkg_path = file.path(td, "NVItest"))
 
-  license <- readLines(file.path(td, "NVItest", "LICENSE"))
+  license <- readLines(file.path(td, "NVItest", "LICENSE.md"))
   expect_equal(license[1],
                paste("Copyright (c)",
                      format(Sys.Date(), "%Y"),
