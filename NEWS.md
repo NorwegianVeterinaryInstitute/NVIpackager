@@ -1,4 +1,4 @@
-# NVIpackager 0.5.2.9002 - (2025-##-##)
+# NVIpackager 0.5.3 - (2026-10-09)
 
 ## New features:
 
@@ -19,10 +19,8 @@
 - Updated the README_installation template with information on how to install 
 NVIverse-packages at workbench and how to install dev-branch from GitHub.
 
-
-## BREAKING CHANGES:
-
-- 
+- Updated develop.R with predefined command to install dev branch og pkg from 
+personal GitHub account.
 
 
 # NVIpackager 0.5.2 - (2024-09-11)
