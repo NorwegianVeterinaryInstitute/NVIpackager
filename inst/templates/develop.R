@@ -1,5 +1,5 @@
 # CREATE, DOCUMENT, TEST AND INSTALL THE PACKAGE
-# develop.r v2025-11-17
+# develop.r v2026-10-09
 # NVIpackager::update_develop() # Update this file from template in NVIpackager
 
 # SET UP R ENVIRONMENT ----
@@ -69,8 +69,10 @@ devtools::check_built(path = paste0("../", pkg, "_", version, ".tar.gz"), args =
 # From local version
 NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "local")
 # From GitHub
-# NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "github", username = "PetterHopp")
+# Local install of dev branch from repo on PetterHopp
+# NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "github", username = "PetterHopp", ref = "dev", dependencies = FALSE)
 #
+# Install last release from NorwegianVeterinaryInstitute
 # NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "github", username = "NorwegianVeterinaryInstitute")
 #
 # # # Install from source file in catalog "NVIverse"
