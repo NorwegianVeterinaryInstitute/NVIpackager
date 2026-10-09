@@ -91,7 +91,7 @@ There is a need to define the packages that should have priority for use in `NVI
 `tidyverse` coding is often easier to interpret than base. `tidyverse` code is used in many NVIverse packages, but the code is slowly removed from the package code. This is due to 
 
 - The fast development of `tidyverse` with deprecated functions and arguments and it takes (too much) time to update the packages to the latest code.
-- `tidyverse` coding is not very well developed for programming were input to `tidyverse` functions is not easily written.
+- `tidyverse` coding is not very well developed for programming where input to `tidyverse` functions is not easily written.
 
 #### Packages for data handling
 Regrettably are there other packages than base that are more efficient or have better API than base for data handling. 
@@ -100,7 +100,7 @@ Regrettably are there other packages than base that are more efficient or have b
 - `tidyverse` has some very convenient functions that is more easy to use than base, for example `tidyr::pivot_wider`, `tidyr::pivot_longer`, `dplyr::add_count`. It has therefore been difficult to  remove these from package code.
 
 #### Piping
-Currently the pipe `%>%` from magrittr is used. When one can assume that most users at NVI are using R >= 4.0.5, the pipe will slowly be changed to R's in-built pipe `|>`.
+The packages use R's in-built pipe `|>`. 
 
 ### Styling
 New code should generally follow the tidyverse [style guide](http://style.tidyverse.org) with some modifications.
