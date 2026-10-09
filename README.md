@@ -2,11 +2,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
--   [Overview](#overview)
--   [Installation](#installation)
--   [Usage](#usage)
--   [Copyright and license](#copyright-and-license)
--   [Contributing](#contributing)
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Copyright and license](#copyright-and-license)
+- [Contributing](#contributing)
 
 ## Overview
 
@@ -54,9 +54,9 @@ with vignettes for all `NVIverse` packages except
 
 To install `NVIpackager` you will need:
 
--   R version &gt; 4.1.0
--   R package `remotes`
--   Rtools version 4.0, 4.2, 4.3, 4.4 or 4.5 depending on R version
+- R version &gt; 4.1.0
+- R package `remotes`
+- Rtools version 4.0, 4.2, 4.3, 4.4 or 4.5 depending on R version
 
 First install and attach the `remotes` package.
 
@@ -117,14 +117,14 @@ To set up a package skeleton you can use the following procedure:
     NorwegianVeterinaryInstitute’s GitHub account. Give the repository
     the name of the package.
 
-    -   Make a short descriptive text. This can later be used as the
-        Title in the DESCRIPTION file.
-    -   Choose between Public or Private. If unsure, start with Private.
-        It is easy to change to Public later.
-    -   Mark for Add a README file.
-    -   Choose the .gitignore template for R.
-    -   Choose a licence, For example “Apache 2.0”, “MIT” or “BSD
-        3-clause”. “Apache 2.0” is recommended.
+    - Make a short descriptive text. This can later be used as the Title
+      in the DESCRIPTION file.
+    - Choose between Public or Private. If unsure, start with Private.
+      It is easy to change to Public later.
+    - Mark for Add a README file.
+    - Choose the .gitignore template for R.
+    - Choose a licence, For example “Apache 2.0”, “MIT” or “BSD
+      3-clause”. “Apache 2.0” is recommended.
 
 2.  Create the repository.
 
@@ -132,10 +132,9 @@ To set up a package skeleton you can use the following procedure:
 
 4.  Create an R-studio project for the package. In R-studio
 
-    -   Choose New project -&gt; Version control
-    -   Copy the directory at GitHub and paste it where asked in
-        R-studio.
-    -   Select a directory in your PC for your package.
+    - Choose New project -&gt; Version control
+    - Copy the directory at GitHub and paste it where asked in R-studio.
+    - Select a directory in your PC for your package.
 
 5.  Create the package skeleton
 
@@ -143,10 +142,10 @@ To set up a package skeleton you can use the following procedure:
 
 6.  Modify the DESCRIPTION file
 
-    -   Copy the descriptive text into the Title field in the
-        DESCRIPTION file.
-    -   Copy the descriptive text into the Description field in the
-        DESCRIPTION file and eventually extend it.
+    - Copy the descriptive text into the Title field in the DESCRIPTION
+      file.
+    - Copy the descriptive text into the Description field in the
+      DESCRIPTION file and eventually extend it.
 
 7.  Update README and Mypackage-package help with the last changes in
     the DESCRIPTION file.
@@ -182,9 +181,9 @@ Consult the vignettes for task-oriented help.
 
 Vignettes in package `NVIpackager`:
 
--   Contribute to NVIpackager (html)  
--   NVIpackager reference manual (pdf)  
--   NVIverse coding conventions (html)
+- Contribute to NVIpackager (html)  
+- NVIpackager reference manual (pdf)  
+- NVIverse coding conventions (html)
 
 ##### NEWS
 
@@ -194,7 +193,7 @@ for information on new features, bug fixes and other changes.
 
 ## Copyright and license
 
-Copyright (c) 2021 - 2025 Norwegian Veterinary Institute.  
+Copyright (c) 2021 - 2026 Norwegian Veterinary Institute.  
 Licensed under the BSD\_3\_clause License. See
 [License](https://github.com/NorwegianVeterinaryInstitute/NVIpackager/blob/main/LICENSE)
 for details.
